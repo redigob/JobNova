@@ -1,0 +1,132 @@
+{
+  "featured": [
+    {
+      "id": 1,
+      "title": "Frontend Developer",
+      "company": "Google",
+      "location": "Mountain View, California, USA",
+      "minSalary": 120000,
+      "maxSalary": 165000,
+      "type": "Full-time",
+      "skills": ["React", "JavaScript", "CSS"],
+      "match": null,
+      "liked": false,
+      "image": "images/google.jpg"
+    },
+    {
+      "id": 3,
+      "title": "Frontend Engineer",
+      "company": "Airbnb",
+      "location": "San Francisco, California, USA",
+      "minSalary": 115000,
+      "maxSalary": 160000,
+      "type": "Full-time",
+      "skills": ["React", "TypeScript", "GraphQL"],
+      "match": null,
+      "liked": false,
+      "image": "images/airbnb.jpg"
+    },
+    {
+      "id": 4,
+      "title": "Product Designer",
+      "company": "Figma",
+      "location": "San Francisco, California, USA",
+      "minSalary": 95000,
+      "maxSalary": 140000,
+      "type": "Full-time",
+      "skills": ["Figma", "UI Design", "Prototyping"],
+      "match": null,
+      "liked": false,
+      "image": "images/figma.jpg"
+    },
+    {
+      "id": 6,
+      "title": "Product Designer",
+      "company": "Dribbble",
+      "location": "Remote",
+      "minSalary": 80000,
+      "maxSalary": 120000,
+      "type": "Full-time",
+      "skills": ["Figma", "UI Design", "UX Research"],
+      "match": null,
+      "liked": false,
+      "image": "images/dribbble.jpg"
+    },
+    {
+      "id": 7,
+      "title": "Software Engineer",
+      "company": "Meta",
+      "location": "Menlo Park, California, USA",
+      "minSalary": 125000,
+      "maxSalary": 175000,
+      "type": "Full-time",
+      "skills": ["React", "Python", "GraphQL"],
+      "match": null,
+      "liked": false,
+      "image": "images/meta.jpg"
+    },
+    {
+      "id": 8,
+      "title": "Frontend Engineer",
+      "company": "Microsoft",
+      "location": "Redmond, Washington, USA",
+      "minSalary": 115000,
+      "maxSalary": 165000,
+      "type": "Full-time",
+      "skills": ["TypeScript", "React", "Azure"],
+      "match": null,
+      "liked": false,
+      "image": "images/microsoft.jpg"
+    }
+  ],
+  "companies": [
+    {
+      "id": 1,
+      "name": "Google",
+      "industry": "Technology",
+      "location": "Mountain View, California, USA",
+      "openJobs": 24,
+      "image": "images/google.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Microsoft",
+      "industry": "Technology",
+      "location": "Redmond, Washington, USA",
+      "openJobs": 18,
+      "image": "images/microsoft.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Safaricom",
+      "industry": "Telecommunications",
+      "location": "Nairobi, Kenya",
+      "openJobs": 12,
+      "image": "images/safaricom.jpg"
+    },
+    {
+      "id": 4,
+      "name": "Meta",
+      "industry": "Technology",
+      "location": "Menlo Park, California, USA",
+      "openJobs": 21,
+      "image": "images/meta.jpg"
+    },
+    {
+      "id": 5,
+      "name": "Netflix",
+      "industry": "Entertainment & Technology",
+      "location": "Los Gatos, California, USA",
+      "openJobs": 15,
+      "image": "images/netflix.jpg"
+    },
+    {
+        "id": 6,
+        "name": "Ethiopian Airlines",
+        "industry": "Aviation",
+        "location": "Addis Ababa, Ethiopia",
+        "openJobs": 14,
+        "image": "images/airlines.jpg"
+    }
+  ]
+}

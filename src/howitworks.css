@@ -1,0 +1,54 @@
+.how{
+    background:linear-gradient(white,#b3f4b3   );
+    color: #030303;
+    margin-top: -4px;
+}
+
+.how > h2:nth-child(1){
+    text-align: center;
+    font-size: 50px;
+    padding-top: 20px;
+    color: green;
+}
+
+.how > div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 100px;
+    gap: 0px;
+}
+
+.how > div > div{
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    padding: 30px 5px;
+
+}
+
+.how > div > div div{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    padding: 20px 0px;
+}
+
+.number{
+    font-size: 100px;
+    text-align: center;
+}
+
+.how div div div:not(.number){
+    border-right: 2px groove black;
+    padding: 20px 20px;
+}
+
+.how div > div > div:nth-child(2){
+    border-right: none;
+}
+
+.how div div div h2{
+    color: #0a0909;
+}

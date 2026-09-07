@@ -1,0 +1,49 @@
+.home > div:nth-child(1){
+    position: relative;
+}
+
+.home > div:nth-child(1) img{
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+    text-align: end;
+}
+
+.home > div:nth-child(1) > div{
+    position: absolute;
+    top: 0;
+    width: 60%;
+    height: 99%;
+    padding: 10% 5% 10% 10%;
+    display: flex;
+    color: white;
+    flex-direction: column;
+    gap: 20px;
+    background: linear-gradient(90deg,black,rgba(0, 0, 0, 0));
+}
+
+.home > div:nth-child(1) > div h2{
+    font-size: 50px;
+}
+
+.home > div:nth-child(1) > div > p{
+    padding: 0px 250px 0px 0px ;
+}
+
+.home div:nth-child(1) .buttons{
+    display: flex;
+    width: 50%;
+    gap: 20px;
+    align-items: center;
+}
+
+.home div:nth-child(1) button{
+    padding: 10px 10px;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+}
+
+.home div:nth-child(1) button:nth-child(1){
+    background-color: #5f975f;
+}

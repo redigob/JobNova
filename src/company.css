@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
+.company{
+    padding: 10px 0px;
+    overflow-x: hidden;
+    position: relative;
+    border-top: 2px solid;
+    border-bottom: 2px solid;
+    border-image: linear-gradient(90deg,white , #45a745,white  ) 1;   
+    background:linear-gradient(90deg,#c7fcc7,white,#c7fcc7);
+}
+
+
+.company h3{
+    text-align: center;
+    font-family: "Dancing Script", cursive;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-size: 25px;
+}
+
+.company > div:nth-child(2){
+  display: flex;
+  gap: 10px;
+  position: relative;
+  padding: 10px;
+  margin-top: 20px;
+  animation: scroll 20s linear infinite;
+}
+
+
+.company > div:nth-child(2):hover{
+    animation-play-state:paused;
+    cursor: pointer;
+}
+
+.company img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.comp{
+    flex-shrink: 0;
+    width: 200px;
+    padding: 10px ;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 20px;
+}
+
+
+.comp div:nth-child(2){
+    color: #000000;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.comp div:nth-child(2) p:nth-child(1){
+   font-weight: 200;
+   font-size: 20px;
+}
+
+.comp div:nth-child(2) p:nth-child(1){
+    font-size: 15px;
+}
+
+@keyframes scroll {
+    from{
+        transform: translateX(0px);
+    }
+
+    to{
+        transform: translateX(-1260px);
+    }
+}

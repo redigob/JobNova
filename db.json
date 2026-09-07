@@ -1,0 +1,694 @@
+{
+  "blogs": [
+    {
+      "id": 1,
+      "title": "The Art of Doing Less",
+      "img": "/images/30.jpg",
+      "category": "Lifestyle",
+      "body": "Modern life often rewards us for being busy, but being busy is not the same as being productive. A simpler lifestyle begins by deciding what deserves our attention and letting go of what does not. When we reduce unnecessary commitments, we create room for rest, creativity, relationships, and meaningful work. Doing less is not about becoming lazy; it is about becoming intentional with the limited time and energy we have.",
+      "date": "2025-08-18",
+      "author": "Maya Bennett",
+      "reactions": {
+        "views": 2840,
+        "likes": 418,
+        "comments": 57
+      }
+    },
+    {
+      "id": 2,
+      "title": "How AI Is Changing the Way We Learn",
+      "img": "/images/31.jpg",
+      "category": "Technology",
+      "body": "Artificial intelligence is changing education by making information easier to access and practice more personalized. Students can use intelligent tools to explain difficult concepts, generate practice questions, and explore subjects from different perspectives. The most valuable use of AI, however, is not replacing thinking but supporting it. Learners still need curiosity, judgment, and the ability to question the information they receive.",
+      "date": "2024-11-12",
+      "author": "Daniel Carter",
+      "reactions": {
+        "views": 5120,
+        "likes": 803,
+        "comments": 96
+      }
+    },
+    {
+      "id": 3,
+      "title": "Building a Better Digital Life",
+      "img": "/images/32.jpg",
+      "category": "Lifestyle",
+      "body": "Our phones and computers can make life easier, but constant notifications can quietly consume our attention. A healthier digital life starts with small choices: turning off unnecessary alerts, creating phone-free periods, organizing apps, and deciding when technology should serve us. Digital balance is not about abandoning technology. It is about using it deliberately instead of allowing every notification to decide what we think about next.",
+      "date": "2023-08-05",
+      "author": "Nora Williams",
+      "reactions": {
+        "views": 3910,
+        "likes": 622,
+        "comments": 71
+      }
+    },
+    {
+      "id": 4,
+      "title": "Think Deep",
+      "img": "/images/33.jpg",
+      "category": "Lifestyle",
+      "body": "Deep thinking has become increasingly difficult in an environment filled with interruptions. Giving yourself uninterrupted time allows ideas to develop beyond the first obvious answer. Reading carefully, writing down questions, walking without a phone, and spending time with difficult problems are simple ways to strengthen this ability. The goal is not to think constantly, but to make the moments when you do think truly meaningful.",
+      "date": "2022-07-28",
+      "author": "Ethan Brooks",
+      "reactions": {
+        "views": 3275,
+        "likes": 541,
+        "comments": 64
+      }
+    },
+    {
+      "id": 5,
+      "title": "Skincare Without the Noise",
+      "img": "/images/34.jpg",
+      "category": "Beauty",
+      "body": "Beauty routines do not have to contain dozens of products. A simple routine built around cleansing, moisturizing, and protecting the skin from the sun can be easier to maintain than a complicated collection of products. The most useful routine is one you understand and can follow consistently. Instead of chasing every trend, pay attention to what works for your own needs and give products enough time to show their results.",
+      "date": "2026-02-14",
+      "author": "Amelia Rose",
+      "reactions": {
+        "views": 6730,
+        "likes": 1042,
+        "comments": 138
+      }
+    },
+    {
+      "id": 6,
+      "title": "The Return of Soft Tailoring",
+      "img": "/images/35.jpg",
+      "category": "Fashion",
+      "body": "Fashion is moving toward clothing that combines structure with comfort. Soft tailoring keeps the clean lines of traditional jackets and trousers while using relaxed shapes and lighter materials. The result feels polished without looking overly formal. This approach also makes individual pieces easier to combine, creating wardrobes that can move between work, social events, and everyday life.",
+      "date": "2025-03-22",
+      "author": "Sofia Laurent",
+      "reactions": {
+        "views": 4580,
+        "likes": 719,
+        "comments": 83
+      }
+    },
+    {
+      "id": 7,
+      "title": "Designing Calm Spaces",
+      "img": "/images/36.jpg",
+      "category": "Design",
+      "body": "A calm room does not require expensive furniture or a huge amount of space. Thoughtful layout, natural light, comfortable textures, and a limited color palette can make a room feel more peaceful. Good design begins by understanding how people move through and use a space. When unnecessary objects are removed and important elements are given breathing room, even a small room can feel welcoming.",
+      "date": "2024-06-10",
+      "author": "Leo Martin",
+      "reactions": {
+        "views": 3120,
+        "likes": 487,
+        "comments": 52
+      }
+    },
+    {
+      "id": 8,
+      "title": "Why Small Habits Matter",
+      "img": "/images/37.jpg",
+      "category": "Lifestyle",
+      "body": "Large goals can feel overwhelming when they are treated as one enormous task. Small habits make progress easier because they turn a desired behavior into something repeatable. Reading a few pages, taking a short walk, organizing a desk, or writing a daily plan may seem insignificant on one day, but repeated actions can shape a much larger result over time.",
+      "date": "2021-10-03",
+      "author": "Oliver Hayes",
+      "reactions": {
+        "views": 2760,
+        "likes": 439,
+        "comments": 48
+      }
+    },
+    {
+      "id": 9,
+      "title": "The Rise of Wearable Technology",
+      "img": "/images/38.jpg",
+      "category": "Technology",
+      "body": "Wearable devices have moved beyond simple step counters. Smart watches and other connected devices can help people monitor activity, communicate quickly, and interact with digital services from their wrists. As these products become more capable, designers face an important challenge: adding useful features without making technology intrusive. The best wearable technology should feel helpful rather than demanding.",
+      "date": "2025-12-01",
+      "author": "Marcus Lee",
+      "reactions": {
+        "views": 4310,
+        "likes": 690,
+        "comments": 79
+      }
+    },
+    {
+      "id": 10,
+      "title": "Color Trends That Feel Timeless",
+      "img": "/images/39.jpg",
+      "category": "Design",
+      "body": "Color trends come and go, but certain combinations remain attractive because they create balance. Warm neutrals, muted greens, deep blues, and natural browns can provide a strong foundation while small accents add personality. Instead of copying an entire trend, designers can borrow one color and combine it with materials and shades that already belong to the space.",
+      "date": "2023-04-17",
+      "author": "Clara Morgan",
+      "reactions": {
+        "views": 2985,
+        "likes": 466,
+        "comments": 44
+      }
+    },
+    {
+      "id": 11,
+      "title": "A Practical Guide to Capsule Wardrobes",
+      "img": "/images/40.jpg",
+      "category": "Fashion",
+      "body": "A capsule wardrobe focuses on a smaller collection of clothes that work well together. The goal is not to own as little as possible, but to remove pieces that rarely get worn. Start with versatile basics, choose a consistent color direction, and add a few items that express your personality. A thoughtful wardrobe can make getting dressed faster while still leaving room for creativity.",
+      "date": "2022-09-08",
+      "author": "Sofia Laurent",
+      "reactions": {
+        "views": 5470,
+        "likes": 911,
+        "comments": 112
+      }
+    },
+    {
+      "id": 12,
+      "title": "The Science of a Good Night Routine",
+      "img": "/images/41.jpg",
+      "category": "Lifestyle",
+      "body": "A consistent evening routine can make the transition from a busy day to rest much easier. Lowering bright light, putting away demanding tasks, preparing for tomorrow, and choosing a quiet activity can signal that the day is ending. The goal is not to create a perfect routine but a predictable sequence that helps the mind slow down.",
+      "date": "2020-12-19",
+      "author": "Nora Williams",
+      "reactions": {
+        "views": 3650,
+        "likes": 574,
+        "comments": 69
+      }
+    },
+    {
+      "id": 13,
+      "title": "AI Tools for Creative Work",
+      "img": "/images/42.jpg",
+      "category": "Technology",
+      "body": "Creative professionals are increasingly experimenting with AI for brainstorming, organization, editing, and rapid prototyping. These tools can help move from a blank page to several possible directions quickly. Human taste remains essential, however, because generating possibilities is different from deciding which possibility is worth developing. The strongest creative workflows treat AI as a collaborator rather than a replacement for judgment.",
+      "date": "2026-04-03",
+      "author": "Daniel Carter",
+      "reactions": {
+        "views": 7820,
+        "likes": 1280,
+        "comments": 176
+      }
+    },
+    {
+      "id": 14,
+      "title": "The Beauty of Natural Makeup",
+      "img": "/images/43.jpg",
+      "category": "Beauty",
+      "body": "Natural-looking makeup is less about using fewer products and more about creating a balanced finish. Lightweight base products, softly defined brows, subtle color, and carefully placed highlights can enhance features without making the makeup feel heavy. The style works especially well when the goal is to look polished while keeping the skin and natural features visible.",
+      "date": "2024-02-27",
+      "author": "Amelia Rose",
+      "reactions": {
+        "views": 4890,
+        "likes": 735,
+        "comments": 91
+      }
+    },
+    {
+      "id": 15,
+      "title": "Furniture With a Story",
+      "img": "/images/44.jpg",
+      "category": "Design",
+      "body": "Furniture becomes more meaningful when it has a connection to the people who use it. A vintage chair, handmade table, or inherited cabinet can give a room character that mass-produced objects sometimes lack. Good interior design does not require everything to match. Mixing old and new pieces can create a space that feels personal, layered, and lived in.",
+      "date": "2021-05-15",
+      "author": "Leo Martin",
+      "reactions": {
+        "views": 2410,
+        "likes": 367,
+        "comments": 38
+      }
+    },
+    {
+      "id": 16,
+      "title": "Street Style and Personal Identity",
+      "img": "/images/45.jpg",
+      "category": "Fashion",
+      "body": "Street style demonstrates that fashion is not only about following designers or seasonal collections. People combine clothing in ways that reflect their personalities, communities, and daily lives. Sneakers with tailoring, vintage pieces with modern basics, and unexpected color combinations show how personal style grows through experimentation rather than strict rules.",
+      "date": "2023-11-21",
+      "author": "Sofia Laurent",
+      "reactions": {
+        "views": 6240,
+        "likes": 978,
+        "comments": 125
+      }
+    },
+    {
+      "id": 17,
+      "title": "How to Build a Personal Tech Stack",
+      "img": "/images/46.jpg",
+      "category": "Technology",
+      "body": "A personal technology stack is the collection of apps, devices, and systems you use to manage your work and life. More tools do not automatically mean better organization. Start by identifying your needs, then choose a small number of reliable tools for notes, tasks, communication, files, and focused work. A simple system that you actually use is more valuable than an impressive collection of unused apps.",
+      "date": "2025-01-09",
+      "author": "Marcus Lee",
+      "reactions": {
+        "views": 3350,
+        "likes": 512,
+        "comments": 58
+      }
+    },
+    {
+      "id": 18,
+      "title": "The Five-Minute Beauty Reset",
+      "img": "/images/47.jpg",
+      "category": "Beauty",
+      "body": "Busy days do not have to mean abandoning your beauty routine. A five-minute reset can focus on the essentials: refreshing the face, moisturizing, arranging the hair, and adding one feature that makes you feel put together. Small routines are easier to maintain when they are realistic, especially on days when time is limited.",
+      "date": "2022-03-30",
+      "author": "Maya Bennett",
+      "reactions": {
+        "views": 2845,
+        "likes": 431,
+        "comments": 47
+      }
+    },
+    {
+      "id": 19,
+      "title": "Designing for Small Apartments",
+      "img": "/images/48.jpg",
+      "category": "Design",
+      "body": "Small homes can feel spacious when every area is designed with purpose. Vertical storage, multifunctional furniture, mirrors, and clear walking paths help preserve usable space. Instead of filling every corner, leave some areas visually quiet. The result is a home that feels more open while still containing everything necessary for everyday life.",
+      "date": "2024-08-24",
+      "author": "Clara Morgan",
+      "reactions": {
+        "views": 4030,
+        "likes": 638,
+        "comments": 72
+      }
+    },
+    {
+      "id": 20,
+      "title": "Why Walking Is a Lifestyle",
+      "img": "/images/49.jpg",
+      "category": "Lifestyle",
+      "body": "Walking can be more than a form of exercise. It can become a simple way to create space between activities, explore a neighborhood, think through a problem, or spend time away from screens. Because it requires little equipment and can fit into ordinary routines, walking is one of the easiest activities to make consistent.",
+      "date": "2020-07-12",
+      "author": "Oliver Hayes",
+      "reactions": {
+        "views": 2190,
+        "likes": 348,
+        "comments": 33
+      }
+    },
+    {
+      "id": 21,
+      "title": "The Future of Digital Fashion",
+      "img": "/images/50.jpg",
+      "category": "Fashion",
+      "body": "Digital fashion is opening new possibilities for how people express themselves online. Virtual clothing, digital styling, and computer-generated designs allow creators to experiment without the same physical limitations as traditional garments. As digital spaces become more important, fashion may increasingly exist in both physical wardrobes and virtual identities.",
+      "date": "2026-01-26",
+      "author": "Sofia Laurent",
+      "reactions": {
+        "views": 7120,
+        "likes": 1145,
+        "comments": 154
+      }
+    },
+    {
+      "id": 22,
+      "title": "Smart Homes, Simpler Living",
+      "img": "/images/51.jpg",
+      "category": "Technology",
+      "body": "Smart home technology can automate lights, temperature, security, and entertainment, but the best systems are not necessarily the ones with the most features. Useful automation should remove repetitive tasks without making everyday life complicated. As connected devices become more affordable, thoughtful setup and privacy awareness will remain just as important as convenience.",
+      "date": "2023-06-06",
+      "author": "Marcus Lee",
+      "reactions": {
+        "views": 3780,
+        "likes": 584,
+        "comments": 67
+      }
+    },
+    {
+      "id": 23,
+      "title": "Finding Your Signature Style",
+      "img": "/images/52.jpg",
+      "category": "Fashion",
+      "body": "A signature style develops through observation and experimentation. Notice the colors, silhouettes, fabrics, and accessories you repeatedly choose. Then look for patterns instead of trying to copy someone else's wardrobe. Personal style becomes stronger when clothing reflects how you actually want to feel rather than simply what happens to be popular.",
+      "date": "2021-09-14",
+      "author": "Amelia Rose",
+      "reactions": {
+        "views": 4620,
+        "likes": 746,
+        "comments": 88
+      }
+    },
+    {
+      "id": 24,
+      "title": "Making a Room Feel Expensive",
+      "img": "/images/53.jpg",
+      "category": "Design",
+      "body": "A luxurious-looking room is often created through proportion, lighting, texture, and careful editing rather than expensive objects. Curtains hung at the right height, cohesive materials, warm lighting, and a few intentional decorative pieces can dramatically change the atmosphere. The key is to make every visible element feel considered.",
+      "date": "2025-05-02",
+      "author": "Leo Martin",
+      "reactions": {
+        "views": 5860,
+        "likes": 895,
+        "comments": 104
+      }
+    },
+    {
+      "id": 25,
+      "title": "The Case for a Slower Morning",
+      "img": "/images/54.jpg",
+      "category": "Lifestyle",
+      "body": "A rushed morning can make the entire day feel reactive. Creating a little extra space for breakfast, planning, reading, stretching, or simply sitting quietly can change the tone of the day. A slower morning does not have to last an hour. Even ten intentional minutes can help you begin with direction instead of immediately responding to other people's demands.",
+      "date": "2022-01-18",
+      "author": "Nora Williams",
+      "reactions": {
+        "views": 3180,
+        "likes": 501,
+        "comments": 61
+      }
+    },
+    {
+      "id": 26,
+      "title": "Beauty Trends Worth Trying",
+      "img": "/images/55.jpg",
+      "category": "Beauty",
+      "body": "Beauty trends can be fun when they are treated as experiments rather than rules. Glossy textures, soft colors, expressive eyes, and simple hairstyles can refresh a familiar routine. The best trend is one that fits your personality and feels comfortable enough to become your own rather than something you feel pressured to reproduce perfectly.",
+      "date": "2025-10-11",
+      "author": "Maya Bennett",
+      "reactions": {
+        "views": 5410,
+        "likes": 827,
+        "comments": 101
+      }
+    },
+    {
+      "id": 27,
+      "title": "Technology That Disappears",
+      "img": "/images/56.jpg",
+      "category": "Technology",
+      "body": "The most successful technology can sometimes feel almost invisible. When interfaces are intuitive and devices work reliably, people can focus on their goals instead of the technology itself. This idea is influencing product design across phones, homes, cars, and workplaces. The future may not be about adding more controls, but about making useful technology feel effortless.",
+      "date": "2024-10-29",
+      "author": "Daniel Carter",
+      "reactions": {
+        "views": 4470,
+        "likes": 701,
+        "comments": 82
+      }
+    },
+    {
+      "id": 28,
+      "title": "Minimalism Meets Warmth",
+      "img": "/images/57.jpg",
+      "category": "Design",
+      "body": "Minimalist design does not have to feel cold. Natural wood, textured fabrics, warm lighting, plants, and earthy colors can soften clean architectural lines. The goal is to remove visual clutter while keeping enough texture and personality to make the space feel comfortable. Warm minimalism proves that simplicity and coziness can exist together.",
+      "date": "2023-02-13",
+      "author": "Clara Morgan",
+      "reactions": {
+        "views": 3520,
+        "likes": 556,
+        "comments": 63
+      }
+    },
+    {
+      "id": 29,
+      "title": "The Psychology of Color in Beauty",
+      "img": "/images/58.jpg",
+      "category": "Beauty",
+      "body": "Color can influence how makeup, clothing, and beauty products are perceived. Warm and cool tones create different visual impressions, while contrast can draw attention to particular features. Understanding color does not mean following strict rules. It gives you another tool for experimenting with combinations that complement your natural features and personal style.",
+      "date": "2021-04-25",
+      "author": "Amelia Rose",
+      "reactions": {
+        "views": 3980,
+        "likes": 617,
+        "comments": 74
+      }
+    },
+    {
+      "id": 30,
+      "title": "Living With More Intention",
+      "img": "/images/59.jpg",
+      "category": "Lifestyle",
+      "body": "Intentional living begins with noticing how you spend your time, money, attention, and energy. It does not require a perfect routine or a dramatic lifestyle change. Instead, it asks you to make small decisions that reflect what matters to you. Over time, those decisions can create a life that feels less accidental and more aligned with your priorities.",
+      "date": "2026-06-20",
+      "author": "Oliver Hayes",
+      "reactions": {
+        "views": 6250,
+        "likes": 984,
+        "comments": 119
+      }
+    }
+  ],
+  "side blogs": [
+  {
+    "id": 31,
+    "title": "Why Less Is More in Fashion",
+    "img": "/images/1.1.jpg",
+    "category": "Fashion",
+    "date": "2026-08-20",
+    "author": "Amara Blake",
+    "body": "Minimalism in fashion is about more than simply wearing fewer pieces. It is about choosing clothing with intention, focusing on clean silhouettes, thoughtful details, and pieces that can remain beautiful beyond a single season. Neutral colors, simple cuts, and quality materials allow a wardrobe to feel effortless while still expressing personality. For many designers, minimalism creates space for craftsmanship to become the main focus, proving that fashion does not always need to be loud to make a lasting impression.",
+    "reactions": {
+      "views": 1840,
+      "likes": 326,
+      "comments": 42
+    }
+  },
+  {
+    "id": 32,
+    "title": "How Fashion Designers Turn Ideas Into Art",
+    "img": "/images/1.2.jpg",
+    "category": "Fashion",
+    "date": "2026-08-17",
+    "author": "Sofia Laurent",
+    "body": "Fashion design begins long before a model steps onto a runway. Designers often start with sketches, photographs, memories, textures, or even ordinary moments that inspire an entirely new collection. Colors, fabrics, shapes, and movement are carefully combined to communicate a particular feeling or story. The runway simply becomes the final stage where these ideas come together. In this way, fashion becomes more than clothing; it becomes a visual form of art that allows designers to share their imagination with the world.",
+    "reactions": {
+      "views": 1675,
+      "likes": 289,
+      "comments": 35
+    }
+  },
+  {
+    "id": 33,
+    "title": "How Fashion Designers Create Emotion",
+    "img": "/images/1.3.jpg",
+    "category": "Fashion",
+    "date": "2026-08-14",
+    "author": "Elena Rose",
+    "body": "Color can completely change the way a piece of clothing feels. Soft pastels may create a sense of calm, while bold reds, deep blues, or bright yellows can bring energy and confidence to a collection. Fashion designers carefully consider these emotional reactions when developing their work, often using color to guide the mood of an entire runway show. The right combination can transform a simple design into something memorable, showing how powerful color can be when it is used with purpose and creativity.",
+    "reactions": {
+      "views": 1920,
+      "likes": 354,
+      "comments": 48
+    }
+  },
+  {
+    "id": 34,
+    "title": "The Rise of Modern Fashion Design",
+    "img": "/images/1.4.jpg",
+    "category": "Fashion",
+    "date": "2026-08-10",
+    "author": "Naomi Carter",
+    "body": "Modern elegance is changing the way people think about sophisticated fashion. Instead of relying only on traditional silhouettes and formal clothing, designers are experimenting with relaxed shapes, unexpected fabrics, and subtle details that feel both refined and comfortable. Today's idea of elegance is increasingly about confidence, individuality, and knowing how to balance simplicity with personality. This shift has created a new kind of fashion where timeless design can exist alongside creativity, making elegance feel more personal and accessible.",
+    "reactions": {
+      "views": 1450,
+      "likes": 241,
+      "comments": 31
+    }
+  }
+],
+  "world": [
+  {
+    "id": 1,
+    "country": "Japan",
+    "flag": "🇯🇵",
+    "title": "A Country Where Tradition Meets Tomorrow",
+    "content": "Japan is a fascinating blend of ancient traditions and futuristic innovation. In the same city, you can find centuries-old temples standing close to skyscrapers, quiet tea ceremonies alongside advanced technology, and traditional gardens surrounded by busy streets. Japan is also famous for its attention to detail, from carefully prepared food to beautifully arranged architecture. One of the country's most recognizable natural sights is Mount Fuji, which has inspired artists and travelers for generations. Japan's culture places strong value on respect, discipline, craftsmanship, and harmony, making it a country where even ordinary daily activities can feel deeply intentional.",
+    "category": "Culture",
+    "image": "./src/assets/japan.jpg"
+  },
+  {
+    "id": 2,
+    "country": "Italy",
+    "flag": "🇮🇹",
+    "title": "Where History Lives in Everyday Life",
+    "content": "Italy is often described as an open-air museum because reminders of its long history can be found almost everywhere. Ancient Roman ruins, Renaissance paintings, medieval towns, and centuries-old churches are woven into modern Italian life. Cities such as Rome, Florence, and Venice each have their own distinctive character. Italy is also famous for its food culture, where meals are often connected to family, tradition, and regional identity. From handmade pasta in small villages to grand architecture in historic cities, Italy shows how the past can remain an important part of everyday life rather than something preserved only in museums.",
+    "category": "History",
+    "image": "./src/assets/italy.jpg"
+  },
+  {
+    "id": 3,
+    "country": "Egypt",
+    "flag": "🇪🇬",
+    "title": "A Civilization Built Along the Nile",
+    "content": "Egypt is home to one of the world's most famous ancient civilizations. The Nile River has played a central role in Egyptian life for thousands of years, providing water and supporting agriculture in an otherwise dry landscape. Ancient Egyptians built enormous monuments, developed sophisticated systems of writing, and created complex religious traditions. The pyramids of Giza remain some of the most recognizable structures on Earth. Modern Egypt is much more than its ancient history, however. Cairo is a huge and energetic city, while the country also contains deserts, coastal communities, and the fertile Nile Valley.",
+    "category": "History",
+     "image": "./src/assets/egypt.jpg"
+  },
+  {
+    "id": 4,
+    "country": "Brazil",
+    "flag": "🇧🇷",
+    "title": "The Country of Forests, Rhythm, and Diversity",
+    "content": "Brazil is the largest country in South America and is famous for its extraordinary natural and cultural diversity. A large portion of the Amazon rainforest lies within Brazil, making the country an important part of the world's most biologically diverse ecosystems. Brazil is also known for its vibrant music, dance, festivals, and football culture. Cities such as Rio de Janeiro combine dramatic mountains, beaches, and dense urban neighborhoods. With Portuguese as its official language and hundreds of cultural influences shaping its identity, Brazil demonstrates how geography, history, and migration can come together to create a remarkably diverse society.",
+    "category": "Nature",
+     "image": "./src/assets/brazil.jpg"
+  },
+  {
+    "id": 5,
+    "country": "India",
+    "flag": "🇮🇳",
+    "title": "A World of Languages and Traditions",
+    "content": "India is one of the world's most culturally and geographically diverse countries. Its landscapes range from the Himalayan mountains in the north to tropical coastlines in the south, with deserts, forests, plains, and major rivers in between. India is home to many languages, cuisines, festivals, religions, and artistic traditions. Its history includes ancient civilizations, powerful empires, and centuries of cultural exchange. The country is also one of the world's largest technology and business centers. From colorful festivals and regional foods to classical music and modern cities, India's diversity can make it feel like many different worlds existing within one country.",
+    "category": "Culture",
+    "image": "./src/assets/india.jpg"
+  },
+  {
+    "id": 6,
+    "country": "Morocco",
+    "flag": "🇲🇦",
+    "title": "Where Africa Meets the Arab World",
+    "content": "Morocco sits at a fascinating crossroads between Africa, Europe, and the Arab world. Its culture has been shaped by Amazigh, Arab, African, Jewish, and European influences over centuries. Traditional markets, known as souks, are filled with spices, textiles, ceramics, and handmade crafts. Morocco's landscape is equally varied, ranging from Atlantic beaches and fertile valleys to the dramatic Atlas Mountains and the Sahara Desert. Cities such as Marrakech and Fez are famous for their historic medinas and distinctive architecture. The country's food, architecture, music, and crafts reflect the many cultures that have influenced Morocco throughout its history.",
+    "category": "Culture",
+     "image": "./src/assets/morocco.jpg"
+  },
+  {
+    "id": 7,
+    "country": "Iceland",
+    "flag": "🇮🇸",
+    "title": "The Land of Fire and Ice",
+    "content": "Iceland is known for an unusual combination of glaciers and volcanic activity. The island sits on the Mid-Atlantic Ridge, where tectonic plates are moving apart, contributing to its geological activity. Iceland's landscape includes volcanoes, waterfalls, lava fields, glaciers, and geothermal springs. Because of its northern location, the country also experiences extremely long summer days and very short winter days. During certain times of the year, visitors may see the northern lights dancing across the night sky. Iceland's dramatic landscape has helped create a culture closely connected to nature and the country's unusual environment.",
+    "category": "Nature",
+     "image": "./src/assets/iceland.jpg"
+  },
+  {
+    "id": 8,
+    "country": "Greece",
+    "flag": "🇬🇷",
+    "title": "A Country of Islands and Ancient Ideas",
+    "content": "Greece is famous for its ancient civilization, beautiful islands, and strong connection to the Mediterranean Sea. Ancient Greek thinkers contributed enormously to philosophy, mathematics, science, literature, and political ideas that continue to influence the modern world. Athens, the capital, is home to landmarks such as the Acropolis, which overlooks the city. Beyond the mainland, Greece contains thousands of islands and islets, many surrounded by clear blue waters. Greek culture also places importance on food, family, community, and hospitality. The country's ancient ruins and modern lifestyle exist side by side, creating a unique connection between history and everyday life.",
+    "category": "History",
+     "image": "./src/assets/greece.jpg"
+  },
+  {
+    "id": 9,
+    "country": "Kenya",
+    "flag": "🇰🇪",
+    "title": "Where Wildlife and Culture Meet",
+    "content": "Kenya is known around the world for its extraordinary wildlife and landscapes, but its identity goes far beyond safari tourism. The country contains savannas, mountains, forests, lakes, and a beautiful coastline along the Indian Ocean. Kenya is home to elephants, lions, giraffes, zebras, and many other species. It is also culturally diverse, with many communities contributing their own languages, traditions, music, and food. Nairobi, the capital, is a modern and rapidly developing city. Kenya's combination of urban life, ancient cultural traditions, and remarkable natural environments makes it one of Africa's most fascinating countries.",
+    "category": "Nature",
+     "image": "./src/assets/kenya.jpg"
+  },
+  {
+    "id": 10,
+    "country": "France",
+    "flag": "🇫🇷",
+    "title": "Art, Architecture, and the French Way of Life",
+    "content": "France has had an enormous influence on art, fashion, architecture, food, and political thought. Paris is famous for landmarks such as the Eiffel Tower, the Louvre, and the Notre-Dame area, but France extends far beyond its capital. The country contains Mediterranean beaches, Alpine mountains, vineyards, forests, and historic villages. French cuisine has influenced professional cooking around the world, while French fashion houses have shaped global ideas about luxury and style. France's long history has produced a rich collection of art, literature, architecture, and traditions that continue to influence modern culture.",
+    "category": "Art & Fashion",
+     "image": "./src/assets/france.jpg"
+  },
+  {
+    "id": 11,
+    "country": "Mexico",
+    "flag": "🇲🇽",
+    "title": "A Culture Built from Many Civilizations",
+    "content": "Mexico has a rich history shaped by ancient civilizations, European colonization, and diverse Indigenous cultures. Long before Spanish arrival, civilizations such as the Maya and Aztec developed complex cities, calendars, agricultural systems, and artistic traditions. Today, Mexico is known for colorful celebrations, music, art, and one of the world's most recognizable cuisines. Its geography is equally impressive, including deserts, mountains, tropical forests, and long coastlines. Mexican culture varies greatly from region to region, with different communities maintaining their own traditions, languages, foods, and celebrations while sharing a strong national identity.",
+    "category": "Culture",
+     "image": "./src/assets/mexico.jpg"
+  },
+  {
+    "id": 12,
+    "country": "Norway",
+    "flag": "🇳🇴",
+    "title": "Life Among the Fjords",
+    "content": "Norway is famous for its dramatic fjords, mountains, forests, and long coastline. Fjords are deep coastal valleys carved by glaciers over thousands of years, creating some of the country's most spectacular landscapes. Norway's northern location also produces unusual seasonal light, including the midnight sun during summer and long periods of darkness during winter in the far north. Norwegian culture has a strong relationship with the outdoors, and activities such as hiking, skiing, and spending time in nature are deeply popular. Despite its relatively small population, Norway has developed modern cities while maintaining a strong connection to its natural environment.",
+    "category": "Nature",
+     "image": "./src/assets/norway.jpg"
+  },
+  {
+    "id": 13,
+    "country": "South Korea",
+    "flag": "🇰🇷",
+    "title": "Ancient Traditions in a Digital Age",
+    "content": "South Korea is one of the world's most striking examples of rapid modernization. Seoul is a highly connected city filled with technology, entertainment, fashion, and modern architecture, yet traditional palaces and historic neighborhoods remain part of the urban landscape. Korean culture has also gained enormous global popularity through music, television, film, beauty, and food. At the same time, traditions such as respect for elders, traditional celebrations, and Korean cuisine remain important. The country demonstrates how a society can embrace rapid technological and cultural change while continuing to preserve elements of its historical identity.",
+    "category": "Modern Culture",
+     "image": "./src/assets/south korea.jpg"
+  },
+  {
+    "id": 14,
+    "country": "Peru",
+    "flag": "🇵🇪",
+    "title": "From the Andes to the Pacific",
+    "content": "Peru contains an extraordinary range of landscapes, from the dry Pacific coast to the high Andes and the Amazon rainforest. The country is especially famous for Machu Picchu, an ancient Inca site located high in the mountains. The Inca civilization developed sophisticated roads, agriculture, architecture, and systems of government across a huge area of South America. Modern Peru combines Indigenous traditions with Spanish and other cultural influences. Its cuisine is also remarkably diverse, reflecting ingredients and traditions from different regions. Peru is a country where mountains, ancient history, and modern cultural life come together.",
+    "category": "History",
+     "image": "./src/assets/peru.jpg"
+  },
+  {
+    "id": 15,
+    "country": "Australia",
+    "flag": "🇦🇺",
+    "title": "A Continent of Extraordinary Wildlife",
+    "content": "Australia is both a country and a continent, making it geographically unique. Its enormous size contains deserts, tropical forests, beaches, mountains, and coral reefs. Australia is especially famous for wildlife that evolved in relative isolation, including kangaroos, koalas, wombats, and platypuses. The country is also home to one of the world's most famous natural ecosystems, the Great Barrier Reef. Australia's Indigenous peoples have cultures and histories stretching back tens of thousands of years. Modern Australia combines these ancient traditions with a highly urbanized society centered around cities such as Sydney, Melbourne, Brisbane, and Perth.",
+    "category": "Nature",
+     "image": "./src/assets/australia.jpg"
+  },
+  {
+    "id": 16,
+    "country": "Turkey",
+    "flag": "🇹🇷",
+    "title": "A Bridge Between Two Continents",
+    "content": "Turkey occupies a unique position between Europe and Asia, and its history reflects this geographical crossroads. Istanbul, one of the country's most famous cities, lies across both sides of the Bosphorus Strait and has served as an important center for different empires and cultures. Turkey's landscapes range from Mediterranean beaches to mountains and dry inland plateaus. Its architecture, food, music, and traditions show influences from many civilizations that have passed through the region. This combination of geography and history gives Turkey a distinctive cultural identity that connects different parts of the world.",
+    "category": "History",
+     "image": "./src/assets/turkey.jpg"
+  },
+  {
+    "id": 17,
+    "country": "Thailand",
+    "flag": "🇹🇭",
+    "title": "A Land of Temples, Islands, and Street Food",
+    "content": "Thailand is known for its tropical islands, Buddhist temples, lively cities, and distinctive cuisine. Bangkok combines enormous shopping centers and modern skyscrapers with traditional temples and busy street markets. Outside the capital, the country offers mountains in the north, tropical forests, rice-growing regions, and beaches surrounded by warm waters. Thai food is famous for balancing flavors such as sweet, sour, salty, bitter, and spicy. Buddhism has strongly influenced Thai art, architecture, and daily life. The country's combination of natural beauty, hospitality, food, and cultural traditions has made it a popular destination for travelers from around the world.",
+    "category": "Travel",
+     "image": "./src/assets/thailand.jpg"
+  },
+  {
+    "id": 18,
+    "country": "Switzerland",
+    "flag": "🇨🇭",
+    "title": "A Country Shaped by Mountains",
+    "content": "Switzerland is famous for the Alps, clear lakes, picturesque villages, and highly organized cities. The country's mountainous geography has influenced everything from transportation to tourism and traditional lifestyles. Switzerland has several official languages, including German, French, Italian, and Romansh, reflecting its position at the crossroads of Europe. It is also known for watchmaking, chocolate, cheese, and financial services. Despite being relatively small, Switzerland contains remarkable geographic variety. Travelers can move from busy urban centers to quiet alpine landscapes within a short distance, making the country feel surprisingly diverse.",
+    "category": "Travel",
+     "image": "./src/assets/switherland.jpg"
+  },
+  {
+    "id": 19,
+    "country": "Ethiopia",
+    "flag": "🇪🇹",
+    "title": "A Land of Ancient History and Living Traditions",
+    "content": "Ethiopia has one of Africa's richest historical and cultural traditions. The country is home to ancient sites, dramatic highlands, deep valleys, and unique cultural communities. Historic places such as Lalibela are famous for churches carved directly into rock, while the ancient city of Aksum is associated with one of Africa's great civilizations. Ethiopia is also known for its distinctive cuisine, coffee culture, music, and colorful celebrations. Its landscapes range from the highlands to the Danakil Depression, one of the hottest places on Earth. Ethiopia's long history and diverse traditions give it a cultural identity unlike anywhere else.",
+    "category": "History",
+     "image": "./src/assets/ethiopia.jpg"
+  },
+  {
+    "id": 20,
+    "country": "New Zealand",
+    "flag": "🇳🇿",
+    "title": "Where Mountains Meet the Ocean",
+    "content": "New Zealand is made up of two main islands and is famous for its dramatic natural landscapes. Visitors can find snow-covered mountains, green hills, volcanic areas, forests, beaches, and deep fjords within a relatively small geographic area. Māori culture is an important part of the country's identity, with traditions, language, stories, and art continuing to influence modern New Zealand. The country is also known for its outdoor lifestyle, with hiking, kayaking, skiing, and other activities popular among residents and visitors. New Zealand's combination of natural beauty and cultural heritage makes it a fascinating destination for exploration.",
+    "category": "Nature",
+     "image": "./src/assets/new zealand.jpg"
+  }
+],
+  "twoblogs": [
+  {
+    "id": 35,
+    "title": "The Rise of Pet-Friendly Homes",
+    "img": "/images/pet.jpg",
+    "category": "Design",
+    "body": "As pets become an increasingly important part of the family, the way we design our homes is beginning to change. Modern pet-friendly design goes far beyond simply placing a bed or food bowl in the corner. Homeowners and designers are creating built-in feeding stations, hidden litter areas, dedicated storage for toys and supplies, cozy sleeping corners, and even indoor pathways that make it easier for pets to move around. Outdoor spaces are also being redesigned with secure play areas, shaded resting spots, and pet-friendly materials. The goal is not to sacrifice style for comfort, but to create spaces where both people and animals can live comfortably together. Thoughtful design can make everyday routines easier while allowing pets to feel like they truly belong in the home.",
+    "date": "2026-05-20",
+    "author": "Maya Carter",
+    "reactions": {
+      "views": 4280,
+      "likes": 612,
+      "comments": 47
+    }
+  },
+  {
+    "id": 36,
+    "title": "Why Fashion Is Getting Fun Again",
+    "img": "/images/y2.jpg",
+    "category": "Fashion",
+    "body": "Fashion has a funny way of bringing the past back to life, and the early 2000s are once again having their moment. After years of minimalist wardrobes dominated by neutral colors and simple silhouettes, people are becoming more interested in the playful and expressive style associated with the Y2K era. Low-rise jeans, tiny bags, colorful accessories, metallic fabrics, denim-on-denim combinations, and nostalgic graphic designs are appearing in modern collections and everyday outfits. What makes the trend interesting is that today's version of Y2K fashion is not simply a copy of the past. Designers and young fashion lovers are mixing nostalgic pieces with modern cuts and styling them in ways that feel more personal. The result is a colorful, confident aesthetic that brings some of the fun and experimentation of the early 2000s back into today's wardrobes.",
+    "date": "2026-08-05",
+    "author": "Elena Rose",
+    "reactions": {
+      "views": 5730,
+      "likes": 891,
+      "comments": 64
+    }
+  }
+]
+}
