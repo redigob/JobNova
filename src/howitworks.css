@@ -1,14 +1,18 @@
 .how{
-    background:linear-gradient(white,#b3f4b3   );
     color: #030303;
     margin-top: -4px;
+    background:linear-gradient(white,#d5e7c3);
 }
 
 .how > h2:nth-child(1){
     text-align: center;
     font-size: 50px;
     padding-top: 20px;
-    color: green;
+    background:linear-gradient(#536B4F,#536B4F,#536b4fb0);
+    color: transparent;
+    background-clip: text;
+    width: 430px;
+    margin: 0 auto;
 }
 
 .how > div{
@@ -50,5 +54,7 @@
 }
 
 .how div div div h2{
-    color: #0a0909;
+    background:linear-gradient(#536B4F,#536B4F,#536b4f6e);
+    color: transparent;
+    background-clip: text;
 }

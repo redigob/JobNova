@@ -8,7 +8,7 @@ const Featured = () => {
     console.log(featured)
     return (
         <div className="featured">
-            <h2>Featured Jobs 🔥
+            <h2>Featured Jobs
                 <p>Explore the jobs making waves right now.</p>
             </h2>
             <div>

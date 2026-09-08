@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+
+.bycategory{
+    float: left;
+    width: 50%;
+    padding: 20px 10px;
+    background-color: white;
+}
+
+.bycategory h2{
+    text-align: center;
+    font-size: 30px;
+    color: #55724e;
+}
+
+.bycategory > div > p:nth-child(2){
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.bycategory > div{
+   margin-top: 20px;
+   padding: 20px 40px;
+   box-shadow: 0px 0px 3px #38353590;
+   height: 400px;
+   overflow-y: scroll;
+}
+
+.bycategory > div > div{
+    display: flex;
+    margin-bottom: 20px;
+    align-items: flex-start;
+    width: 100%;
+    background-color: #e4e4e461;
+    padding: 10px;
+    height: 70px;
+    overflow-y: hidden;
+    transition: height 1s ease;
+    cursor: pointer;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.457);
+}
+
+
+.bycategory > div > div:hover{
+   height: 300px;
+   transition: height 1s ease;
+}
+
+.bycategory > div > div > p:nth-child(1){
+    margin-right: 20px;
+}
+
+.bycategory > div > div > div:nth-child(2){
+    width: 350px;
+}
+
+.bycategory > div > div > p:nth-child(3){
+    text-align: end;
+    margin-left: 100px;
+}
+
+.bycategory > div > div > div p:nth-child(2){
+    font-size: 15px;
+    margin-top: 3px;
+}
+
+.bycategory > div > div ul{
+    margin-top: 30px;
+    border-top: 1px solid black;
+    padding-top: 10px;
+    width: 100%;
+}
+
+
+.bycategory > div > div div{
+    display: flex;
+    flex-direction: column;
+}

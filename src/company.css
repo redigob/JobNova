@@ -1,20 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
 .company{
+    margin-bottom: 50px;
     padding: 10px 0px;
     overflow-x: hidden;
     position: relative;
-    border-top: 2px solid;
-    border-bottom: 2px solid;
-    border-image: linear-gradient(90deg,white , #45a745,white  ) 1;   
-    background:linear-gradient(90deg,#c7fcc7,white,#c7fcc7);
+    border-bottom: 2px solid #647f59;
+    
 }
 
-
 .company h3{
+    z-index: -1;
     text-align: center;
-    font-family: "Dancing Script", cursive;
+    font-family: "Dancing Script";
     font-optical-sizing: auto;
-    font-style: normal;
     font-size: 25px;
 }
 
