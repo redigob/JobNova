@@ -1,10 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
 
 .bycategory{
-    float: left;
-    width: 50%;
-    padding: 20px 10px;
+    padding: 0px 10px;
     background-color: white;
+    margin-bottom: 20px;
 }
 
 .bycategory h2{
@@ -19,11 +18,13 @@
 }
 
 .bycategory > div{
-   margin-top: 20px;
+   margin-top: 0px;
    padding: 20px 40px;
    box-shadow: 0px 0px 3px #38353590;
-   height: 400px;
+   height: 630px;
    overflow-y: scroll;
+   border-radius: 20px;
+
 }
 
 .bycategory > div > div{

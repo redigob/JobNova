@@ -72,7 +72,7 @@ h2 p{
     font-size: 20px;
 }
 
-.job> div:nth-child(2) div p:nth-child(2){
+.job> div:nth-child(2) > div p:nth-child(2){
     font-size: 20px;
     font-weight: 600;
     text-align: center;
@@ -82,7 +82,7 @@ h2 p{
     text-align: center;
 }
 
-.job> div:nth-child(3) > p:nth-child(3){
+.job> div:nth-child(3) > div:nth-child(3){
     width: 100%;
     background-color: #769876;
     padding: 7px;

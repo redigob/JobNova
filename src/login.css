@@ -1,0 +1,184 @@
+.login{
+    width: 80%;
+    padding: 20px 40px;
+    margin: 0 auto;
+    background-color: #679876;
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+    box-shadow: 0px 0px 5px #679876;
+}
+
+.login > div:nth-child(4) img{
+    width: 20px;
+    height: 20px;
+    margin-right: 20px;
+}
+
+.login > div:nth-child(2){
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 20px;
+    font-size: 20px;
+    text-align: center;
+    position: relative;
+}
+
+.login > div:nth-child(2){
+    cursor: pointer;
+}
+
+.login > div:nth-child(2).scroll::after{
+     transform: translatex(100%);
+}
+
+.login > div:nth-child(2) p:nth-child(1){
+    width: 100%;
+}
+
+.login h2{
+    font-size: 30px;
+    text-align: center;
+}
+
+.login .loginform,.login .signupform{
+    margin-top: 5px;
+    padding-top: 20px ;
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid #516e49 ;
+    border-top: 2px solid #3d54365f ;
+    transition: all 1s ease ;
+}
+
+.login > div:nth-child(2)::after{
+    content: "";
+    position: absolute;
+    width: 50%;
+    height: 2px;
+    background-color: #3e5a37;
+    bottom: -7px;
+    transform: translatex(0%);
+    transition: transform 0.3s ease;
+}
+
+.login .loginform label{
+    padding: 10px 0;
+}
+
+.login .signupform label{
+    padding: 10px 0;
+}
+
+.login .loginform label > div,.login .signupform label > div{
+    position: relative;
+    padding:10px 10px;
+    width: 100%;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    border-radius: 10px ;
+    border: 1px solid #46683c;
+    margin-top: 7px;
+}
+
+
+
+.login .loginform label:nth-child(2) > div {
+    justify-content: space-between;
+}
+
+.login .loginform label input,.login .signupform label input{
+    border: none;
+    outline: none;
+    margin-left: 10px;
+    font-size: 15px;
+    padding:1px 3px;
+    background-color: transparent;
+}
+
+.login .loginform label svg{
+    text-align: end;
+}
+
+.login .loginform p:nth-child(3){
+   text-align: end;
+   text-decoration: underline;
+   cursor: pointer;
+}
+
+.login .loginform p:nth-child(4){
+    color: rgb(169, 23, 23);
+    display: none;
+}
+
+.login .loginform p.visible{
+    display: block;
+}
+
+.login .loginform button,.login .signupform button{
+    padding: 10px ;
+    margin: 40px 0;
+    font-size: 17px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+}
+
+.login .signupform label:nth-child(8) div{
+    border: none;
+    padding: 0;
+    gap: 10px;
+}
+
+.login div:nth-child(4){
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.login div:nth-child(4) p:nth-child(2),.login div:nth-child(4) p:nth-child(3){
+    border: 1px solid #516e49;
+    display: block;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+    margin-top: 10px;
+}
+
+.login div:nth-child(4) p:nth-child(2){
+    margin-top: 25px;
+}
+
+.login div:nth-child(4) p:nth-child(1){
+    background-color: #679876;
+    z-index: 1;   
+}
+
+.login div:nth-child(4) p:nth-child(4){
+    margin-top: 30px;
+}
+.login div:nth-child(4) p:nth-child(4) span{
+    font-weight: 600;
+    font-size: 18px;
+    cursor: pointer;
+    margin-left: 5px;
+}
+
+.login div:nth-child(4){
+    margin-top: -12px;
+}
+
+.login .signupform p:nth-child(5),.login .signupform p:nth-child(7),.login .signupform p:nth-child(9){
+    font-size: 15px;
+    color: #8a2c2c;
+    display: none;
+}
+
+.login .signupform p.visibleerror1,.login .signupform p.visibleerror2,.login .signupform p.visibleerror3{
+    display: block;
+}

@@ -6,9 +6,10 @@ import { faHeart,faHeartCircleCheck } from '@fortawesome/free-solid-svg-icons'
 const Featured = () => {
     const {featured,loggedin,profile,match} = useContext(JobContext)
     console.log(featured)
+    console.log(profile)
     return (
         <div className="featured">
-            <h2>Featured Jobs
+            <h2>
                 <p>Explore the jobs making waves right now.</p>
             </h2>
             <div>
@@ -34,7 +35,15 @@ const Featured = () => {
                                     <p>{skill}</p>
                                 ))}
                             </div>   
-                        <p>{loggedin ? (profile ? (<div className="result"><button style={{color:`${color}`}}></button>{match}</div>) : "🔒 Complete your profile to see match"): "🔒 Log In to see a match"}</p>
+                            <div>{loggedin ? 
+                        
+                                (profile.length!=0 ? 
+                                    
+                                    "you profile is set"
+                                    
+                                    : "🔒 Complete your profile to see match")
+                                
+                                : "🔒 Log In to see a match"}</div>
                         </div>
                      </div>
                    ))

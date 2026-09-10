@@ -4,7 +4,6 @@ import './bycategory.css'
 const Bycategory = () => {
     return (
         <div className="bycategory">
-            
             <div>
                 <h2>Explore By Category</h2>
                 <p>Find opportunities built around it.</p>

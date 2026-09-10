@@ -3,8 +3,12 @@ import './Home.css'
 import How from './howitworks';
 import Company from './company';
 import Bycategory from './bycategory';
+import Login from './login';
+import {useContext } from 'react';
+import JobContext from './JobContext';
 
 const Home = () => {
+    const {loggedin,setLoggedin} = useContext(JobContext)
     return (
         <div className="home">
             <div>
@@ -14,7 +18,7 @@ const Home = () => {
                     <p>Your skills are valuable. JobNova helps you discover opportunities that match what you can actually do.</p>
                     <div className='buttons'>
                         <button>Search Jobs 🔎</button>
-                        <button>Learn More →</button>
+                        {loggedin ? "" :<button>Learn More →</button>}
                     </div>
                 </div>
             </div>
@@ -22,7 +26,10 @@ const Home = () => {
                 <How/>
                 <Featured/>
                 <Company/>
-                <Bycategory/>
+                <div className='categorynlogin'>
+                    <Bycategory/>
+                   <Login/>
+                </div>
             </div>
         </div>
     );
