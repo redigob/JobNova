@@ -9,13 +9,13 @@
     box-shadow: 0px 0px 5px #679876;
 }
 
-.login > div:nth-child(4) img{
+.login > div:nth-child(5) img{
     width: 20px;
     height: 20px;
     margin-right: 20px;
 }
 
-.login > div:nth-child(2){
+.login > div:nth-child(3){
     display: grid;
     grid-template-columns: 1fr 1fr;
     margin-top: 20px;
@@ -24,15 +24,15 @@
     position: relative;
 }
 
-.login > div:nth-child(2){
+.login > div:nth-child(3){
     cursor: pointer;
 }
 
-.login > div:nth-child(2).scroll::after{
+.login > div:nth-child(3).scroll::after{
      transform: translatex(100%);
 }
 
-.login > div:nth-child(2) p:nth-child(1){
+.login > div:nth-child(3) p:nth-child(1){
     width: 100%;
 }
 
@@ -51,7 +51,7 @@
     transition: all 1s ease ;
 }
 
-.login > div:nth-child(2)::after{
+.login > div:nth-child(3)::after{
     content: "";
     position: absolute;
     width: 50%;
@@ -131,7 +131,7 @@
     gap: 10px;
 }
 
-.login div:nth-child(4){
+.login div:nth-child(5){
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -139,7 +139,7 @@
 }
 
 
-.login div:nth-child(4) p:nth-child(2),.login div:nth-child(4) p:nth-child(3){
+.login div:nth-child(5) p:nth-child(2),.login div:nth-child(5) p:nth-child(3){
     border: 1px solid #516e49;
     display: block;
     width: 100%;
@@ -150,26 +150,26 @@
     margin-top: 10px;
 }
 
-.login div:nth-child(4) p:nth-child(2){
+.login div:nth-child(5) p:nth-child(2){
     margin-top: 25px;
 }
 
-.login div:nth-child(4) p:nth-child(1){
+.login div:nth-child(5) p:nth-child(1){
     background-color: #679876;
     z-index: 1;   
 }
 
-.login div:nth-child(4) p:nth-child(4){
+.login div:nth-child(5) p:nth-child(4){
     margin-top: 30px;
 }
-.login div:nth-child(4) p:nth-child(4) span{
+.login div:nth-child(5) p:nth-child(4) span{
     font-weight: 600;
     font-size: 18px;
     cursor: pointer;
     margin-left: 5px;
 }
 
-.login div:nth-child(4){
+.login div:nth-child(5){
     margin-top: -12px;
 }
 
@@ -177,6 +177,18 @@
     font-size: 15px;
     color: #8a2c2c;
     display: none;
+}
+
+.login > p:nth-child(1){
+    font-size: 15px;
+    color: #187218;
+    display: none;
+    padding-left: 20px;
+    text-align: center;
+}
+
+.login > p:nth-child(1).success{
+    display: block;
 }
 
 .login .signupform p.visibleerror1,.login .signupform p.visibleerror2,.login .signupform p.visibleerror3{

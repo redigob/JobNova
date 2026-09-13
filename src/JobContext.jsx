@@ -11,13 +11,11 @@ export function Jobprovider({children}){
     const [featured,setFeatured] = useState([])
     const [match,setMatch] = useState([])
     const [marquee,setMarquee] =useState([])
+    const [show,setShow] = useState(false)
+    const [jobs,setJobs] = useState([])
+
     console.log(loggedin)
 
-    useEffect(()=>{
-        if(signupdata.username || logindata.username){
-            setLoggedin(true)
-        }
-    },[signupdata,logindata])
 
     useEffect(()=>{
         fetch('http://localhost:3000/featured')
@@ -28,10 +26,14 @@ export function Jobprovider({children}){
         .then(res=>res.json())
         .then(data=>setMarquee(data))
 
+        fetch('http://localhost:3000/jobs')
+        .then(res=>res.json())
+        .then(data=>setJobs(data))
+
     },[])
-    console.log(featured)
+    console.log(jobs)
     return(
-        <JobContext.Provider value={{signuptemp,setSignuptemp,signupdata,setSignupdata,temp,setTemp,logindata,setLogindata,featured,match,profile,loggedin,marquee}}>
+        <JobContext.Provider value={{show,setShow,signuptemp,setSignuptemp,signupdata,setSignupdata,temp,setTemp,logindata,setLogindata,featured,match,profile,loggedin,setLoggedin,marquee,jobs}}>
             {children}
         </JobContext.Provider>
     )

@@ -1,0 +1,96 @@
+import { faSearch } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Link } from "react-router-dom";
+import './Dashboard.css'
+const Dashboard = () => {
+    return (
+        <div className="dashboard">
+            <div>
+                <h2>Welcome to JobNova</h2>
+                <p>Your next opportunity starts here.</p>
+                <p>Build your profile to discover opportunities that match your skills and interests.</p>
+                <button>Build My Profile</button>
+            </div>
+            <div>
+                <h2>YOUR JOBNOVA JOURNEY</h2>
+                <div>
+                    <div>
+                        <p>1</p>
+                        <h3>Build Profile</h3>
+                        <p>Tell us about your education, skills, experience, and career interests. The more we know about you, the better we can understand what opportunities fit you.</p>
+                        <Link to={"/profile"} className="link">→ Get started</Link>
+                    </div>
+
+                    <div>
+                        <p>2</p>
+                        <h3>Discover Jobs</h3>
+                        <p>Explore opportunities from different companies and industries. Search by job title, skill, or company and find roles that match what you're looking for.</p>
+                        <Link to={"/find"} className="link">→ Explore jobs</Link>
+                    </div>
+
+                    <div>
+                        <p>3</p>
+                        <h3>Grow Your Skills</h3>
+                        <p>Discover the skills employers are looking for and identify areas where you can improve. Build a clear path toward the career you want.</p>
+                        <Link to={"/career"} className="link">→ View roadmap</Link>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <h2>EXPLORE OPPORTUNITIES</h2>
+                <p>Start exploring jobs that could be the beginning of your next career move.</p>
+                <div>
+                    <input 
+                      type="text"
+                      placeholder="Search jobs by title, skill or company"
+                    ></input>
+                    <FontAwesomeIcon icon={faSearch}/>
+                </div>
+            </div>
+            <div>
+                <h2>Find Your Career Direction</h2>
+                <p>Not sure where you want to go? </p>
+                <p>Explore career paths based on what you enjoy and what you can do.</p>
+                <div>
+                    <div>
+                        <img src='images/code.jpg'/>
+                        <div>
+                            <p>Start a Tech Career </p>
+                            <p>Build the future with code.  </p>
+                            <p>Explore path →  </p>
+                        </div>
+                    </div>
+
+                    <div>
+                        <img src='images/data.jpg'/>
+                        <div>
+                            <p>Work With Data</p>
+                            <p>Turn information into smart decisions.</p>
+                            <p>Explore path →  </p>
+                        </div>
+                    </div>
+
+                    <div>
+                        <img src='images/uiux.jpg'/>
+                        <div>
+                            <p>Build & Create   </p>
+                            <p>Turn ideas into meaningful experiences.</p>
+                            <p>Explore path →  </p>
+                        </div>
+                    </div>
+
+                    <div>
+                        <img src='images/business.jpg'/>
+                        <div>
+                            <p>Grow in Business </p>
+                            <p>Build the future with code.  </p>
+                            <p>Explore path →  </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    );
+}
+ 
+export default Dashboard;

@@ -11,9 +11,10 @@ const Login = () => {
     const [err2,setErr2] = useState(false)
     const [err3,setErr3] = useState(false)
     const [err4,setErr4] = useState(false)
+    const [success,setSuccess] = useState(false)
     const [message,setMessage] = useState('')
 
-    const {temp,setTemp,logindata,setLogindata,signuptemp,setSignuptemp,signupdata,setSignupdata} = useContext(JobContext)
+    const {setLoggedin,temp,setTemp,logindata,setLogindata,signuptemp,setSignuptemp,signupdata,setSignupdata} = useContext(JobContext)
     
     const handleLogin = (e)=>{
         e.preventDefault()
@@ -23,7 +24,10 @@ const Login = () => {
         if(temp.username==signupdata.username){
             if(temp.password==signupdata.password){
                 setLogindata(temp)
+                setLoggedin(true)
                 setErr4(false)
+                setSuccess(false)
+                setTemp({username:'',password:''})
                 console.log("correct")
             }
             else{
@@ -33,7 +37,7 @@ const Login = () => {
         }
         else{
            setErr4(true)
-           setMessage("*The Account doesn't Exist. please sign up!!")
+           setMessage("*The Account doesn't exist. Please sign up!!")
            console.log("incorrect")
         }
         
@@ -63,10 +67,15 @@ const Login = () => {
         console.log(signuptemp.password.length)
         if(signuptemp.password.length >= 8 && signuptemp.confirm==signuptemp.password && signuptemp.agreed){
            setSignupdata(signuptemp)
+           setSuccess(true)
+           setLogin(true)
+           setErr4(false)
+           setTemp({username:'',password:''})
         }
     }
     return (
         <div className="login">
+            <p className={success ? "success": ""}>You are successfully signed Up!! Please Log In to continue using JobNova</p>
             <h2>{(login) ? "Welcome Back" : "Sign Up"}</h2>
             <div className={login ? "" : "scroll"}>
                 <p onClick={()=>(setLogin(true),
@@ -177,7 +186,6 @@ const Login = () => {
                </label>
 
                <p className={err3 ? "visibleerror3" : ""}>*You have to check the agreement</p>
-
                <button onClick={(e)=>handleSignup(e)}>Sign Up</button>
             </form>}
 

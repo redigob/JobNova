@@ -22,6 +22,7 @@
 .navbar .links{
     text-decoration: none;
     color: black;
+    cursor: pointer;
 }
 
 .navbar div:nth-child(3){

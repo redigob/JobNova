@@ -1,12 +1,30 @@
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useNavigate } from "react-router-dom";
 import Home from "./Home";
 import Navbar from "./Navbar";
+import { useContext,useEffect } from "react";
+import JobContext from "./JobContext";
+import Dashboard from "./Dashboard";
+import FindJobs from "./findJobs";
+import Clearshow from "./Clearshow";
 const App = () => {
+    const {loggedin} = useContext(JobContext)
+    const navigate = useNavigate()
+
+    useEffect(() => {
+        const navigation = performance.getEntriesByType("navigation")[0];
+
+        if (navigation.type === "reload") {
+            navigate("/");
+        }
+    }, []);
+
     return (
         <div className="app">
             <Navbar/>
+            <Clearshow/>
             <Routes>
-                <Route path="/" element={<Home/>}></Route>
+                <Route path="/" element={loggedin ? <Dashboard/> :<Home/>}></Route>
+                <Route path="/find" element={<FindJobs/>}></Route>
             </Routes>
         </div>
     );
