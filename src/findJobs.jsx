@@ -5,12 +5,43 @@ import { useContext, useEffect, useState } from "react";
 import JobContext from "./JobContext";
 
 const FindJobs = () => {
-    const [count,setCount] = useState(0)
-    const {jobs,loggedin,profile} = useContext(JobContext)
-    useEffect(()=>{
-       const tempJobs = jobs
-    },[])
-    console.log(jobs)
+    const {jobs,setJobs,loggedin,profile} = useContext(JobContext)
+    let tempJobs = jobs;
+ 
+    const [location,setLocation] = useState('')
+    const [jobtype,setJobtype] = useState('')
+    const [experience,setExperience] = useState('')
+    const [salary,setSalary] = useState([])
+
+    if(location){
+        tempJobs = tempJobs.filter((job)=>job.workType==location)
+    }
+    if(jobtype){
+        tempJobs = tempJobs.filter((job)=>job.employmentType==jobtype)
+    }
+    if(experience){
+        tempJobs = tempJobs.filter((job)=>job.experience==experience)
+    }
+    if(salary.length!=0){ 
+        if(salary.length==2){
+          tempJobs = tempJobs.filter((job)=>(job.minSalary<=salary[1] ))    
+        }
+        else{
+          tempJobs = tempJobs.filter((job)=>(job.minSalary>=salary[0] ))
+        }
+    }
+
+    function handleLike(jo){
+        setJobs(jobs.map((job)=>{
+            if(job.id==jo.id){
+                return{...job, liked:!jo.liked}
+            }
+            else{
+                return job
+            }
+        }))
+    }
+
     return (
         <div className="findjobs">
             <div>
@@ -28,15 +59,19 @@ const FindJobs = () => {
                     <p>Location : </p>
                     <label name="location">
                         <div>
-                            <input type="radio" name="location"/>
+                            <input checked={location==""? true : false} type="radio" name="location" onClick={()=>setLocation("")}/>
+                            <p>All</p>
+                        </div>
+                        <div>
+                            <input type="radio" name="location" onClick={()=>setLocation("Remote")}/>
                             <p>Remote</p>
                         </div>
                         <div>
-                            <input type="radio" name="location"/>
+                            <input type="radio" name="location" onClick={()=>setLocation("On-site")}/>
                             <p>On-Site</p>
                         </div>
                         <div>
-                            <input type="radio" name="location"/>
+                            <input type="radio" name="location" onClick={()=>setLocation("Hybrid")}/>
                             <p>Hybrid</p>
                         </div>
                     </label>
@@ -44,15 +79,19 @@ const FindJobs = () => {
                     <p>Job type :</p>
                     <label name="jobtype">
                         <div>
-                            <input type="radio" name="jobtype"/>
+                            <input checked={jobtype==""? true : false} type="radio" name="jobtype" onClick={()=>setJobtype("")}/>
+                            <p>All</p>
+                        </div>
+                        <div>
+                            <input type="radio" name="jobtype" onClick={()=>setJobtype("Full-time")}/>
                             <p>Full-time</p>
                         </div>
                         <div>
-                            <input type="radio" name="jobtype"/>
+                            <input type="radio" name="jobtype" onClick={()=>setJobtype("Part-time")}/>
                             <p>Part-time</p>
                         </div>
                         <div>
-                            <input type="radio" name="jobtype"/>
+                            <input type="radio" name="jobtype" onClick={()=>setJobtype("Internship")}/>
                             <p>Internship</p>
                         </div>
                     </label>
@@ -60,15 +99,19 @@ const FindJobs = () => {
                     <p>Experience :</p>
                     <label name="experience">
                         <div>
-                            <input type="radio" name="experience"/>
+                            <input checked={experience==""? true : false} type="radio" name="experience" onClick={()=>setExperience("")}/>
+                            <p>All</p>
+                        </div>
+                        <div>
+                            <input type="radio" name="experience" onClick={()=>setExperience("Entry Level")}/>
                             <p>Entry-level</p>
                         </div>
                         <div>
-                            <input type="radio" name="experience"/>
+                            <input type="radio" name="experience" onClick={()=>setExperience("Mid Level")}/>
                             <p>Mid-level</p>
                         </div>
                         <div>
-                            <input type="radio" name="experience"/>
+                            <input type="radio" name="experience" onClick={()=>setExperience("Senior")}/>
                             <p>Senior</p>
                         </div>
                     </label>
@@ -76,29 +119,37 @@ const FindJobs = () => {
                     <p>Salaly :</p>
                     <label name="jobtype">
                         <div>
-                            <input type="radio" name="salary"/>
-                            <p>Any</p>
+                            <input checked={salary.length==0 ? true : false} type="radio" name="salary" onChange={()=>setSalary([])}/>
+                            <p>All</p>
                         </div>
                         <div>
-                            <input type="radio" name="salary"/>
-                            <p>10k+</p>
+                            <input type="radio" name="salary" onChange={()=>setSalary([0,15000])}/>
+                            <p>Under 15,000 ETB</p>
                         </div>
                         <div>
-                            <input type="radio" name="salary"/>
-                            <p>20+</p>
+                            <input type="radio" name="salary" onChange={()=>setSalary([15000])}/>
+                            <p>15,000+ ETB</p>
+                        </div>
+                        <div>
+                            <input type="radio" name="salary" onChange={()=>setSalary([20000])}/>
+                            <p>20,000+ ETB</p>
+                        </div>
+                        <div>
+                            <input type="radio" name="salary" onChange={()=>setSalary([30000])}/>
+                            <p>30,000+ ETB</p>
                         </div>
                     </label>
 
-                    <button>Clear Filter</button>
+                    <button onClick={()=>(setLocation(''),setJobtype(''),setExperience(''),setSalary([]))}>Clear Filter</button>
                 </div>
                 <div>
-                    <p>{count} Available Jobs</p>
+                    <p>{tempJobs.length} Available Jobs</p>
                     <div>
-                       {jobs && jobs.map((jo)=>(
+                       {tempJobs && tempJobs.map((jo)=>(
                         <div className="jo">
                             <div>
                                 <p>💼 {jo.workType}</p>
-                                <p><FontAwesomeIcon icon={jo.liked ? faHeartCircleCheck : faHeart}/></p>
+                                <p>{loggedin ? <FontAwesomeIcon icon={jo.liked ? faHeartCircleCheck : faHeart} style={{cursor:"pointer"}} onClick={()=>handleLike(jo)}/> :"" }</p>
                             </div>
                             <div>
                                 <img src={jo.logo} />

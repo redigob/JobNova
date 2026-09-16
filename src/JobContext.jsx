@@ -3,7 +3,6 @@ export const JobContext = createContext()
 
 export function Jobprovider({children}){
     const [loggedin,setLoggedin] = useState(false)
-    const [profile,setProfile] = useState([])
     const [logindata,setLogindata] = useState({})
     const [temp,setTemp] = useState({username:'',password:''})
     const [signupdata,setSignupdata] = useState({})
@@ -13,6 +12,35 @@ export function Jobprovider({children}){
     const [marquee,setMarquee] =useState([])
     const [show,setShow] = useState(false)
     const [jobs,setJobs] = useState([])
+
+    const [profile,setProfile] = useState({
+        name:"",
+        location:"",
+        email:"",
+        headline:"",
+        education: [],
+        skills:[],
+        jobcategory: "",
+        worktype:"",
+        jobtype:""
+    })
+
+     const [tempProfile,settempProfile] = useState({
+        name:"",
+        location:"",
+        email:"",
+        headline:"",
+        education: [],
+        skill:"",
+        jobcategory: "",
+        worktype:"",
+        jobtype:""
+    })
+
+    function hanldeDeleteskill(skill){
+        const updatedskills = profile.skills.filter(ski=>ski!=skill)
+        setProfile({...profile,skills:updatedskills})
+    }
 
     console.log(loggedin)
 
@@ -33,7 +61,7 @@ export function Jobprovider({children}){
     },[])
     console.log(jobs)
     return(
-        <JobContext.Provider value={{show,setShow,signuptemp,setSignuptemp,signupdata,setSignupdata,temp,setTemp,logindata,setLogindata,featured,match,profile,loggedin,setLoggedin,marquee,jobs}}>
+        <JobContext.Provider value={{show,setShow,signuptemp,setSignuptemp,signupdata,setSignupdata,temp,setTemp,logindata,setLogindata,featured,match,profile,setProfile,tempProfile,settempProfile,loggedin,setLoggedin,marquee,jobs,setJobs}}>
             {children}
         </JobContext.Provider>
     )

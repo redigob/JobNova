@@ -1,0 +1,192 @@
+.profile{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+}
+
+.profile .header{
+    grid-column: span 2;
+    border-block: 1px solid #5f9372;
+    padding: 110px ;
+    text-align: center;
+    background:linear-gradient(90deg,#8bb07d,#d0f1c2,#8bb07d);
+}
+
+.profile .header h2{
+    font-size: 40px;
+    font-weight: 600;
+    background:linear-gradient(90deg,#2e4525,#90ba7f);
+    width: 500px;
+    margin: 0px auto;
+    background-clip: text;
+    color: transparent;
+}
+
+.profile > div:nth-child(2),.profile > div:nth-child(3){
+    display: grid;
+    grid-template-columns:  1fr 1fr;
+    gap: 10px;
+    text-align: center;
+    padding: 10px;
+}
+
+.profile div:nth-child(2) h2,.profile div:nth-child(3) h2{
+    grid-column:  span 2;
+}
+
+.profile > div:nth-child(2) > label,.profile > div:nth-child(3) > label{
+    background-color: #b0d6a0a9;
+    border: 1px solid #4b6341;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    border-radius: 30px;
+    padding: 12px 10px;
+    color: #30563e;
+    justify-content: space-between;
+}
+
+.profile > div:nth-child(2) > label input{
+    margin-left: 10px;
+    width: 60%;
+    background-color: transparent;
+    outline: none;
+    border: none;
+}
+
+.profile > div:nth-child(3) > label input{
+    background-color: transparent;
+    outline: none;
+    border: none;
+}
+
+.profile > div:nth-child(3) > label:nth-child(4) select,.profile > div:nth-child(3) > label:nth-child(5) input{
+   width: 60%;
+   text-align: center;
+   background-color: transparent;
+   border: 1px solid #30563e;
+   padding: 5px;
+   border-radius: 10px;
+}
+
+.profile > div:nth-child(4){
+    padding: 0px 10px;
+}
+
+.profile > div:nth-child(4) h2{
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.profile > div:nth-child(4) label{
+    background-color: #b0d6a0a9;
+    border: 1px solid #4b6341;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    border-radius: 30px;
+    padding: 12px 10px;
+    color: #30563e;
+    justify-content: space-between;
+}
+
+.profile > div:nth-child(4) label div{
+    display: flex;
+    flex: 1;
+    justify-content: space-between;
+}
+
+.profile > div:nth-child(4) label div input{
+    flex: 1;
+    margin-inline: 10px 20px;
+    border: none;
+    outline: none;
+    background-color: transparent;
+}
+
+.profile > div:nth-child(4) label button{
+    width: 100px;
+    background-color: #4b6341;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    padding: 8px;
+    color: white;
+}
+.profile > div:nth-child(4) > p{
+    margin: 10px;
+}
+
+.profile > div:nth-child(4) .skills{
+    background-color: #b9d9acd4;
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px 30px;
+}
+
+.profile > div:nth-child(4) .skills:empty::before{
+   text-align: center;
+   content: "You haven't added any skills yet!";
+}
+
+.profile > div:nth-child(4) .skills p{
+    background-color: #8bb07d;
+    padding: 5px 10px 6px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.profile > div:nth-child(4) .skills p span{
+    cursor: pointer;
+}
+
+.profile > div:nth-child(5){
+    padding: 0px 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+
+.profile > div:nth-child(5) h2{
+    text-align: center;
+    grid-column:  span 2;
+}
+
+
+.profile > div:nth-child(5) label{
+    background-color: #b0d6a0a9;
+    border: 1px solid #4b6341;
+    display: flex;
+    align-items: center;
+    border-radius: 30px;
+    padding: 12px 10px;
+    color: #30563e;
+    justify-content: space-between;
+}
+
+.profile > div:nth-child(5) label:nth-child(2) select{
+    width: 70%;
+   text-align: center;
+   background-color: transparent;
+   border: 1px solid #30563e;
+   padding: 5px;
+   border-radius: 10px;
+}
+
+.profile > div:nth-child(5) label div{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.profile > div:nth-child(5) label > div{
+    justify-content: space-between;
+}
+
+.profile > div:nth-child(5) label > div div{
+    width: 100px;
+    background-color: #4b6341;
+}

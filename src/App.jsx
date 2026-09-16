@@ -6,6 +6,7 @@ import JobContext from "./JobContext";
 import Dashboard from "./Dashboard";
 import FindJobs from "./findJobs";
 import Clearshow from "./Clearshow";
+import Profile from "./Profile";
 const App = () => {
     const {loggedin} = useContext(JobContext)
     const navigate = useNavigate()
@@ -25,6 +26,7 @@ const App = () => {
             <Routes>
                 <Route path="/" element={loggedin ? <Dashboard/> :<Home/>}></Route>
                 <Route path="/find" element={<FindJobs/>}></Route>
+                <Route path="/myprofile" element={<Profile/>}></Route>
             </Routes>
         </div>
     );
