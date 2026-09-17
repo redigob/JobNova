@@ -3,10 +3,14 @@ import './Navbar.css'
 import { useContext, useState } from "react";
 import JobContext from "./JobContext";
 import { useNavigate } from "react-router-dom";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faBars } from '@fortawesome/free-solid-svg-icons'
+
 const Navbar = () => {
     const location = useLocation()
     const [selected,setSelected] = useState("/")
     const {loggedin,show,setShow,setLoggedin,signupdata,setSignupData,setLogindata} = useContext(JobContext)
+    const [showfull,setShowfull] = useState(false)
     const navigate = useNavigate()
     console.log(selected)
     console.log(location.pathname)
@@ -25,6 +29,15 @@ const Navbar = () => {
                 <div>
                     <p className={selected == "login" ? "links selected": "links"}  onClick={()=>(setSelected("login"),location.pathname!="/" ? navigate("/",{state:{scrollTo:2300}}) : window.scrollTo({top:2300,behavior:"smooth"}))}>Log In</p>
                     <p className={selected == "signup" ? "links selected": "links"}  onClick={()=>(setSelected("signup"),location.pathname!="/" ? navigate("/",{state:{scrollTo:2300}}) : window.scrollTo({top:2300,behavior:"smooth"}))}>Sign up</p>               
+                </div>
+                <FontAwesomeIcon icon={faBars} onClick={()=>setShowfull(!showfull)} />               
+                <div className={showfull ? "bar full" : "bar"}>
+                    <Link className={selected == "Home" ? "links selected": "links"} to={"/"} onClick={()=>setSelected("Home")}>Home</Link>
+                    <Link className={selected == "find" ? "links selected": "links"} to={"/find"}  onClick={()=>setSelected("find")}>Find Jobs</Link>
+                    <Link className={selected == "discover" ? "links selected": "links"} to={"/discover"}  onClick={()=>setSelected("discover")}>Discover</Link>
+                    <Link className={selected == "company" ? "links selected": "links"} to={"/company"}  onClick={()=>setSelected("company")}>Company</Link>
+                    <p className={selected == "login" ? "links selected": "links"}  onClick={()=>(setSelected("login"),location.pathname!="/" ? navigate("/",{state:{scrollTo:2300}}) : window.scrollTo({top:2300,behavior:"smooth"}))}>Log In</p>
+                    <p className={selected == "signup" ? "links selected": "links"}  onClick={()=>(setSelected("signup"),location.pathname!="/" ? navigate("/",{state:{scrollTo:2300}}) : window.scrollTo({top:2300,behavior:"smooth"}))}>Sign up</p>
                 </div>
             </div> :
             <div className="navbar">

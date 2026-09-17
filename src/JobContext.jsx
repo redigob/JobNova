@@ -12,13 +12,18 @@ export function Jobprovider({children}){
     const [marquee,setMarquee] =useState([])
     const [show,setShow] = useState(false)
     const [jobs,setJobs] = useState([])
+    const [editmode,setEditmode] = useState(false)
+    const [profileCreated,setProfilecreated] = useState(false)
 
     const [profile,setProfile] = useState({
         name:"",
-        location:"",
         email:"",
+        location:"",
         headline:"",
-        education: [],
+        school:"",
+        field:"",
+        education:"",
+        grad:"",
         skills:[],
         jobcategory: "",
         worktype:"",
@@ -27,12 +32,15 @@ export function Jobprovider({children}){
 
      const [tempProfile,settempProfile] = useState({
         name:"",
-        location:"",
         email:"",
+        location:"",
         headline:"",
-        education: [],
+        school:"",
+        field:"",
+        education:"high-school",
+        grad:"",
         skill:"",
-        jobcategory: "",
+        jobcategory: "Technology",
         worktype:"",
         jobtype:""
     })
@@ -61,7 +69,7 @@ export function Jobprovider({children}){
     },[])
     console.log(jobs)
     return(
-        <JobContext.Provider value={{show,setShow,signuptemp,setSignuptemp,signupdata,setSignupdata,temp,setTemp,logindata,setLogindata,featured,match,profile,setProfile,tempProfile,settempProfile,loggedin,setLoggedin,marquee,jobs,setJobs}}>
+        <JobContext.Provider value={{editmode,setEditmode,profileCreated,setProfilecreated,show,setShow,signuptemp,setSignuptemp,signupdata,setSignupdata,temp,setTemp,logindata,setLogindata,featured,match,profile,setProfile,tempProfile,settempProfile,loggedin,setLoggedin,marquee,jobs,setJobs}}>
             {children}
         </JobContext.Provider>
     )
