@@ -67,3 +67,30 @@
     grid-template-columns: 1fr 1fr;
     align-items: start;
 }
+
+@media (max-width:1120px) {
+    .home > div:nth-child(1) > div{
+        padding: 10% 0% 10% 10%;
+    }
+    .home > div:nth-child(1) > div h2{
+        font-size: 40px;
+    }
+
+    .home > div:nth-child(1) img{
+        height: 400px;
+    }
+}
+
+
+@media (max-width:810px) {
+    .home > div:nth-child(1) > div{
+        padding: 5% 0% 5% 5%;
+    }
+    .home > div:nth-child(1) > div h2{
+        font-size: 30px;
+    }
+
+    .home > div:nth-child(1) img{
+        height: 300px;
+    }
+}

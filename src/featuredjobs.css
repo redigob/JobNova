@@ -20,6 +20,8 @@ h2 p{
     margin-bottom: 0px;
     padding: 20px 4px 100px;
     border-block: 2px solid #647f59;
+    display: flex;
+    flex-direction: column;
 }
 
 .featured > div:nth-child(2){
@@ -54,6 +56,11 @@ h2 p{
 
 .job> div:nth-child(1) p:nth-child(2){
     cursor: pointer;
+}
+
+
+.job> div:nth-child(2) > div:nth-child(2) p:nth-child(3){
+    font-size: 15px;
 }
 
 
@@ -108,10 +115,35 @@ h2 p{
 
 .featured > div:nth-child(3){
     text-align: center;
+    align-self: center;
     margin: 50px auto 0;
-    width: 20%;
-    padding:10px 10px;
+    width: 200px;
+    padding:10px 1%;
     cursor: pointer;
     background:#637e58 ;
     box-shadow: 0px 0px 5px #618f50;
+}
+
+@media (max-width:1060px) {
+    .featured > div:nth-child(2){
+        display: grid;
+        grid-template-columns:  1fr 1fr;
+    }
+}
+
+@media (max-width:620px) {
+     .featured > div:nth-child(2){
+        display: grid;
+        grid-template-columns: 1fr  ;
+        gap: 20px;
+        align-items: center;
+        padding:10px 10% ;
+     }
+}
+
+
+@media (max-width:350px) {
+    .featured{
+        margin-bottom: 10px;
+    }
 }

@@ -11,7 +11,6 @@
     background:linear-gradient(#536B4F,#536B4F,#536b4fb0);
     color: transparent;
     background-clip: text;
-    width: 430px;
     margin: 0 auto;
 }
 
@@ -57,4 +56,24 @@
     background:linear-gradient(#536B4F,#536B4F,#536b4f6e);
     color: transparent;
     background-clip: text;
+}
+
+@media (max-width:810px) {
+    .how > h2:nth-child(1){
+        font-size: 30px;
+    }
+
+    .how > div{
+        padding: 20px 5%;
+    }
+}
+
+@media (max-width:570px) {
+    .how > div{
+        padding: 10px 0%;
+    }
+
+    .how > div .number{
+        font-size: 70px;
+    }
 }

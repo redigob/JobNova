@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
 
 .bycategory{
-    padding: 0px 10px;
+    padding: 0px 20px;
     background-color: white;
     margin-bottom: 20px;
 }
@@ -19,7 +19,7 @@
 
 .bycategory > div{
    margin-top: 0px;
-   padding: 20px 40px;
+   padding: 20px 10%;
    box-shadow: 0px 0px 3px #38353590;
    height: 630px;
    overflow-y: scroll;
@@ -38,6 +38,7 @@
     overflow-y: hidden;
     transition: height 1s ease;
     cursor: pointer;
+    background-color: #b5d8aa61;
     box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.457);
 }
 
@@ -56,8 +57,7 @@
 }
 
 .bycategory > div > div > p:nth-child(3){
-    text-align: end;
-    margin-left: 100px;
+    align-self: flex-end;
 }
 
 .bycategory > div > div > div p:nth-child(2){
@@ -76,4 +76,75 @@
 .bycategory > div > div div{
     display: flex;
     flex-direction: column;
+}
+
+
+@media (max-width:1060px) {
+    .home div:nth-child(2) .categorynlogin{
+        display: flex;
+        justify-content: center;
+        padding: 0px 5px;
+    }
+     
+    .categorynlogin .login{
+        width: 60%;
+    }
+    
+    .bycategory{
+        width: 50%;
+    }
+}
+
+@media (max-width:800px) {
+    .home div:nth-child(2) .categorynlogin{
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    .categorynlogin .login{
+        width: 70%;
+    }
+    
+    .bycategory{
+        width: 100%;
+        margin: 10px 20px 10px 0px;
+    }
+
+    .bycategory > div > div > p:nth-child(3){
+        margin-left: 30%;
+     }
+}
+
+@media (max-width:750px) {
+    .categorynlogin .login{
+        width: 70%;
+    }
+}
+
+@media (max-width:650px) {
+    .categorynlogin .login{
+        width: 80%;
+    }
+}
+
+
+@media (max-width:570px) {
+     .bycategory > div > div > p:nth-child(3){
+        margin-left: 10%;
+     }
+}
+
+@media (max-width:470px) {
+    .bycategory{
+        display: none;
+    }
+    .categorynlogin .login{
+        width: 95%;
+    }
+}
+
+@media (max-width:365px) {
+    .categorynlogin .login{
+       padding: 20px;
+    }
 }

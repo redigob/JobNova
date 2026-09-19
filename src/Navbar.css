@@ -84,6 +84,7 @@
 }
 
 .navbar .bar{
+    padding: 10px 0px;
     position: absolute;
     display: none;
     flex-direction: column;
@@ -93,7 +94,7 @@
     background-color: #6e986ee0;
     width: 100px;
     right: 1%;
-    top: 60px;
+    top: 58px;
     padding-left: 10px;
     z-index: 1;
     opacity: 0;
@@ -101,11 +102,15 @@
 }
 
 .navbar .bar.full{
-    height: 150px;
+    height: 170px;
     opacity: 1;
     margin-bottom: 30px;
     transition: height 1s ease,opacity 1s ease;
+}
 
+.bar .link{
+    text-decoration: none;
+    color: black;
 }
 
 .navbar svg{

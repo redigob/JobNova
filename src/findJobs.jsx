@@ -1,4 +1,4 @@
-import { faHeart, faHeartCircleCheck, faSearch } from "@fortawesome/free-solid-svg-icons";
+import { faHeart, faHeartCircleCheck, faSearch,faArrowDown, faArrowUp } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import './findJobs.css'
 import { useContext, useEffect, useState } from "react";
@@ -7,11 +7,13 @@ import JobContext from "./JobContext";
 const FindJobs = () => {
     const {jobs,setJobs,loggedin,profile} = useContext(JobContext)
     let tempJobs = jobs;
- 
+    const [search,setSearch] = useState('')
     const [location,setLocation] = useState('')
     const [jobtype,setJobtype] = useState('')
     const [experience,setExperience] = useState('')
+    const [category,setCategory] = useState('')
     const [salary,setSalary] = useState([])
+    const [showlong,setShowlong] = useState(false)
 
     if(location){
         tempJobs = tempJobs.filter((job)=>job.workType==location)
@@ -31,6 +33,13 @@ const FindJobs = () => {
         }
     }
 
+    
+
+    tempJobs = tempJobs.filter(job=>(
+        job.title.toLowerCase().includes(search.toLowerCase()) ||
+        job.company.toLowerCase().includes(search.toLowerCase()) 
+    ))
+
     function handleLike(jo){
         setJobs(jobs.map((job)=>{
             if(job.id==jo.id){
@@ -49,13 +58,13 @@ const FindJobs = () => {
                 <p>Discover jobs that match your skills and goals. </p>
                 <div>
                     <FontAwesomeIcon icon={faSearch}/>
-                    <input placeholder="Job title, skill, or company"></input>
+                    <input placeholder="Job title, or company" value={search} onChange={(e)=>setSearch(e.target.value)}></input>
                     <button>Search</button>
                 </div>
             </div>
             <div>
-                <div>
-                    <h2>Filter Jobs</h2>
+                <div className={showlong ? "long" : ""}>
+                    <h2>Filter Jobs<span onClick={()=>(setShowlong(!showlong))}><FontAwesomeIcon icon={showlong ? faArrowUp :faArrowDown} /></span></h2>
                     <p>Location : </p>
                     <label name="location">
                         <div>
@@ -137,6 +146,38 @@ const FindJobs = () => {
                         <div>
                             <input type="radio" name="salary" onChange={()=>setSalary([30000])}/>
                             <p>30,000+ ETB</p>
+                        </div>
+                    </label>
+
+                    <p>Category:</p>
+                    <label>
+                        <div>
+                            <input checked={category=='' ? true : false} type="radio" name="category" onChange={()=>setCategory('')}/>
+                            <p>All</p>
+                        </div>
+                        <div>
+                            <input checked={category=='' ? true : false} type="radio" name="category" onChange={()=>setCategory('technology')}/>
+                            <p>Technology</p>
+                        </div>
+                        <div>
+                            <input checked={category=='' ? true : false} type="radio" name="category" onChange={()=>setCategory('design')}/>
+                            <p>Design</p>
+                        </div>
+                        <div>
+                            <input checked={category=='' ? true : false} type="radio" name="category" onChange={()=>setCategory('datananalytics')}/>
+                            <p>Data & Analytics</p>
+                        </div>
+                        <div>
+                            <input checked={category=='' ? true : false} type="radio" name="category" onChange={()=>setCategory('business')}/>
+                            <p>Business</p>
+                        </div>
+                        <div>
+                            <input checked={category=='' ? true : false} type="radio" name="category" onChange={()=>setCategory('marketingncommunication')}/>
+                            <p>Marketing & Communication</p>
+                        </div>
+                        <div>
+                            <input checked={category=='' ? true : false} type="radio" name="category" onChange={()=>setCategory('finance')}/>
+                            <p>Finance</p>
                         </div>
                     </label>
 

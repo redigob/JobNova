@@ -1,6 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
 import './Navbar.css'
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import JobContext from "./JobContext";
 import { useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -8,13 +8,17 @@ import { faBars } from '@fortawesome/free-solid-svg-icons'
 
 const Navbar = () => {
     const location = useLocation()
-    const [selected,setSelected] = useState("/")
-    const {loggedin,show,setShow,setLoggedin,signupdata,setSignupData,setLogindata} = useContext(JobContext)
     const [showfull,setShowfull] = useState(false)
+    const {selected,setSelected,loggedin,show,setShow,setLoggedin,signupdata,setSignupData,setLogindata} = useContext(JobContext)
     const navigate = useNavigate()
-    console.log(selected)
+    console.log(location)
+
     console.log(location.pathname)
-    console.log(loggedin)
+
+    useEffect(()=>{
+      setShowfull(false)
+    },[location.pathname])
+
     return (
         <div>
            {!loggedin ? 
@@ -56,6 +60,15 @@ const Navbar = () => {
                         <Link className="link" to={"/myprofile"} onClick={()=>setSelected("myprofile")}>My Profile</Link>
                         <Link className="link" to={"/"} onClick={()=>(setLoggedin(false),setLogindata({}))}>Log Out</Link>
                     </div>
+                </div>
+                <FontAwesomeIcon icon={faBars} onClick={()=>setShowfull(!showfull)} />               
+                <div className={showfull ? "bar full" : "bar"}>
+                    <p>👤 {signupdata.username}</p>
+                    <Link className={selected == "Dashboard" ? "links selected": "links"} to={"/"} onClick={()=>setSelected("Dashboard")}>Dashboard</Link>
+                    <Link className={selected == "find" ? "links selected": "links"} to={"/find"}  onClick={()=>setSelected("find")}>Find Jobs</Link>
+                    <Link className={selected == "applications" ? "links selected": "links"} to={"/applications"}  onClick={()=>setSelected("applications")}>Applications</Link>
+                    <Link className="link" to={"/myprofile"} onClick={()=>setSelected("myprofile")}>My Profile</Link>
+                    <Link className="link" to={"/"} onClick={()=>(setLoggedin(false),setLogindata({}))}>Log Out</Link>
                 </div>
             </div> 
             }

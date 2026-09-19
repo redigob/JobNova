@@ -1,7 +1,7 @@
-import { Route, Routes, useNavigate } from "react-router-dom";
+import { Route, Routes, useNavigate, useParams } from "react-router-dom";
 import Home from "./Home";
 import Navbar from "./Navbar";
-import { useContext,useEffect } from "react";
+import { useContext,useEffect, useState } from "react";
 import JobContext from "./JobContext";
 import Dashboard from "./Dashboard";
 import FindJobs from "./findJobs";
@@ -10,10 +10,9 @@ import Profile from "./Profile";
 const App = () => {
     const {loggedin} = useContext(JobContext)
     const navigate = useNavigate()
+    const navigation = performance.getEntriesByType("navigation")[0];
 
     useEffect(() => {
-        const navigation = performance.getEntriesByType("navigation")[0];
-
         if (navigation.type === "reload") {
             navigate("/");
         }

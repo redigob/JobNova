@@ -14,6 +14,7 @@ export function Jobprovider({children}){
     const [jobs,setJobs] = useState([])
     const [editmode,setEditmode] = useState(false)
     const [profileCreated,setProfilecreated] = useState(false)
+    const [selected,setSelected] = useState("/")
 
     const [profile,setProfile] = useState({
         name:"",
@@ -69,7 +70,7 @@ export function Jobprovider({children}){
     },[])
     console.log(jobs)
     return(
-        <JobContext.Provider value={{editmode,setEditmode,profileCreated,setProfilecreated,show,setShow,signuptemp,setSignuptemp,signupdata,setSignupdata,temp,setTemp,logindata,setLogindata,featured,match,profile,setProfile,tempProfile,settempProfile,loggedin,setLoggedin,marquee,jobs,setJobs}}>
+        <JobContext.Provider value={{selected,setSelected,editmode,setEditmode,profileCreated,setProfilecreated,show,setShow,signuptemp,setSignuptemp,signupdata,setSignupdata,temp,setTemp,logindata,setLogindata,featured,match,profile,setProfile,tempProfile,settempProfile,loggedin,setLoggedin,marquee,jobs,setJobs}}>
             {children}
         </JobContext.Provider>
     )

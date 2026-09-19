@@ -8,16 +8,15 @@
 .findjobs > div:nth-child(1) p:nth-child(1){
     font-size: 40px;
     font-weight: 600;
-    background:linear-gradient(90deg,#2e4525,#90ba7f);
-    width: 500px;
-    margin: 0px auto;
+    background:linear-gradient(#2e4525,#90ba7f);
     background-clip: text;
+    text-align: center;
     color: transparent;
 }
 
 .findjobs > div:nth-child(1) > div{
     background-color: white;
-    width: 50%;
+    width: 500px;
     margin: 36px auto 27px ;
     border-radius: 30px;
     display: flex;
@@ -55,6 +54,23 @@
     padding:10px;
     text-align: center;
     flex-basis: 1;
+    transition: height 1s ease;
+}
+
+.findjobs > div:nth-child(2) > div:nth-child(1) h2{
+    display: flex;
+    justify-content: center;
+    padding-inline: 2px;
+}
+
+.findjobs > div:nth-child(2) > div:nth-child(1) h2 span{
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    padding-top: 2px;
+    border-radius:50%;
+    color: #9fceae;
+    display: none;
 }
 
 .findjobs > div:nth-child(2) > div >p{
@@ -212,7 +228,7 @@
 }
 
 
-@media (max-width:750px) {
+@media (max-width:800px) {
     .findjobs > div:nth-child(2) > div:nth-child(2) > div:nth-child(2){
         display: grid;
         grid-template-columns: 1fr 1fr ;
@@ -220,13 +236,73 @@
         margin-top: 20px;
     }
 
+    .findjobs > div:nth-child(2){
+        display: grid;
+        grid-template-columns: 1fr;
+    }
     
+    .findjobs > div:nth-child(2) > div:nth-child(1){
+        height: 50px;
+        overflow-y: hidden;
+        border: none;
+    }
 
     .jo{
         font-size: 15px;
     }
 
-    .jo div:nth-child(2) div:nth-child(2) p:nth-child(2){
+    .findjobs > div:nth-child(2) > div:nth-child(1) h2{
+        display: flex;
+        justify-content: space-between;
+        padding: 2px 5%;
+    }
+
+    .findjobs > div:nth-child(2) > div:nth-child(1).long{
+        height: 650px;
+        transition: height 1s ease;
+    }
+
+    .findjobs > div:nth-child(2) > div:nth-child(1) h2 span{
+        display: block;
+    }
+
+    .jo div:nth-child(2) > div:nth-child(2) > p:nth-child(2){
         font-size: 15px;
+        font-weight: 600;
+    }
+}
+
+@media (max-width:530px) {
+    .findjobs > div:nth-child(2) > div:nth-child(2) > div:nth-child(2){
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 10px;
+        margin-top: 20px;
+    }
+    .jo{
+       font-size: 18px;
+    }
+
+    .jo div:nth-child(2) > div:nth-child(2) > p:nth-child(2){
+        font-size: 25px;
+    }
+
+    .jo >  div:nth-child(2) img{
+        width: 120px;
+        height: 120px;
+    }
+
+    .jo div:nth-child(2){
+        justify-content: space-between;
+
+    }
+    .findjobs > div:nth-child(1)> p:first-child{
+       font-size: 30px;
+    }
+}
+
+@media (max-width:530px) {
+    .findjobs > div:nth-child(1) > div{
+        width: 80%;
     }
 }
