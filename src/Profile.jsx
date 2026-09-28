@@ -3,10 +3,9 @@ import './Profile.css'
 import JobContext from './JobContext';
 
 const Profile = () => {
-    const {tempProfile,editmode,setEditmode,profileCreated,setProfilecreated,settempProfile,profile,setProfile} =useContext(JobContext)
+    const {setSelected,tempProfile,editmode,setEditmode,profileCreated,setProfilecreated,settempProfile,profile,setProfile} =useContext(JobContext)
     console.log(profile)
     console.log(tempProfile)
-
     function handleProfileSubmit(e){
        e.preventDefault()
        if(profile.skills.length==0){

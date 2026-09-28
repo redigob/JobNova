@@ -258,7 +258,7 @@
     }
 
     .findjobs > div:nth-child(2) > div:nth-child(1).long{
-        height: 650px;
+        height: 850px;
         transition: height 1s ease;
     }
 
@@ -268,7 +268,7 @@
 
     .jo div:nth-child(2) > div:nth-child(2) > p:nth-child(2){
         font-size: 15px;
-        font-weight: 600;
+        font-weight: 00;
     }
 }
 

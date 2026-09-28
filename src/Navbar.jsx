@@ -11,9 +11,6 @@ const Navbar = () => {
     const [showfull,setShowfull] = useState(false)
     const {selected,setSelected,loggedin,show,setShow,setLoggedin,signupdata,setSignupData,setLogindata} = useContext(JobContext)
     const navigate = useNavigate()
-    console.log(location)
-
-    console.log(location.pathname)
 
     useEffect(()=>{
       setShowfull(false)
@@ -27,7 +24,6 @@ const Navbar = () => {
                 <div>
                     <Link className={selected == "Home" ? "links selected": "links"} to={"/"} onClick={()=>setSelected("Home")}>Home</Link>
                     <Link className={selected == "find" ? "links selected": "links"} to={"/find"}  onClick={()=>setSelected("find")}>Find Jobs</Link>
-                    <Link className={selected == "discover" ? "links selected": "links"} to={"/discover"}  onClick={()=>setSelected("discover")}>Discover</Link>
                     <Link className={selected == "company" ? "links selected": "links"} to={"/company"}  onClick={()=>setSelected("company")}>Company</Link>
                 </div>
                 <div>
@@ -35,13 +31,12 @@ const Navbar = () => {
                     <p className={selected == "signup" ? "links selected": "links"}  onClick={()=>(setSelected("signup"),location.pathname!="/" ? navigate("/",{state:{scrollTo:2300}}) : window.scrollTo({top:2300,behavior:"smooth"}))}>Sign up</p>               
                 </div>
                 <FontAwesomeIcon icon={faBars} onClick={()=>setShowfull(!showfull)} />               
-                <div className={showfull ? "bar full" : "bar"}>
+                <div className={showfull ? "bar before full" : "bar before"}>
                     <Link className={selected == "Home" ? "links selected": "links"} to={"/"} onClick={()=>setSelected("Home")}>Home</Link>
                     <Link className={selected == "find" ? "links selected": "links"} to={"/find"}  onClick={()=>setSelected("find")}>Find Jobs</Link>
-                    <Link className={selected == "discover" ? "links selected": "links"} to={"/discover"}  onClick={()=>setSelected("discover")}>Discover</Link>
                     <Link className={selected == "company" ? "links selected": "links"} to={"/company"}  onClick={()=>setSelected("company")}>Company</Link>
-                    <p className={selected == "login" ? "links selected": "links"}  onClick={()=>(setSelected("login"),location.pathname!="/" ? navigate("/",{state:{scrollTo:2300}}) : window.scrollTo({top:2300,behavior:"smooth"}))}>Log In</p>
-                    <p className={selected == "signup" ? "links selected": "links"}  onClick={()=>(setSelected("signup"),location.pathname!="/" ? navigate("/",{state:{scrollTo:2300}}) : window.scrollTo({top:2300,behavior:"smooth"}))}>Sign up</p>
+                    <p className={selected == "login" ? "links selected": "links"}  onClick={()=>(setSelected("login"),location.pathname!="/" ? navigate("/",{state:{scrollTo:3000}}) : window.scrollTo({top:3000,behavior:"smooth"}))}>Log In</p>
+                    <p className={selected == "signup" ? "links selected": "links"}  onClick={()=>(setSelected("signup"),location.pathname!="/" ? navigate("/",{state:{scrollTo:3000}}) : window.scrollTo({top:3000,behavior:"smooth"}))}>Sign up</p>
                 </div>
             </div> :
             <div className="navbar">
@@ -49,7 +44,7 @@ const Navbar = () => {
                 <div>
                     <Link className={selected == "Dashboard" ? "links selected": "links"} to={"/"} onClick={()=>setSelected("Dashboard")}>Dashboard</Link>
                     <Link className={selected == "find" ? "links selected": "links"} to={"/find"}  onClick={()=>setSelected("find")}>Find Jobs</Link>
-                    <Link className={selected == "career" ? "links selected": "links"} to={"/career"}  onClick={()=>setSelected("career")}>Career Roadmap</Link>
+                    <Link className={selected == "company" ? "links selected": "links"} to={"/company"}  onClick={()=>setSelected("company")}>Company</Link>
                     <Link className={selected == "applications" ? "links selected": "links"} to={"/applications"}  onClick={()=>setSelected("applications")}>Applications</Link>
                 </div>
                 <div>
@@ -62,10 +57,11 @@ const Navbar = () => {
                     </div>
                 </div>
                 <FontAwesomeIcon icon={faBars} onClick={()=>setShowfull(!showfull)} />               
-                <div className={showfull ? "bar full" : "bar"}>
+                <div className={showfull ? "bar after full" : "bar after"}>
                     <p>👤 {signupdata.username}</p>
                     <Link className={selected == "Dashboard" ? "links selected": "links"} to={"/"} onClick={()=>setSelected("Dashboard")}>Dashboard</Link>
                     <Link className={selected == "find" ? "links selected": "links"} to={"/find"}  onClick={()=>setSelected("find")}>Find Jobs</Link>
+                    <Link className={selected == "company" ? "links selected": "links"} to={"/company"}  onClick={()=>setSelected("company")}>Company</Link>
                     <Link className={selected == "applications" ? "links selected": "links"} to={"/applications"}  onClick={()=>setSelected("applications")}>Applications</Link>
                     <Link className="link" to={"/myprofile"} onClick={()=>setSelected("myprofile")}>My Profile</Link>
                     <Link className="link" to={"/"} onClick={()=>(setLoggedin(false),setLogindata({}))}>Log Out</Link>

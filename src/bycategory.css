@@ -21,10 +21,9 @@
    margin-top: 0px;
    padding: 20px 10%;
    box-shadow: 0px 0px 3px #38353590;
-   height: 630px;
    overflow-y: scroll;
    border-radius: 20px;
-
+   height: 627px;
 }
 
 .bycategory > div > div{
@@ -44,7 +43,7 @@
 
 
 .bycategory > div > div:hover{
-   height: 300px;
+   height: 310px;
    transition: height 1s ease;
 }
 
@@ -58,6 +57,7 @@
 
 .bycategory > div > div > p:nth-child(3){
     align-self: flex-end;
+    margin-left: 30%;
 }
 
 .bycategory > div > div > div p:nth-child(2){
@@ -76,6 +76,12 @@
 .bycategory > div > div div{
     display: flex;
     flex-direction: column;
+}
+
+@media (max-width:1100px) {
+    .bycategory > div > div > p:nth-child(3){
+        margin-left: 10%;
+    }
 }
 
 
@@ -109,10 +115,9 @@
         width: 100%;
         margin: 10px 20px 10px 0px;
     }
-
     .bycategory > div > div > p:nth-child(3){
         margin-left: 30%;
-     }
+    }
 }
 
 @media (max-width:750px) {

@@ -7,6 +7,8 @@ import Dashboard from "./Dashboard";
 import FindJobs from "./findJobs";
 import Clearshow from "./Clearshow";
 import Profile from "./Profile";
+import Companies from "./Companies";
+import Companyinfo from "./Companyinfo";
 const App = () => {
     const {loggedin} = useContext(JobContext)
     const navigate = useNavigate()
@@ -26,6 +28,8 @@ const App = () => {
                 <Route path="/" element={loggedin ? <Dashboard/> :<Home/>}></Route>
                 <Route path="/find" element={<FindJobs/>}></Route>
                 <Route path="/myprofile" element={<Profile/>}></Route>
+                <Route path="/company" element={<Companies/>}></Route>
+                <Route path={`companyinfo/:id` }element={<Companyinfo/>}></Route>
             </Routes>
         </div>
     );

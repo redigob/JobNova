@@ -15,6 +15,15 @@ export function Jobprovider({children}){
     const [editmode,setEditmode] = useState(false)
     const [profileCreated,setProfilecreated] = useState(false)
     const [selected,setSelected] = useState("/")
+    const [search,setSearch] = useState('')
+    const [companies,setCompanies] = useState([])
+    const [filter,setFilter] = useState({
+        location:'', 
+        jobtype:'',
+        experience:'',
+        salary:[],
+        category:''
+    })
 
     const [profile,setProfile] = useState({
         name:"",
@@ -31,7 +40,9 @@ export function Jobprovider({children}){
         jobtype:""
     })
 
-     const [tempProfile,settempProfile] = useState({
+    console.log(profile)
+
+    const [tempProfile,settempProfile] = useState({
         name:"",
         email:"",
         location:"",
@@ -51,15 +62,13 @@ export function Jobprovider({children}){
         setProfile({...profile,skills:updatedskills})
     }
 
-    console.log(loggedin)
-
 
     useEffect(()=>{
         fetch('http://localhost:3000/featured')
         .then(res=>res.json())
         .then(data=>setFeatured(data))
 
-        fetch('http://localhost:3000/companies')
+        fetch('http://localhost:3000/company')
         .then(res=>res.json())
         .then(data=>setMarquee(data))
 
@@ -67,10 +76,13 @@ export function Jobprovider({children}){
         .then(res=>res.json())
         .then(data=>setJobs(data))
 
+        fetch('http://localhost:3000/companies')
+        .then(res=>res.json())
+        .then(data=>(setCompanies(data),console.log(data)))
     },[])
-    console.log(jobs)
+
     return(
-        <JobContext.Provider value={{selected,setSelected,editmode,setEditmode,profileCreated,setProfilecreated,show,setShow,signuptemp,setSignuptemp,signupdata,setSignupdata,temp,setTemp,logindata,setLogindata,featured,match,profile,setProfile,tempProfile,settempProfile,loggedin,setLoggedin,marquee,jobs,setJobs}}>
+        <JobContext.Provider value={{companies,filter,setFilter,search,setSearch,selected,setSelected,editmode,setEditmode,profileCreated,setProfilecreated,show,setShow,signuptemp,setSignuptemp,signupdata,setSignupdata,temp,setTemp,logindata,setLogindata,featured,match,profile,setProfile,tempProfile,settempProfile,loggedin,setLoggedin,marquee,jobs,setJobs}}>
             {children}
         </JobContext.Provider>
     )

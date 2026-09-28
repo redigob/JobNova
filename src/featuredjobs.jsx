@@ -3,10 +3,10 @@ import JobContext from "./JobContext";
 import './featuredjobs.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHeart,faHeartCircleCheck } from '@fortawesome/free-solid-svg-icons'
+import { useNavigate } from "react-router-dom";
 const Featured = () => {
+    const navigate = useNavigate()
     const {featured,loggedin,profile,match} = useContext(JobContext)
-    console.log(featured)
-    console.log(profile)
     return (
         <div className="featured">
             <h2>
@@ -50,7 +50,7 @@ const Featured = () => {
                 : "Loading..."}
             </div>
             
-            <div>
+            <div onClick={()=>navigate("/find")}>
                 Explore all jobs ⟶
             </div>
         </div>

@@ -1,35 +1,32 @@
 import { faHeart, faHeartCircleCheck, faSearch,faArrowDown, faArrowUp } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import './findJobs.css'
-import { useContext, useEffect, useState } from "react";
+import { use, useContext, useEffect, useState } from "react";
 import JobContext from "./JobContext";
 
 const FindJobs = () => {
-    const {jobs,setJobs,loggedin,profile} = useContext(JobContext)
+    const {filter,setFilter,search,setSearch,jobs,setJobs,loggedin,profile} = useContext(JobContext)
     let tempJobs = jobs;
-    const [search,setSearch] = useState('')
-    const [location,setLocation] = useState('')
-    const [jobtype,setJobtype] = useState('')
-    const [experience,setExperience] = useState('')
-    const [category,setCategory] = useState('')
-    const [salary,setSalary] = useState([])
     const [showlong,setShowlong] = useState(false)
 
-    if(location){
-        tempJobs = tempJobs.filter((job)=>job.workType==location)
+    if(filter.location){
+        tempJobs = tempJobs.filter((job)=>job.workType==filter.location)
     }
-    if(jobtype){
-        tempJobs = tempJobs.filter((job)=>job.employmentType==jobtype)
+    if(filter.jobtype){
+        tempJobs = tempJobs.filter((job)=>job.employmentType==filter.jobtype)
     }
-    if(experience){
-        tempJobs = tempJobs.filter((job)=>job.experience==experience)
+    if(filter.experience){
+        tempJobs = tempJobs.filter((job)=>job.experience==filter.experience)
     }
-    if(salary.length!=0){ 
-        if(salary.length==2){
-          tempJobs = tempJobs.filter((job)=>(job.minSalary<=salary[1] ))    
+    if(filter.category){
+        tempJobs = tempJobs.filter((job)=>job.category.toLowerCase()==filter.category.toLowerCase())
+    }
+    if(filter.salary.length!=0){ 
+        if(filter.salary.length==2){
+          tempJobs = tempJobs.filter((job)=>(job.minSalary<=filter.salary[1] ))    
         }
         else{
-          tempJobs = tempJobs.filter((job)=>(job.minSalary>=salary[0] ))
+          tempJobs = tempJobs.filter((job)=>(job.minSalary>=filter.salary[0] ))
         }
     }
 
@@ -68,19 +65,19 @@ const FindJobs = () => {
                     <p>Location : </p>
                     <label name="location">
                         <div>
-                            <input checked={location==""? true : false} type="radio" name="location" onClick={()=>setLocation("")}/>
+                            <input checked={filter.location==""? true : false} type="radio" name="location" onClick={()=>setFilter({...filter,location:''})}/>
                             <p>All</p>
                         </div>
                         <div>
-                            <input type="radio" name="location" onClick={()=>setLocation("Remote")}/>
+                            <input checked={filter.location=="Remote"? true : false} type="radio" name="location" onClick={()=>setFilter({...filter,location:"Remote"})}/>
                             <p>Remote</p>
                         </div>
                         <div>
-                            <input type="radio" name="location" onClick={()=>setLocation("On-site")}/>
+                            <input checked={filter.location=="On-site"? true : false} type="radio" name="location" onClick={()=>setFilter({...filter,location:"On-site"})}/>
                             <p>On-Site</p>
                         </div>
                         <div>
-                            <input type="radio" name="location" onClick={()=>setLocation("Hybrid")}/>
+                            <input checked={filter.location=="Hybrid"? true : false} type="radio" name="location" onClick={()=>setFilter({...filter,location:"Hybrid"})}/>
                             <p>Hybrid</p>
                         </div>
                     </label>
@@ -88,19 +85,19 @@ const FindJobs = () => {
                     <p>Job type :</p>
                     <label name="jobtype">
                         <div>
-                            <input checked={jobtype==""? true : false} type="radio" name="jobtype" onClick={()=>setJobtype("")}/>
+                            <input checked={filter.jobtype==""? true : false} type="radio" name="jobtype" onClick={()=>setFilter({...filter,jobtype:''})}/>
                             <p>All</p>
                         </div>
                         <div>
-                            <input type="radio" name="jobtype" onClick={()=>setJobtype("Full-time")}/>
+                            <input checked={filter.jobtype=="Full-time"? true : false} type="radio" name="jobtype" onClick={()=>setFilter({...filter,jobtype:"Full-time"})}/>
                             <p>Full-time</p>
                         </div>
                         <div>
-                            <input type="radio" name="jobtype" onClick={()=>setJobtype("Part-time")}/>
+                            <input checked={filter.jobtype=="Part-time"? true : false} type="radio" name="jobtype" onClick={()=>setFilter({...filter,jobtype:"Part-time"})}/>
                             <p>Part-time</p>
                         </div>
                         <div>
-                            <input type="radio" name="jobtype" onClick={()=>setJobtype("Internship")}/>
+                            <input checked={filter.jobtype=="Internship"? true : false} type="radio" name="jobtype" onClick={()=>setFilter({...filter,jobtype:"Internship"})}/>
                             <p>Internship</p>
                         </div>
                     </label>
@@ -108,19 +105,19 @@ const FindJobs = () => {
                     <p>Experience :</p>
                     <label name="experience">
                         <div>
-                            <input checked={experience==""? true : false} type="radio" name="experience" onClick={()=>setExperience("")}/>
+                            <input checked={filter.experience==""? true : false} type="radio" name="experience" onClick={()=>setFilter({...filter,experience:''})}/>
                             <p>All</p>
                         </div>
                         <div>
-                            <input type="radio" name="experience" onClick={()=>setExperience("Entry Level")}/>
+                            <input checked={filter.experience=="Entry Level"? true : false} type="radio" name="experience" onClick={()=>setFilter({...filter,experience:"Entry Level"})}/>
                             <p>Entry-level</p>
                         </div>
                         <div>
-                            <input type="radio" name="experience" onClick={()=>setExperience("Mid Level")}/>
+                            <input checked={filter.experience=="Mid Level"? true : false} type="radio" name="experience" onClick={()=>setFilter({...filter,experience:"Mid Level"})}/>
                             <p>Mid-level</p>
                         </div>
                         <div>
-                            <input type="radio" name="experience" onClick={()=>setExperience("Senior")}/>
+                            <input checked={filter.experience=="Senior"? true : false} type="radio" name="experience" onClick={()=>setFilter({...filter,experience:"Senior"})}/>
                             <p>Senior</p>
                         </div>
                     </label>
@@ -128,23 +125,23 @@ const FindJobs = () => {
                     <p>Salaly :</p>
                     <label name="jobtype">
                         <div>
-                            <input checked={salary.length==0 ? true : false} type="radio" name="salary" onChange={()=>setSalary([])}/>
+                            <input checked={filter.salary.length==0 ? true : false} type="radio" name="salary" onChange={()=>setFilter({...filter,salary:[]})}/>
                             <p>All</p>
                         </div>
                         <div>
-                            <input type="radio" name="salary" onChange={()=>setSalary([0,15000])}/>
+                            <input checked={filter.salary[0]==0 ? true : false} type="radio" name="salary" onChange={()=>setFilter({...filter,salary:[0,15000]})}/>
                             <p>Under 15,000 ETB</p>
                         </div>
                         <div>
-                            <input type="radio" name="salary" onChange={()=>setSalary([15000])}/>
+                            <input checked={filter.salary[0]==15000 ? true : false} type="radio" name="salary" onChange={()=>setFilter({...filter,salary:[15000]})}/>
                             <p>15,000+ ETB</p>
                         </div>
                         <div>
-                            <input type="radio" name="salary" onChange={()=>setSalary([20000])}/>
+                            <input checked={filter.salary[0]==20000 ? true : false} type="radio" name="salary" onChange={()=>setFilter({...filter,salary:[20000]})}/>
                             <p>20,000+ ETB</p>
                         </div>
                         <div>
-                            <input type="radio" name="salary" onChange={()=>setSalary([30000])}/>
+                            <input checked={filter.salary[0]==30000 ? true : false} type="radio" name="salary" onChange={()=>setFilter({...filter,salary:[30000]})}/>
                             <p>30,000+ ETB</p>
                         </div>
                     </label>
@@ -152,36 +149,40 @@ const FindJobs = () => {
                     <p>Category:</p>
                     <label>
                         <div>
-                            <input checked={category=='' ? true : false} type="radio" name="category" onChange={()=>setCategory('')}/>
+                            <input checked={filter.category=='' ? true : false} type="radio" name="category" onChange={()=>setFilter({...filter,category:''})}/>
                             <p>All</p>
                         </div>
                         <div>
-                            <input checked={category=='' ? true : false} type="radio" name="category" onChange={()=>setCategory('technology')}/>
+                            <input checked={filter.category=='technology' ? true : false} type="radio" name="category" onChange={()=>setFilter({...filter,category:'technology'})}/>
                             <p>Technology</p>
                         </div>
                         <div>
-                            <input checked={category=='' ? true : false} type="radio" name="category" onChange={()=>setCategory('design')}/>
+                            <input checked={filter.category=='design' ? true : false} type="radio" name="category" onChange={()=>setFilter({...filter,category:'design'})}/>
                             <p>Design</p>
                         </div>
                         <div>
-                            <input checked={category=='' ? true : false} type="radio" name="category" onChange={()=>setCategory('datananalytics')}/>
-                            <p>Data & Analytics</p>
-                        </div>
-                        <div>
-                            <input checked={category=='' ? true : false} type="radio" name="category" onChange={()=>setCategory('business')}/>
+                            <input checked={filter.category=='business' ? true : false}  type="radio" name="category" onChange={()=>setFilter({...filter,category:'business'})}/>
                             <p>Business</p>
                         </div>
                         <div>
-                            <input checked={category=='' ? true : false} type="radio" name="category" onChange={()=>setCategory('marketingncommunication')}/>
-                            <p>Marketing & Communication</p>
+                            <input checked={filter.category=='marketing' ? true : false}  type="radio" name="category" onChange={()=>setFilter({...filter,category:'marketing'})}/>
+                            <p>Marketing</p>
                         </div>
                         <div>
-                            <input checked={category=='' ? true : false} type="radio" name="category" onChange={()=>setCategory('finance')}/>
+                            <input checked={filter.category=='finance' ? true : false} type="radio" name="category" onChange={()=>setFilter({...filter,category:'finance'})}/>
                             <p>Finance</p>
+                        </div>
+                        <div>
+                            <input checked={filter.category=='data' ? true : false} type="radio" name="category" onChange={()=>setFilter({...filter,category:'data'})}/>
+                            <p>Data</p>
+                        </div>
+                        <div>
+                            <input checked={filter.category=='fashion' ? true : false} type="radio" name="category" onChange={()=>setFilter({...filter,category:'fashion'})}/>
+                            <p>Fashion</p>
                         </div>
                     </label>
 
-                    <button onClick={()=>(setLocation(''),setJobtype(''),setExperience(''),setSalary([]))}>Clear Filter</button>
+                    <button onClick={()=>setFilter({location:'',jobtype:'',experience:'',salary:[],category:''})}>Clear Filter</button>
                 </div>
                 <div>
                     <p>{tempJobs.length} Available Jobs</p>

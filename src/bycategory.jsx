@@ -1,13 +1,23 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import './bycategory.css'
+import JobContext from './JobContext';
+import { useNavigate } from 'react-router-dom';
 
 const Bycategory = () => {
+    const {filter,setFilter,setSelected} = useContext(JobContext)
+    const navigate = useNavigate()
+    function handleclick(category){
+        setFilter({...filter,category:category})
+        navigate("/find")
+        setSelected("find")
+    }
+
     return (
         <div className="bycategory">
             <div>
                 <h2>Explore By Category</h2>
                 <p>Find opportunities built around it.</p>
-                <div >
+                <div onClick={()=>handleclick("technology")} >
                     <p>01</p>
                     <div>
                         <p>TECHNOLOGY</p>
@@ -24,9 +34,9 @@ const Bycategory = () => {
                             <li>IT Support Specialist</li>
                         </ul>
                     </div>
-                    <p>120+</p>
+                    <p>⟶</p>
                 </div>
-                <div>
+                <div onClick={()=>handleclick("design")}>
                     <p>02</p>
                     <div>
                         <p>DESIGN</p>
@@ -44,30 +54,10 @@ const Bycategory = () => {
                             <li>Design Intern</li>
                         </ul>
                     </div>
-                    <p>65+</p>
+                    <p>⟶</p>
                 </div>
-                <div>
+                <div onClick={()=>handleclick("business")}>
                     <p>03</p>
-                    <div>
-                        <p>DATA & ANALYTICS</p>
-                        <p>Turn information into decisions.</p>
-                        <ul>
-                            <li>Data Analyst</li>
-                            <li>Business Intelligence Analyst</li>
-                            <li>Data Scientist</li>
-                            <li>Data Engineer</li>
-                            <li>Machine Learning Engineer</li>
-                            <li>Product Analyst</li>
-                            <li>Business Analyst</li>
-                            <li>Marketing Data Analyst</li>
-                            <li>Research Analyst</li>
-                            <li>Analytics Intern</li>
-                        </ul>
-                    </div>
-                    <p>48+</p>
-                </div>
-                <div>
-                    <p>04</p>
                     <div>
                         <p>BUSINESS</p>
                         <p>Lead, grow and build.</p>
@@ -84,12 +74,12 @@ const Bycategory = () => {
                             <li>Human Resources Specialist</li>
                         </ul>
                     </div>
-                    <p>85+</p>
+                    <p>⟶</p>
                 </div>
-                <div>
-                    <p>05</p>
+                <div onClick={()=>handleclick("marketing")}>
+                    <p>04</p>
                     <div>
-                        <p>Marketing & Communication</p>
+                        <p>MARKETING </p>
                         <p>Make ideas impossible to ignore.</p>
                         <ul>
                             <li>Digital Marketing Specialist</li>
@@ -104,12 +94,12 @@ const Bycategory = () => {
                             <li>Marketing Intern</li>
                         </ul>
                     </div>
-                    <p>55+</p>
+                    <p>⟶</p>
                 </div>
-                <div>
-                    <p>06</p>
+                <div onClick={()=>handleclick("finance")}>
+                    <p>05</p>
                     <div>
-                        <p>Finance</p>
+                        <p>FINANCE</p>
                         <p>Turn numbers into smarter decisions.</p>
                         <ul>
                             <li>Financial Analyst</li>
@@ -124,12 +114,12 @@ const Bycategory = () => {
                             <li>Finance Intern</li>
                         </ul>
                     </div>
-                    <p>42+</p>
+                    <p>⟶</p>
                 </div>
-                <div>
-                    <p>07</p>
+                <div onClick={()=>handleclick("engineering")}>
+                    <p>06</p>
                     <div>
-                        <p>Engineering</p>
+                        <p>ENGINEERING</p>
                         <p>Design solutions that move the world.</p>
                         <ul>
                             <li>Mechanical Engineer</li>
@@ -144,12 +134,12 @@ const Bycategory = () => {
                             <li>Engineering Intern</li>
                         </ul>
                     </div>
-                    <p>70+</p>
+                    <p>⟶</p>
                 </div>
-                <div>
-                    <p>08</p>
+                <div onClick={()=>handleclick("fashion")}>
+                    <p>07</p>
                     <div>
-                        <p>Healthcare</p>
+                        <p>FASHION</p>
                         <p>Make a difference where it matters most.</p>
                         <ul>
                             <li>Registered Nurse</li>
@@ -164,7 +154,27 @@ const Bycategory = () => {
                             <li>Healthcare Intern</li>
                         </ul>
                     </div>
-                    <p>60+</p>
+                    <p>⟶</p>
+                </div>
+                <div onClick={()=>handleclick("data")}>
+                    <p>08</p>
+                    <div>
+                        <p>DATA</p>
+                        <p>Make a difference where it matters most.</p>
+                        <ul>
+                            <li>Registered Nurse</li>
+                            <li>Medical Assistant</li>
+                            <li>Pharmacist</li>
+                            <li>Medical Laboratory Technician</li>
+                            <li>Healthcare Administrator</li>
+                            <li>Radiology Technician</li>
+                            <li>Physiotherapist</li>
+                            <li>Public Health Specialist</li>
+                            <li>Clinical Research Associate</li>
+                            <li>Healthcare Intern</li>
+                        </ul>
+                    </div>
+                    <p>⟶</p>
                 </div>
             </div>
         </div>

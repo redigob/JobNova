@@ -12,6 +12,7 @@ const Home = () => {
     const {loggedin,selected,setSelected} = useContext(JobContext)
     const location = useLocation()
     const navigate = useNavigate()
+    
     useEffect(()=>{
         if(location.state?.scrollTo){
             window.scrollTo({
