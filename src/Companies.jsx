@@ -108,7 +108,7 @@ const Companies = () => {
             </div>
             <div>
               {tempcompanies.map((company)=>(
-                <div className="companylist" onClick={()=>navigate(`/companyinfo/${company.id}`)}>
+                <div className="companylist" onClick={()=>navigate(`/companyinfo/${company.id}`)} style={{cursor:"pointer"}}>
                   <img src={company.img}/>
                   <div className="companyinfo">
                     <p>{company.name}</p>
@@ -123,7 +123,8 @@ const Companies = () => {
               <button className={selected=="1" ? "selected" : ""} >1</button>
               <button className={selected=="2" ? "selected" : ""} >2</button>
               <button className={selected=="3" ? "selected" : ""} >3</button>
-              <button disabled={currentpage==3 || tempcompanies.length<6 ? true : false} onClick={()=>handlePagination("next")} ><FontAwesomeIcon icon={faArrowRight}/></button>
+              <button className={selected=="4" ? "selected" : ""} >4</button>
+              <button disabled={currentpage==4 || tempcompanies.length<6 ? true : false} onClick={()=>handlePagination("next")} ><FontAwesomeIcon icon={faArrowRight}/></button>
             </div>
           </div>
       </div>

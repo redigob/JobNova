@@ -141,7 +141,7 @@
     height: 100%;
 }
 
-.companylist .companyinfo{
+.companies .companylist .companyinfo{
     position: absolute;
     display: flex;
     flex-direction: column;
@@ -179,7 +179,7 @@
     transition: color 0.5s ease, transform 0.5s ease;
 }
 
-.companies div:nth-child(3) div:nth-child(3) button:nth-child(2),.companies div:nth-child(3) div:nth-child(3) button:nth-child(3),.companies div:nth-child(3) div:nth-child(3) button:nth-child(4){
+.companies div:nth-child(3) div:nth-child(3) button:nth-child(2),.companies div:nth-child(3) div:nth-child(3) button:nth-child(3),.companies div:nth-child(3) div:nth-child(3) button:nth-child(4),.companies div:nth-child(3) div:nth-child(3) button:nth-child(5){
    pointer-events: none;
    color: #a7a5a5;
 }
@@ -205,6 +205,9 @@
     background-color: transparent;
 }
 
+
+
+
 @media (max-width:1070px) {
     .companies > div:nth-child(3) > div:nth-child(2){
         grid-template-columns: 1fr 1fr;
@@ -217,5 +220,20 @@
     .companies > div:nth-child(3) > div:nth-child(2){
         grid-template-columns: 1fr;
         height: fit-content;
+    }
+}
+
+@media (max-width:530px) {
+    .companies .explore > div{
+        grid-template-columns:  1fr 1fr 1fr;
+    }
+    .companies .header label{
+        width: 100%;
+    }
+}
+
+@media (max-width:400px) {
+    .companies .explore > div{
+        grid-template-columns:  1fr 1fr;
     }
 }

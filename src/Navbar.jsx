@@ -35,8 +35,8 @@ const Navbar = () => {
                     <Link className={selected == "Home" ? "links selected": "links"} to={"/"} onClick={()=>setSelected("Home")}>Home</Link>
                     <Link className={selected == "find" ? "links selected": "links"} to={"/find"}  onClick={()=>setSelected("find")}>Find Jobs</Link>
                     <Link className={selected == "company" ? "links selected": "links"} to={"/company"}  onClick={()=>setSelected("company")}>Company</Link>
-                    <p className={selected == "login" ? "links selected": "links"}  onClick={()=>(setSelected("login"),location.pathname!="/" ? navigate("/",{state:{scrollTo:3000}}) : window.scrollTo({top:3000,behavior:"smooth"}))}>Log In</p>
-                    <p className={selected == "signup" ? "links selected": "links"}  onClick={()=>(setSelected("signup"),location.pathname!="/" ? navigate("/",{state:{scrollTo:3000}}) : window.scrollTo({top:3000,behavior:"smooth"}))}>Sign up</p>
+                    <p className={selected == "login" ? "links selected": "links"}  onClick={()=>(setSelected("login"),location.pathname!="/" ? navigate("/",{state:{scrollTo:0}}) : window.scrollTo({top:4000,behavior:"smooth"}))}>Log In</p>
+                    <p className={selected == "signup" ? "links selected": "links"}  onClick={()=>(setSelected("signup"),location.pathname!="/" ? navigate("/",{state:{scrollTo:0}}) : window.scrollTo({top:4000,behavior:"smooth"}))}>Sign up</p>
                 </div>
             </div> :
             <div className="navbar">

@@ -3,25 +3,48 @@ import { useNavigate, useParams } from "react-router-dom";
 import JobContext from "./JobContext";
 import './Companyinfo.css'
 import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faHeartCircleCheck,faHeart } from "@fortawesome/free-solid-svg-icons";
 
 const Companyinfo = () => {
-
-   const {id} =  useParams()
-   const {companies,loggedin} = useContext(JobContext)
-   const job=companies.find((job)=>job.id==id)
+   const {companies,loggedin,profile} = useContext(JobContext)
+   const {id:ID} = useParams()
+   const id =  Number(ID)
+   const explore = companies.filter((company)=>company.id > id && company.id <= id+3)
+   if(id==22){
+    const added = companies.find((company)=>company.id ==1)
+    explore.push(added)
+   }
+   if(id==23){
+    const added1 = companies.find((company)=>company.id ==1 )
+    const added2 = companies.find((company)=>company.id ==2 )
+    explore.push(added1)
+    explore.push(added2)
+   }
+   if(id==24){
+    const added1 = companies.find((company)=>company.id ==1)
+    const added2 = companies.find((company)=>company.id ==2 )
+    const added3 = companies.find((company)=>company.id ==3)
+    explore.push(added1)
+    explore.push(added2)
+    explore.push(added3)
+   }
+   console.log(explore)
+   const company=companies.find((job)=>job.id==id)
+   console.log(companies)
+   console.log(company)
    const navigate = useNavigate()
-   console.log(job)
     return (
         <div className="companyinfo">
-            {job && 
+            {company && 
             <div>
                 <div className="header">
-                    <img src={job.img} />
+                    <img src={company.img} />
                     <div>
-                        <h1>{job.name}</h1>
-                        <p>{job.industry} · {job.location}</p>
-                        <p>{job.description}</p>
-                        <button className="link" onClick={()=>navigate(`${job.website}`)}>View Website ↗</button>
+                        <h1>{company.name}</h1>
+                        <p>{company.industry} · {company.location}</p>
+                        <p>{company.description}</p>
+                        <button className="link" onClick={()=>navigate(`${company.website}`)}>View Website ↗</button>
                     </div>
                 </div>
                 <div>
@@ -29,28 +52,28 @@ const Companyinfo = () => {
                     <div>
                         <div>
                             <p>INDUSTRY</p>
-                            <p>{job.industry}</p>
+                            <p>{company.industry}</p>
                         </div>
                         <div>
                             <p>LOCATION</p>
-                            <p>{job.location}</p>
+                            <p>{company.location}</p>
                         </div>
                         <div>
                             <p>OPEN POSITIONS</p>
-                            <p>{job.positions.length} opportunities</p>
+                            <p>{company.positions.length} opportunities</p>
                         </div>
                         <div>
                             <p>WESBITE</p>
-                            <button className="link" onClick={()=>navigate(`${job.website}`)}>View Website ↗</button>
+                            <button className="link" onClick={()=>navigate(`${company.website}`)}>View Website ↗</button>
                         </div>
                     </div>
                 </div>
                 <div>
                     <h2>Open Positions</h2>
-                    <p>{job.positions.length} {job.positions.length > 2 ? "Oportunities" : "opportunity"} at {job.name}</p>
+                    <p>{company.positions.length} {company.positions.length > 2 ? "Oportunities" : "opportunity"} at {company.name}</p>
                     <div>
-                        {job.positions.map((jo)=>(
-                        <div className="jo">
+                        {company.positions.map((jo)=>(
+                        <div className="jo" onClick={()=>navigate(`/jobdetail/${jo.id}`)} style={{cursor:"pointer"}}>
                             <div>
                                 <p>💼 {jo.workType}</p>
                                 <p>{loggedin ? <FontAwesomeIcon icon={jo.liked ? faHeartCircleCheck : faHeart} style={{cursor:"pointer"}} onClick={()=>handleLike(jo)}/> :"" }</p>
@@ -58,7 +81,7 @@ const Companyinfo = () => {
                             <div>
                                 <img src={jo.logo} />
                                 <div>
-                                    <p>{jo.company}</p>
+                                    <p>{company.name}</p>
                                    <p>{jo.title}</p>
                                    <p>📍 {jo.location}</p>
                                 </div>
@@ -76,10 +99,9 @@ const Companyinfo = () => {
                              </div>
                             <div className="match">
                                 {loggedin ? 
-                                   (profile.length!=0 ?
+                                   (profile.name ?
                                         <div>
                                             <p>match</p>
-                                            <p>View Job →</p>
                                         </div>: <p>🔒 Complete your profile to see match</p>
                                     ) :
                                  <p>🔒 Log In to see a match</p>}
@@ -91,7 +113,19 @@ const Companyinfo = () => {
                 </div>
                 <div>
                     <h2>Explore More Companies</h2>
-                    <div></div>
+                    <div className="explore">
+                       {explore.map((company)=>(
+                        <div className="explorecompany">
+                          <img src={company.img}></img>
+                          <div>
+                            <h2>{company.name}</h2>
+                            <p>{company.industry}</p>
+                            <p>{company.description}</p>
+                            <p>{company.positions.length} {company.positions.length < 2 ?  "job" : "jobs"}<button onClick={()=>(navigate(`/companyinfo/${company.id}`))}>View Company ↗</button></p>
+                          </div>
+                        </div>
+                       ))}
+                    </div>
                 </div>
             </div>
          }

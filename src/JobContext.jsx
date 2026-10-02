@@ -37,7 +37,8 @@ export function Jobprovider({children}){
         skills:[],
         jobcategory: "",
         worktype:"",
-        jobtype:""
+        jobtype:"",
+        experiencelevel:""
     })
 
     console.log(profile)
@@ -54,12 +55,25 @@ export function Jobprovider({children}){
         skill:"",
         jobcategory: "Technology",
         worktype:"",
-        jobtype:""
+        jobtype:"",
+        experiencelevel:""
     })
 
     function hanldeDeleteskill(skill){
         const updatedskills = profile.skills.filter(ski=>ski!=skill)
         setProfile({...profile,skills:updatedskills})
+    }
+
+    function handleLike(jo){
+        setJobs(jobs.map((job)=>{
+            if(job.id==jo.id){
+                return{...job, liked:!jo.liked}
+            }
+            else{
+                return job
+            }
+        }))
+        console.log("liked")
     }
 
 
@@ -81,8 +95,12 @@ export function Jobprovider({children}){
         .then(data=>(setCompanies(data),console.log(data)))
     },[])
 
+    function calculateMatch(job){
+        
+    }
+
     return(
-        <JobContext.Provider value={{companies,filter,setFilter,search,setSearch,selected,setSelected,editmode,setEditmode,profileCreated,setProfilecreated,show,setShow,signuptemp,setSignuptemp,signupdata,setSignupdata,temp,setTemp,logindata,setLogindata,featured,match,profile,setProfile,tempProfile,settempProfile,loggedin,setLoggedin,marquee,jobs,setJobs}}>
+        <JobContext.Provider value={{calculateMatch,handleLike,companies,filter,setFilter,search,setSearch,selected,setSelected,editmode,setEditmode,profileCreated,setProfilecreated,show,setShow,signuptemp,setSignuptemp,signupdata,setSignupdata,temp,setTemp,logindata,setLogindata,featured,match,profile,setProfile,tempProfile,settempProfile,loggedin,setLoggedin,marquee,jobs,setJobs}}>
             {children}
         </JobContext.Provider>
     )

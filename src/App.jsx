@@ -9,6 +9,7 @@ import Clearshow from "./Clearshow";
 import Profile from "./Profile";
 import Companies from "./Companies";
 import Companyinfo from "./Companyinfo";
+import Jobdetail from "./Jobdetail";
 const App = () => {
     const {loggedin} = useContext(JobContext)
     const navigate = useNavigate()
@@ -30,6 +31,8 @@ const App = () => {
                 <Route path="/myprofile" element={<Profile/>}></Route>
                 <Route path="/company" element={<Companies/>}></Route>
                 <Route path={`companyinfo/:id` }element={<Companyinfo/>}></Route>
+                <Route path={`jobdetail/:id` }element={<Jobdetail/>}></Route>
+                <Route path={`find/jobdetail/:id` }element={<Jobdetail/>}></Route>
             </Routes>
         </div>
     );

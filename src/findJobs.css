@@ -212,6 +212,12 @@
     padding: 5px;
 }
 
+.jo .match div p{
+    text-align: center;
+    width: 100px;
+    background-color: #90ba7f;
+}
+
 .jo p:nth-child(5){
     text-align: end;
     font-size: 12px;

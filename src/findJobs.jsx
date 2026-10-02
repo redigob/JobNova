@@ -3,11 +3,68 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import './findJobs.css'
 import { use, useContext, useEffect, useState } from "react";
 import JobContext from "./JobContext";
+import { useNavigate } from "react-router-dom";
 
 const FindJobs = () => {
-    const {filter,setFilter,search,setSearch,jobs,setJobs,loggedin,profile} = useContext(JobContext)
+    const {handleLike,filter,setFilter,search,setSearch,jobs,setJobs,loggedin,profile} = useContext(JobContext)
     let tempJobs = jobs;
     const [showlong,setShowlong] = useState(false)
+    const navigate = useNavigate()
+
+    function calculateMatch(job){
+        let  skillpercent = 0;
+        let  worktypepercent = 0;
+        let  experiencepercent = 0;
+        let  jobtypepercent = 0
+        let  categorypercent = 0
+        
+        
+        console.log(job)
+        const matchedSkills = job.skills.filter(skill=>(
+            profile.skills.map(s=>s.toLowerCase()).includes(skill.toLowerCase())
+        ))
+        
+        skillpercent = (matchedSkills.length/job.skills.length) * 100;
+        
+        if(job.category.toLowerCase() == profile.jobcategory.toLowerCase()){
+            categorypercent = 100
+        }
+        else{
+             categorypercent = 0;
+        }
+
+        if(job.employmentType==profile.jobtype){
+             jobtypepercent = 100
+        }
+        else{
+             jobtypepercent = 0
+        }
+
+        if(job.workType==profile.worktype){
+             worktypepercent = 100
+        }
+        else{
+             worktypepercent = 0
+        }
+  
+        if(job.experience==profile.experiencelevel){
+            experiencepercent = 100
+        }
+        else{
+            experiencepercent = 0
+        }
+
+        const match = skillpercent * 0.5 +
+                      worktypepercent * 0.1 +
+                      categorypercent * 0.15 +
+                      experiencepercent * 0.2 +
+                      jobtypepercent * 0.05 ;
+
+       (match && console.log("match" , match))
+
+        return Math.round(match)
+
+    }
 
     if(filter.location){
         tempJobs = tempJobs.filter((job)=>job.workType==filter.location)
@@ -37,16 +94,7 @@ const FindJobs = () => {
         job.company.toLowerCase().includes(search.toLowerCase()) 
     ))
 
-    function handleLike(jo){
-        setJobs(jobs.map((job)=>{
-            if(job.id==jo.id){
-                return{...job, liked:!jo.liked}
-            }
-            else{
-                return job
-            }
-        }))
-    }
+    
 
     return (
         <div className="findjobs">
@@ -188,7 +236,7 @@ const FindJobs = () => {
                     <p>{tempJobs.length} Available Jobs</p>
                     <div>
                        {tempJobs && tempJobs.map((jo)=>(
-                        <div className="jo">
+                        <div className="jo" style={{cursor:"pointer"}} onClick={()=>navigate(`jobdetail/${jo.id}`)}>
                             <div>
                                 <p>💼 {jo.workType}</p>
                                 <p>{loggedin ? <FontAwesomeIcon icon={jo.liked ? faHeartCircleCheck : faHeart} style={{cursor:"pointer"}} onClick={()=>handleLike(jo)}/> :"" }</p>
@@ -214,10 +262,9 @@ const FindJobs = () => {
                              </div>
                             <div className="match">
                                 {loggedin ? 
-                                   (profile.length!=0 ?
+                                   (profile.name ?
                                         <div>
-                                            <p>match</p>
-                                            <p>View Job →</p>
+                                            <p>{calculateMatch(jo)}% match</p>
                                         </div>: <p>🔒 Complete your profile to see match</p>
                                     ) :
                                  <p>🔒 Log In to see a match</p>}

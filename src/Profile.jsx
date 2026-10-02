@@ -3,7 +3,7 @@ import './Profile.css'
 import JobContext from './JobContext';
 
 const Profile = () => {
-    const {setSelected,tempProfile,editmode,setEditmode,profileCreated,setProfilecreated,settempProfile,profile,setProfile} =useContext(JobContext)
+    const {setSelected,tempProfile,editmode,setEditmode,profileCreated,setProfilecreated,settempProfile,profile,setProfile,jobs,companies} =useContext(JobContext)
     console.log(profile)
     console.log(tempProfile)
     function handleProfileSubmit(e){
@@ -27,7 +27,8 @@ const Profile = () => {
             field:tempProfile.field,
             jobcategory: tempProfile.jobcategory,
             worktype:tempProfile.worktype,
-            jobtype:tempProfile.jobtype
+            jobtype:tempProfile.jobtype,
+            experiencelevel:tempProfile.experiencelevel
         })
         setProfilecreated(true)    
         setEditmode(false)   
@@ -122,6 +123,14 @@ const Profile = () => {
                             <p>{skill}<span onClick={()=>hanldeDeleteskill(skill)}>✕</span></p>
                         ))}
                     </div>
+                    <div>
+                        <p>Available skills</p>
+                        <div>
+                           {jobs.map(job=>job.skills.map(skill=>(
+                            <p>{skill}</p>
+                           )))}
+                        </div>
+                    </div>
                 </div>
                 <div>
                     <h2>Career Preferences</h2>
@@ -176,15 +185,15 @@ const Profile = () => {
                         <p>Experience Level</p>
                         <div>
                             <div>
-                                <input type="radio" name='experience' onChange={(e)=>settempProfile({...tempProfile,experience:"Entry-level"})} required readOnly={profileCreated && !editmode ? true: false}/>
+                                <input type="radio" name='experience' onChange={(e)=>settempProfile({...tempProfile,experiencelevel:"Entry-level"})} required readOnly={profileCreated && !editmode ? true: false}/>
                                 <p>Entry Level</p>
                             </div>
                             <div>
-                                <input type="radio" name='experience' onChange={(e)=>settempProfile({...tempProfile,experience:"Mid-level"})} required readOnly={profileCreated && !editmode ? true: false}/>
+                                <input type="radio" name='experience' onChange={(e)=>settempProfile({...tempProfile,experiencelevel:"Mid-level"})} required readOnly={profileCreated && !editmode ? true: false}/>
                                 <p>Mid Level</p>
                             </div>
                             <div>
-                                <input type="radio" name='experience' onChange={(e)=>settempProfile({...tempProfile,experience:"Senior"})} required readOnly={profileCreated && !editmode ? true: false}/>
+                                <input type="radio" name='experience' onChange={(e)=>settempProfile({...tempProfile,experiencelevel:"Senior"})} required readOnly={profileCreated && !editmode ? true: false}/>
                                 <p>Senior</p>
                             </div>
                         </div>

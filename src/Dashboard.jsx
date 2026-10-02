@@ -9,6 +9,7 @@ const Dashboard = () => {
     const {setSearch,setSelected,setFilter,filter} = useContext(JobContext)
 
     function handleFind(category){
+        setSelected("find")
         setFilter({...filter,category:category})
         navigate("/find")
     }
@@ -42,7 +43,7 @@ const Dashboard = () => {
                         <h3>Grow Your Skills</h3>
                         <p>Discover the skills employers are looking for and identify areas where you can improve. Build a clear path toward the career you want.</p>
                         <p className="link" onClick={()=>(setSelected("career"),navigate("/career"))}>→ View roadmap</p>
-                    </div>
+                    </div> 
                 </div>
             </div>
             <div>
