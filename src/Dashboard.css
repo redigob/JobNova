@@ -165,7 +165,7 @@
     width: 250px;
     flex-direction: column;
     justify-content: center;
-    background: linear-gradient(90deg,#88a8891a,#658757);
+    background: linear-gradient(90deg,#88a88900,#658757);
 }
 
 .dashboard > div:nth-child(4) > div > div >div p:nth-child(3){
@@ -222,5 +222,37 @@
     .dashboard > div:nth-child(4) > div > div >div p:nth-child(3){
         color: rgb(24, 50, 24) ;
     }
+}
 
+@media (max-width:480px) {
+    .dashboard > div:nth-child(4) h2{
+        font-size: 23px;
+        margin-bottom: 10px;
+    }
+
+    .dashboard > div:nth-child(4) p:nth-child(3){
+        padding: 0px 30px;
+    }
+
+    .dashboard > div:nth-child(3) > div{
+        height: 40px;
+    }
+
+    .dashboard > div:nth-child(3) h2{
+        transform: scale(1);
+    }
+
+    .dashboard > div:nth-child(4) > div > div > div{
+        background: linear-gradient(90deg,#88a88900,#597e5bee,#3b573c);
+    }
+}
+
+@media (max-width:370px) {
+    .dashboard > div:nth-child(4) h2{
+        font-size: 18px;
+    }
+
+    .dashboard > div:nth-child(4) p:nth-child(3){
+        font-size: 15px;
+    }
 }

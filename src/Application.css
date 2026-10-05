@@ -1,0 +1,410 @@
+.application{
+    color: rgb(86, 85, 85);
+}
+
+.application h1, .application h2{
+    color: black;
+}
+
+.application > div:nth-child(1){
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 5px;
+    font-size: 20px;
+    background:linear-gradient(90deg,#8bb07d,#d0f1c2,#8bb07d);
+    padding: 110px 100px;
+    border-block: 1px solid #4e6d4e;
+}
+
+.application .pending{
+    border: 1px solid #344934;
+    border-radius: 10px;
+    margin: 20px;
+}
+
+.application .pending > div:nth-child(1){
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: space-between;
+    padding: 20px 50px 20px 30px ;
+}
+
+.application .pending > div:nth-child(1) svg{
+    font-size: 20px;
+}
+
+.application .pending > div:nth-child(1)>div:nth-child(2){
+    flex: 1;
+    margin-right: 20px;
+}
+
+.application .pending > div:nth-child(2){
+    display: grid;
+    grid-template-columns: 1fr ;
+    gap: 5px;
+    padding: 0px 30px 30px;
+}
+
+.application .pending > div:nth-child(2) .pendingjob{
+    display: grid;
+    grid-template-columns: 0.4fr 1.5fr 1.5fr 0.8fr;
+    align-items: center;
+    gap: 20px;
+    border:1px solid #4e6d4e ;
+    padding: 10px;
+}
+
+.application .pending > div:nth-child(2) .pendingjob img{
+   width: 100px;
+   height: 100px;
+   border-radius: 50%;
+}
+
+.application .pending > div:nth-child(2) .pendingjob div:nth-child(3){
+    background-color: rgb(215, 250, 215);
+    display: flex;
+    width: 80%;
+    align-items: center;
+    gap: 20px;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 14px;
+}
+
+.application .pending > div:nth-child(2) .pendingjob div:nth-child(4){
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+.application .pending > div:nth-child(2) .pendingjob div:nth-child(4) button{
+    width: 100px;
+    padding: 5px ;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    background-color:#c9c9c9 ;
+    cursor: pointer;
+}
+
+.application .pending > div:nth-child(2) .pendingjob div:nth-child(4) button:nth-child(1){
+    background-color: #8bb07d;
+}
+
+.application .applied{
+   padding: 30px;
+   border: 1px solid #344934;
+   border-radius: 10px;
+    margin: 20px;
+}
+
+.application .applied > div:nth-child(1){
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.application .applied > div:nth-child(1) div:nth-child(2){
+    display: flex;
+    align-items: center;
+    background-color: #d0f1c2;
+    padding: 10px;
+    gap: 10px;
+    border-radius: 10px;
+}
+
+.application .applied > div:nth-child(1) div:nth-child(2) select{
+    text-align: center;
+    padding: 3px;
+}
+
+.application .applied >  div:nth-child(2){
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 5px;
+    padding: 10px 0px;
+}
+
+.application .applied .appliedjob{
+    display: grid;
+    align-items: center;
+    grid-template-columns: 0.3fr 1fr 1fr 0.5fr;
+    padding: 10px;
+    border: 1px solid #4e6d4e;
+}
+
+.application .applied .appliedjob img{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+.application .applied .appliedjob select{
+    padding: 5px;
+    background-color: #d0f1c2;
+    border: none;
+    cursor: pointer;
+    width: 150px;
+    text-align: center;
+    display: block;
+}
+
+.application .pending > div:nth-child(2).none{
+    text-align: center;
+    font-size: 20px;
+    padding-top: 20px;
+    border-top: 1px solid black;
+    margin: 0px 30px;
+}
+
+.application .applied > div:nth-child(2).none {
+    text-align: center;
+    font-size: 20px;
+    padding-top: 20px;
+    margin-top: 20px;
+    border-top: 1px solid black;
+}
+
+.application .applied > div:nth-child(2):empty::after{
+    text-align: center;
+    font-size: 20px;
+    padding-top: 20px;
+    margin-top: 20px;
+    border-top: 1px solid black;
+    content: "You Don't have any job under this filter";
+}
+
+.application .appliedjob > p:nth-child(3){
+    color: black;
+    padding: 5px;
+    background-color: #8eb07f;
+    border: none;
+    cursor: pointer;
+    width: 150px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.appliedjob > div:nth-child(2){
+    margin-right: 20px;
+}
+
+.application .appliedjob > button:nth-child(5){
+    grid-column: span 4;
+    padding: 10px;
+    background-color: #d5f4a9;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+@media (max-width:955px) {
+    .application .pendingjob > div:nth-child(2) h2{
+        font-size: 20px;
+    }
+
+    .application .pending > div:nth-child(2) .pendingjob{
+        grid-template-columns: 0.2fr 2fr 3fr 0.1fr;
+    }
+
+    .application .applied .appliedjob{
+        grid-template-columns: 0.2fr 3fr 2fr 0.1fr;
+    }
+
+    .application .appliedjob > p:nth-child(3){
+        width: 120px;
+        display: block;
+    }
+    
+
+    .application .pending > div:nth-child(2) .pendingjob img,.application .applied .appliedjob img{
+        width: 70px;
+        height: 70px;
+    }
+
+    .application .pending > div:nth-child(2) .pendingjob div:nth-child(4) button{
+        width: 70px;
+    }
+}
+
+@media (max-width:860px) {
+    .appliedjob > div:nth-child(2) h2{
+        font-size: 20px;
+    }
+}
+
+@media (max-width:840px) {
+    .application .pending > div:nth-child(2) .pendingjob{
+        grid-template-columns: 0.1fr 2fr 2fr;
+    }
+
+    .application .pending > div:nth-child(2) .pendingjob div:nth-child(4){
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-column:  span 4;
+        align-self: end;
+    }
+
+    .application .pending > div:nth-child(2) .pendingjob img{
+        width: 100px;
+        height: 100px;
+    }
+
+    .application .pending > div:nth-child(2) .pendingjob div:nth-child(4) button{
+        width: 100%;
+    }
+
+    .application .pending > div:nth-child(2) .pendingjob div:nth-child(3){
+        gap: 8px;
+    }
+
+}
+
+@media (max-width:710px) {
+    .application .applied .appliedjob{
+        grid-template-columns: 1fr 4fr 2fr;;
+    }
+
+    .application .applied .appliedjob select{
+        grid-column: span 3;
+        width: 100%;
+        margin-block:10px -10px;
+        padding: 10px;
+    }
+
+    .application .applied .appliedjob img{
+        width: 100px;
+        height: 100px;
+    }
+}
+
+@media (max-width:660px) {
+    .application .pending > div:nth-child(2) .pendingjob{
+        grid-template-columns: 0.1fr 2fr 2.3fr;
+    }
+
+    .application .pending > div:nth-child(2) .pendingjob img,.application .applied .appliedjob img{
+        width: 70px;
+        height: 70px;
+    }
+
+    .pendingjob> div:nth-child(2){
+        display: flex;
+        flex-direction: column;
+        gap: 3px;
+        font-size: 13px;
+    }
+
+    .pendingjob > div:nth-child(3) > div:nth-child(2) h2{
+        font-size: 15px;
+    }
+
+    .appliedjob > div:nth-child(2) h2{
+        font-size: 15px;
+    }
+
+    .appliedjob > div:nth-child(2){
+        font-size: 15px;
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+    }
+
+
+    .application .pendingjob > div:nth-child(2) h2{
+        font-size: 15px;
+    }
+}
+
+
+@media (max-width:570px) {
+    .application .applied > div:nth-child(1) > div:nth-child(1) h1{
+        font-size: 25px;
+    }
+
+    .application .applied{
+        padding: 10px;
+    }
+
+    .application .pending > div:nth-child(1){
+        padding: 10px;
+    }
+
+    .application .pending > div:nth-child(2).none{
+        margin: 10px;
+    }
+
+    .application > div:nth-child(1){
+        padding: 100px 50px;
+    }
+}
+
+
+@media (max-width:530px) {
+    .application .pending > div:nth-child(2) .pendingjob{
+        grid-template-columns: 2fr 3fr ;
+    }
+
+    .application .applied .appliedjob{
+        grid-template-columns: 3fr 1fr;
+    }
+
+    .application .pending > div:nth-child(2) .pendingjob div:nth-child(3){
+        grid-column: span 3;
+    }
+
+    .application .pending > div:nth-child(2) .pendingjob img,.application .applied .appliedjob img{
+        display: none;
+    }
+
+    .application .pending > div:nth-child(2){
+        padding: 0px 10px 30px;
+    }
+}
+
+@media (max-width:450px) {
+    .application .applied > div:nth-child(1){
+        flex-direction: column;
+        gap: 5px;
+        align-items: normal;
+    }
+
+    .application .applied > div:nth-child(1) div:nth-child(2) select{
+        flex: 1;
+    }
+
+    .application .pending > div:nth-child(1) svg{
+        display: none;
+    }
+
+    .application .pending h2,.application .applied > div:nth-child(1) > div:nth-child(1) h1{
+        font-size: 20px;
+    }
+}
+
+@media (max-width:360px) {
+    .application .pending > div:nth-child(1) > div:nth-child(2){
+        margin-right: 0px;
+    }
+
+    .application > div:nth-child(1){
+        padding: 90px 20px;
+    }
+}
+
+@media (max-width:1206px) {
+    .application .pending > div:nth-child(2) .pendingjob div:nth-child(3){
+        width: 100%;
+    }
+}
+
+@media (max-width:420px) {
+    .appliedjob > div:nth-child(2){
+        font-size: 12px;
+    }
+}
+

@@ -7,7 +7,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeartCircleCheck,faHeart } from "@fortawesome/free-solid-svg-icons";
 
 const Companyinfo = () => {
-   const {companies,loggedin,profile} = useContext(JobContext)
+   const {calculateMatch,companies,loggedin,profile,jobs} = useContext(JobContext)
    const {id:ID} = useParams()
    const id =  Number(ID)
    const explore = companies.filter((company)=>company.id > id && company.id <= id+3)
@@ -73,12 +73,11 @@ const Companyinfo = () => {
                     <p>{company.positions.length} {company.positions.length > 2 ? "Oportunities" : "opportunity"} at {company.name}</p>
                     <div>
                         {company.positions.map((jo)=>(
-                        <div className="jo" onClick={()=>navigate(`/jobdetail/${jo.id}`)} style={{cursor:"pointer"}}>
+                        <div className="jo">
                             <div>
                                 <p>💼 {jo.workType}</p>
-                                <p>{loggedin ? <FontAwesomeIcon icon={jo.liked ? faHeartCircleCheck : faHeart} style={{cursor:"pointer"}} onClick={()=>handleLike(jo)}/> :"" }</p>
                             </div>
-                            <div>
+                            <div onClick={()=>navigate(`/jobdetail/${jo.id}`)} style={{cursor:"pointer"}}>
                                 <img src={jo.logo} />
                                 <div>
                                     <p>{company.name}</p>
@@ -101,7 +100,7 @@ const Companyinfo = () => {
                                 {loggedin ? 
                                    (profile.name ?
                                         <div>
-                                            <p>match</p>
+                                            <p>{calculateMatch(jo)}% match</p>
                                         </div>: <p>🔒 Complete your profile to see match</p>
                                     ) :
                                  <p>🔒 Log In to see a match</p>}

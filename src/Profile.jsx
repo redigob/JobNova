@@ -1,21 +1,27 @@
 import { useContext, useState } from 'react';
 import './Profile.css'
 import JobContext from './JobContext';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSearch } from '@fortawesome/free-solid-svg-icons';
 
 const Profile = () => {
-    const {setSelected,tempProfile,editmode,setEditmode,profileCreated,setProfilecreated,settempProfile,profile,setProfile,jobs,companies} =useContext(JobContext)
-    console.log(profile)
-    console.log(tempProfile)
+    const {tempProfile,editmode,setEditmode,profileCreated,setProfilecreated,settempProfile,profile,setProfile,jobs,companies} =useContext(JobContext)
+    const [search,setSearch] = useState('')
+    let availableskills = [...new Set(jobs.flatMap(job=>(job.skills)))]
+
+    if(search){
+        availableskills = availableskills.filter(skill=>skill.toLowerCase().includes(search.toLowerCase()))
+    }
+    
     function handleProfileSubmit(e){
        e.preventDefault()
-       if(profile.skills.length==0){
+       if(tempProfile.skills.length==0){
         document.getElementById("skills").scrollIntoView({
             behavior:"smooth"
         })
         window.alert("Enter skills to let job nova find a match for you")
        }
        else{
-        settempProfile({...tempProfile,skill:""})
         setProfile({...profile,
             name:tempProfile.name,
             email:tempProfile.email,
@@ -28,30 +34,29 @@ const Profile = () => {
             jobcategory: tempProfile.jobcategory,
             worktype:tempProfile.worktype,
             jobtype:tempProfile.jobtype,
-            experiencelevel:tempProfile.experiencelevel
+            experiencelevel:tempProfile.experiencelevel,
+            skills:tempProfile.skills
         })
         setProfilecreated(true)    
         setEditmode(false)   
        }
     }
 
-    function handleaddSkill(){
-      if(tempProfile.skill==""){
-        return
-      }
-      else{
-        setProfile({...profile,skills:[...profile.skills,tempProfile.skill]})
-        settempProfile({...tempProfile,skill:""})
-      }
+    function handleaddSkill(skill){
+        const found = tempProfile.skills.find(skil=>skil==skill)
+        if(found){
+            return
+        }
+        else{
+            settempProfile({...tempProfile,skills:[...tempProfile.skills,skill]})
+        }
     }
 
     function hanldeDeleteskill(skill){
-        const updatedskills = profile.skills.filter(ski=>ski!=skill)
-        setProfile({...profile,skills:updatedskills})
+        const updatedskills = tempProfile.skills.filter(ski=>ski!=skill)
+        settempProfile({...tempProfile,skills:updatedskills})
     }
 
-    console.log(profileCreated)
-    console.log(editmode)
 
     return (
         <div className={profileCreated && !editmode ? "profile disabled": "profile"}>
@@ -111,24 +116,24 @@ const Profile = () => {
                 <div id='skills'>
                     <h2>Skills</h2>
                     <label>
-                        <p>Skill</p>
+                        <p>Search</p>
                         <div>
-                        <input type='text' value={tempProfile.skill} onChange={(e)=>settempProfile({...tempProfile,skill:e.target.value})} readOnly={profileCreated && !editmode ? true: false}></input>
-                        <button type="button" onClick={()=>handleaddSkill()}>Add</button>
+                            <input type='text' value={search} onChange={(e)=>(setSearch(e.target.value))} disabled={profileCreated && !editmode ? true: false}></input>
+                            <FontAwesomeIcon icon={faSearch}/>
                         </div>
                     </label>
                     <p>Your skills:</p>
                     <div className='skills'>
-                        {profile.skills.map((skill)=>(
+                        {tempProfile.skills.map((skill)=>(
                             <p>{skill}<span onClick={()=>hanldeDeleteskill(skill)}>✕</span></p>
                         ))}
                     </div>
                     <div>
                         <p>Available skills</p>
                         <div>
-                           {jobs.map(job=>job.skills.map(skill=>(
-                            <p>{skill}</p>
-                           )))}
+                           {availableskills.map(skill=>(
+                            <p className={profileCreated && !editmode ? "disabled": ""} onClick={()=>handleaddSkill(skill)}>{skill} </p>
+                           ))}
                         </div>
                     </div>
                 </div>
@@ -151,15 +156,15 @@ const Profile = () => {
                         <p>Work Type</p>
                         <div>
                             <div>
-                                <input type="radio" name='work' onChange={(e)=>settempProfile({...tempProfile,worktype:"Remote"})} required readOnly={profileCreated && !editmode ? true: false}/>
+                                <input type="radio" name='work' onChange={(e)=>settempProfile({...tempProfile,worktype:"Remote"})} checked = {tempProfile.worktype=="Remote" ? true : false} required disabled={profileCreated && !editmode ? true: false}/>
                                 <p>Remote</p>
                             </div>
                             <div>
-                                <input type="radio" name='work' onChange={(e)=>settempProfile({...tempProfile,worktype:"Hybrid"})} required readOnly={profileCreated && !editmode ? true: false}/>
+                                <input type="radio" name='work' onChange={(e)=>settempProfile({...tempProfile,worktype:"Hybrid"})} checked = {tempProfile.worktype=="Hybrid" ? true : false}  required disabled={profileCreated && !editmode ? true: false}/>
                                 <p>Hybrid</p>
                             </div>
                             <div>
-                                <input type="radio" name='work' onChange={(e)=>settempProfile({...tempProfile,worktype:"Onsite"})} required readOnly={profileCreated && !editmode ? true: false}/>
+                                <input type="radio" name='work' onChange={(e)=>settempProfile({...tempProfile,worktype:"Onsite"})} checked = {tempProfile.worktype=="Onsite" ? true : false}  required disabled={profileCreated && !editmode ? true: false}/>
                                 <p>Onsite</p>
                             </div>
                         </div>
@@ -168,15 +173,15 @@ const Profile = () => {
                         <p>Job Type</p>
                         <div>
                             <div>
-                                <input type="radio" name='job' onChange={(e)=>settempProfile({...tempProfile,jobtype:"Full-time"})} required readOnly={profileCreated && !editmode ? true: false}/>
+                                <input type="radio" name='job' onChange={(e)=>settempProfile({...tempProfile,jobtype:"Full-time"})} checked = {tempProfile.jobtype=="Full-time" ? true : false} required disabled={profileCreated && !editmode ? true: false}/>
                                 <p>Full-time</p>
                             </div>
                             <div>
-                                <input type="radio" name='job' onChange={(e)=>settempProfile({...tempProfile,jobtype:"Part-time"})} required readOnly={profileCreated && !editmode ? true: false}/>
+                                <input type="radio" name='job' onChange={(e)=>settempProfile({...tempProfile,jobtype:"Part-time"})} checked = {tempProfile.jobtype=="Part-time" ? true : false} required disabled={profileCreated && !editmode ? true: false}/>
                                 <p>Part-time</p>
                             </div>
                             <div>
-                                <input type="radio" name='job' onChange={(e)=>settempProfile({...tempProfile,jobtype:"Internship"})} required readOnly={profileCreated && !editmode ? true: false}/>
+                                <input type="radio" name='job' onChange={(e)=>settempProfile({...tempProfile,jobtype:"Internship"})} checked = {tempProfile.jobtype=="Internship" ? true : false} required disabled={profileCreated && !editmode ? true: false}/>
                                 <p>Internship</p>
                             </div>
                         </div>
@@ -185,15 +190,15 @@ const Profile = () => {
                         <p>Experience Level</p>
                         <div>
                             <div>
-                                <input type="radio" name='experience' onChange={(e)=>settempProfile({...tempProfile,experiencelevel:"Entry-level"})} required readOnly={profileCreated && !editmode ? true: false}/>
+                                <input type="radio" name='experience' onChange={(e)=>settempProfile({...tempProfile,experiencelevel:"Entry-level"})} checked = {tempProfile.experiencelevel=="Entry-level" ? true : false} required disabled={profileCreated && !editmode ? true: false}/>
                                 <p>Entry Level</p>
                             </div>
                             <div>
-                                <input type="radio" name='experience' onChange={(e)=>settempProfile({...tempProfile,experiencelevel:"Mid-level"})} required readOnly={profileCreated && !editmode ? true: false}/>
+                                <input type="radio" name='experience' onChange={(e)=>settempProfile({...tempProfile,experiencelevel:"Mid-level"})} checked = {tempProfile.experiencelevel=="Mid-level" ? true : false} required disabled={profileCreated && !editmode ? true: false}/>
                                 <p>Mid Level</p>
                             </div>
                             <div>
-                                <input type="radio" name='experience' onChange={(e)=>settempProfile({...tempProfile,experiencelevel:"Senior"})} required readOnly={profileCreated && !editmode ? true: false}/>
+                                <input type="radio" name='experience' onChange={(e)=>settempProfile({...tempProfile,experiencelevel:"Senior"})} checked = {tempProfile.experiencelevel=="Senior" ? true : false} required disabled={profileCreated && !editmode ? true: false}/>
                                 <p>Senior</p>
                             </div>
                         </div>

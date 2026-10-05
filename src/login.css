@@ -123,6 +123,7 @@
     border-radius: 10px;
     border: none;
     outline: none;
+    cursor: pointer;
 }
 
 .login .signupform label:nth-child(8) div{

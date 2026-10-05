@@ -1,17 +1,46 @@
 import { useContext } from "react";
 import JobContext from "./JobContext";
 import './Jobdetail.css'
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart, faHeartCircleCheck } from "@fortawesome/free-solid-svg-icons";
 
 const Jobdetail = () => {
-    const {jobs,handleLike,loggedin,profile} = useContext(JobContext)
+    const {application,setApplication,calculateMatch,jobs,setJobs,handleLike,loggedin,profile} = useContext(JobContext)
     const {id} = useParams()
-    console.log(id)
-    console.log(jobs)
     const job = jobs.find(job=>job.id==id)
-    console.log(job)
+    const navigate = useNavigate()
+ 
+    console.log(jobs)
+
+    function handleapply(job){
+        const find = application.pending.find(jo=>jo.id==job.id)
+        if(find){
+            return
+        }
+
+        const today = new Date().toLocaleDateString("en-US",{
+            month:"short",
+            day:"numeric",
+            year:"numeric"
+        });
+
+        const newJob = jobs.map(jo=>{
+            if(jo.id==job.id){
+                return {...jo,applieddate:today}
+            }
+            else{
+                return jo
+            }
+        })
+
+        setJobs(newJob)
+        const found = newJob.find(jo=>jo.id==job.id)
+        console.log(found)
+
+        setApplication({...application,pending:[...application.pending,found]})
+        window.open(job.applyUrl, "_blank")
+    }
 
     return (
         <div className="jobdetail">
@@ -25,11 +54,11 @@ const Jobdetail = () => {
                     <p>{job.location} • {job.workType}  • {job.employmentType}</p>
                 </div>
             </div>
-            {loggedin && profile.firstname && <div>
-               <p>{} Match</p>
+            {loggedin && profile.name && <div>
+               <p>{calculateMatch(job)}% Match</p>
                <p>
-                <button>Apply Now↗</button>
-                <button onClick={()=>handleLike(job)}><FontAwesomeIcon icon={job.liked ? faHeartCircleCheck : faHeart}/> {job.liked ? "Saved" : "save"}</button>
+                <button onClick={()=>handleapply(job)} disabled = {job.applied ? true : false}>{job.applied ? "Applied" : "Apply Now ↗"}</button>
+                <button  onClick={()=>handleLike(job)}><FontAwesomeIcon icon={job.liked ? faHeartCircleCheck : faHeart}/> {job.liked ? "Saved" : "save"}</button>
                </p>
             </div> }
            </div>
@@ -64,7 +93,7 @@ const Jobdetail = () => {
                 <p>Employement Type : {job.employmentType}</p>
                 <p>Experience Level : {job.experience}</p>
 
-                {loggedin ? (profile.name  ? <button> Apply Now ↗</button> : <div className="logintosee">🔒 Fill Your Profile to Apply</div> ) : <div className="logintosee">🔒 Log In to Apply</div> }
+                {loggedin ? (profile.name  ? <button disabled = {job.applied ? true : false} onClick={()=>handleapply(job)}> {job.applied ? "Applied" : "Apply Now ↗"}</button> : <div className="logintosee">🔒 Fill Your Profile to Apply</div> ) : <div className="logintosee">🔒 Log In to Apply</div> }
                 {loggedin && <button onClick={()=>handleLike(job)}><FontAwesomeIcon icon={job.liked ? faHeartCircleCheck : faHeart}/> {job.liked ? "Saved" : "save"}</button>}
             </div>
            </div>

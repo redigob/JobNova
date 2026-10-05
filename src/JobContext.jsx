@@ -1,4 +1,4 @@
-import {createContext, useEffect, useState } from "react";
+import {createContext, useContext, useEffect, useState } from "react";
 export const JobContext = createContext()
 
 export function Jobprovider({children}){
@@ -17,6 +17,14 @@ export function Jobprovider({children}){
     const [selected,setSelected] = useState("/")
     const [search,setSearch] = useState('')
     const [companies,setCompanies] = useState([])
+    const [applicationFilter,setApplicationfilter] = useState('')
+    let saved;
+    if(jobs){
+        saved = jobs.filter(jo=>jo.liked== true) 
+    }
+
+    console.log("saved: ",saved)
+    const [application,setApplication] = useState({pending:[],applied:[]})
     const [filter,setFilter] = useState({
         location:'', 
         jobtype:'',
@@ -52,17 +60,13 @@ export function Jobprovider({children}){
         field:"",
         education:"high-school",
         grad:"",
-        skill:"",
         jobcategory: "Technology",
         worktype:"",
         jobtype:"",
-        experiencelevel:""
+        experiencelevel:"",
+        skills:[]
     })
 
-    function hanldeDeleteskill(skill){
-        const updatedskills = profile.skills.filter(ski=>ski!=skill)
-        setProfile({...profile,skills:updatedskills})
-    }
 
     function handleLike(jo){
         setJobs(jobs.map((job)=>{
@@ -96,11 +100,62 @@ export function Jobprovider({children}){
     },[])
 
     function calculateMatch(job){
-        
-    }
+            let  skillpercent = 0;
+            let  worktypepercent = 0;
+            let  experiencepercent = 0;
+            let  jobtypepercent = 0
+            let  categorypercent = 0
+            
+            
+            console.log(job)
+            const matchedSkills = job.skills.filter(skill=>(
+                profile.skills.map(s=>s.toLowerCase()).includes(skill.toLowerCase())
+            ))
+            
+            skillpercent = (matchedSkills.length/job.skills.length) * 100;
+            
+            if(job.category.toLowerCase() == profile.jobcategory.toLowerCase()){
+                categorypercent = 100
+            }
+            else{
+                 categorypercent = 0;
+            }
+    
+            if(job.employmentType==profile.jobtype){
+                 jobtypepercent = 100
+            }
+            else{
+                 jobtypepercent = 0
+            }
+    
+            if(job.workType==profile.worktype){
+                 worktypepercent = 100
+            }
+            else{
+                 worktypepercent = 0
+            }
+      
+            if(job.experience==profile.experiencelevel){
+                experiencepercent = 100
+            }
+            else{
+                experiencepercent = 0
+            }
+    
+            const match = skillpercent * 0.5 +
+                          worktypepercent * 0.1 +
+                          categorypercent * 0.15 +
+                          experiencepercent * 0.2 +
+                          jobtypepercent * 0.05 ;
+    
+           (match && console.log("match" , match))
+    
+            return Math.round(match)
+    
+        }
 
     return(
-        <JobContext.Provider value={{calculateMatch,handleLike,companies,filter,setFilter,search,setSearch,selected,setSelected,editmode,setEditmode,profileCreated,setProfilecreated,show,setShow,signuptemp,setSignuptemp,signupdata,setSignupdata,temp,setTemp,logindata,setLogindata,featured,match,profile,setProfile,tempProfile,settempProfile,loggedin,setLoggedin,marquee,jobs,setJobs}}>
+        <JobContext.Provider value={{saved,applicationFilter,setApplicationfilter,application,setApplication,calculateMatch,handleLike,companies,filter,setFilter,search,setSearch,selected,setSelected,editmode,setEditmode,profileCreated,setProfilecreated,show,setShow,signuptemp,setSignuptemp,signupdata,setSignupdata,temp,setTemp,logindata,setLogindata,featured,match,profile,setProfile,tempProfile,settempProfile,loggedin,setLoggedin,marquee,jobs,setJobs}}>
             {children}
         </JobContext.Provider>
     )

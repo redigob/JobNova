@@ -101,6 +101,7 @@
     padding: 5px 20px;
     border: none;
     font-size: 15px;
+    cursor: pointer;
 }
 
 .findjobs > div:nth-child(2) > div:nth-child(2){
@@ -150,6 +151,10 @@
     align-items: center;
     padding-bottom: 10px;
     border-bottom: 1px solid rgb(147, 169, 127);
+}
+
+.jo > div:nth-child(1) >p:nth-child(2){
+    color: #d4280d;
 }
 
 .jo > div:nth-child(2){
@@ -205,6 +210,10 @@
     margin-left: 5px;
 }
 
+.jo .match {
+    margin-top: 10px;
+}
+
 .jo .match > p{
     background-color: #d0f1c2;
     text-align: center;
@@ -222,6 +231,12 @@
     text-align: end;
     font-size: 12px;
     margin-top: 10px;
+}
+
+@media (max-width:1150px) {
+    .findjobs > div:nth-child(2) > div:nth-child(2) > div:nth-child(2){
+        gap: 10px;
+    }
 }
 
 @media (max-width:1000px) {

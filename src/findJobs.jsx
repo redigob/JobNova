@@ -6,65 +6,12 @@ import JobContext from "./JobContext";
 import { useNavigate } from "react-router-dom";
 
 const FindJobs = () => {
-    const {handleLike,filter,setFilter,search,setSearch,jobs,setJobs,loggedin,profile} = useContext(JobContext)
+    const {calculateMatch,handleLike,filter,setFilter,search,setSearch,jobs,setJobs,loggedin,profile} = useContext(JobContext)
     let tempJobs = jobs;
     const [showlong,setShowlong] = useState(false)
     const navigate = useNavigate()
-
-    function calculateMatch(job){
-        let  skillpercent = 0;
-        let  worktypepercent = 0;
-        let  experiencepercent = 0;
-        let  jobtypepercent = 0
-        let  categorypercent = 0
-        
-        
-        console.log(job)
-        const matchedSkills = job.skills.filter(skill=>(
-            profile.skills.map(s=>s.toLowerCase()).includes(skill.toLowerCase())
-        ))
-        
-        skillpercent = (matchedSkills.length/job.skills.length) * 100;
-        
-        if(job.category.toLowerCase() == profile.jobcategory.toLowerCase()){
-            categorypercent = 100
-        }
-        else{
-             categorypercent = 0;
-        }
-
-        if(job.employmentType==profile.jobtype){
-             jobtypepercent = 100
-        }
-        else{
-             jobtypepercent = 0
-        }
-
-        if(job.workType==profile.worktype){
-             worktypepercent = 100
-        }
-        else{
-             worktypepercent = 0
-        }
-  
-        if(job.experience==profile.experiencelevel){
-            experiencepercent = 100
-        }
-        else{
-            experiencepercent = 0
-        }
-
-        const match = skillpercent * 0.5 +
-                      worktypepercent * 0.1 +
-                      categorypercent * 0.15 +
-                      experiencepercent * 0.2 +
-                      jobtypepercent * 0.05 ;
-
-       (match && console.log("match" , match))
-
-        return Math.round(match)
-
-    }
+    console.log(jobs)
+    
 
     if(filter.location){
         tempJobs = tempJobs.filter((job)=>job.workType==filter.location)
@@ -236,12 +183,12 @@ const FindJobs = () => {
                     <p>{tempJobs.length} Available Jobs</p>
                     <div>
                        {tempJobs && tempJobs.map((jo)=>(
-                        <div className="jo" style={{cursor:"pointer"}} onClick={()=>navigate(`jobdetail/${jo.id}`)}>
-                            <div>
+                        <div className="jo" >
+                            <div >
                                 <p>💼 {jo.workType}</p>
                                 <p>{loggedin ? <FontAwesomeIcon icon={jo.liked ? faHeartCircleCheck : faHeart} style={{cursor:"pointer"}} onClick={()=>handleLike(jo)}/> :"" }</p>
                             </div>
-                            <div>
+                            <div style={{cursor:"pointer"}} onClick={()=>navigate(`jobdetail/${jo.id}`)}>
                                 <img src={jo.logo} />
                                 <div>
                                     <p>{jo.company}</p>

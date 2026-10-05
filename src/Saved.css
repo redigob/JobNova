@@ -1,0 +1,66 @@
+.saved .header{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 5px;
+    font-size: 20px;
+    background:linear-gradient(90deg,#8bb07d,#d0f1c2,#8bb07d);
+    padding: 110px 100px;
+    border-block: 1px solid #4e6d4e;
+}
+
+.saved > div:nth-child(2):empty{
+    border: 1px solid black;
+    border-radius: 10px;
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+    padding: 100px ;
+}
+
+.saved > div:nth-child(2):empty::after{
+    content: "You don't have any saved Jobs";
+    font-size: 20px;
+}
+
+.saved > div:nth-child(2){
+    padding: 20px 1%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+}
+
+.saved .jo > div:nth-child(1) >p:nth-child(2){
+    color: black;
+}
+
+@media (max-width:950px) {
+    .saved > div:nth-child(2){
+        gap: 10px;
+    }
+}
+
+@media (max-width:885px) {
+    .saved > div:nth-child(2){
+        grid-template-columns: 1fr 1fr;
+        padding: 20px 2%;
+        gap: 10px;
+    }
+}
+
+@media (max-width:575px) {
+    .saved > div:nth-child(2){
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width:500px) {
+    .saved .header{
+        padding: 100px 50px;
+    }
+
+    .saved > div:nth-child(2):empty{
+        padding: 100px 10px;
+    }
+}
+

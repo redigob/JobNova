@@ -13,8 +13,7 @@
 .profile form .header h2{
     font-size: 40px;
     font-weight: 600;
-    background:linear-gradient(90deg,#2e4525,#90ba7f);
-    width: 500px;
+    background:linear-gradient(#2e4525,#90ba7f);
     margin: 0px auto;
     background-clip: text;
     color: transparent;
@@ -47,6 +46,7 @@
     background-clip: text;
     margin-bottom: 10px;
     display: flex;
+    align-items: center;
     justify-content: space-between;
 }
 
@@ -78,8 +78,7 @@
     width: 100%;
     padding: 5px;
     outline: none;
-    border: 1px solid #2e4525;
-    background-color: white;
+    border: none;
 }
 
 .profile form > div:nth-child(2) > div:nth-child(3){
@@ -94,41 +93,40 @@
 .profile form > div:nth-child(2) > div:nth-child(3) label div{
     display: flex;
     gap: 10px;
+    align-items: center;
+    background-color: white;
+    margin-top: 10px;
+    padding: 5px 10px;
+    border: 1px solid #2e4525;
 }
 
 .profile form > div:nth-child(2) > div:nth-child(3) label > input{
     flex: 1;
     padding: 5px;
     outline: none;
-    border: 1px solid #2e4525;
-}
-
-.profile form > div:nth-child(2) > div:nth-child(3) label button{
-    width: 100px;
-    background-color: #b0d0a2;
-    outline: none;
-    border: 1px solid #86a47a;
-    border-radius: 20px;
-    color: white;
-    box-shadow: 0px 0px 10px #322d2d38;
-    cursor: pointer;
+    border-radius: 10px;
 }
 
 .profile form > div:nth-child(2) > div:nth-child(3)  div:nth-child(4){
     padding: 5px 0px;
     display: flex;
-    gap: 20px;
+    flex-wrap: wrap;
+    gap: 10px;
 }
 
 .profile form > div:nth-child(2) > div:nth-child(3) > div:nth-child(4):empty::after{
     content: "Add skills to let JobNova find a match for you!!";
     text-align: center;
+    background-color: #cecfce;
+    width: 100%;
+    padding: 5px;
 }
 
 .profile form  > div:nth-child(2) > div:nth-child(3) > div:nth-child(4) p{
     display: flex;
     align-items: center;
     gap: 10px;
+    width: fit-content;
     padding: 5px 10px;
     border-radius: 10px;
     background-color: white;
@@ -211,4 +209,56 @@
     border-radius: 10px;
     padding: 5px;
     cursor: pointer;
+}
+
+.profile form > div:nth-child(2) > div:nth-child(3) div:nth-child(5) > div p.disabled{
+    cursor: no-drop;
+    pointer-events: none;
+}
+
+@media (max-width:1020px) {
+    .profile form > div:nth-child(2) > div:nth-child(4){
+        gap: 10px;
+    }
+}
+
+@media (max-width:970px) {
+    .profile form > div:nth-child(2) > div:nth-child(4) label{
+        grid-column: span 2;
+    }
+}
+
+@media (max-width:550px) {
+    .profile form > div:nth-child(2){
+        padding: 10px 5% 30px;
+    }
+
+    .profile form .header{
+        padding: 110px 50px;
+    }
+
+    .profile form h2 span p{
+        width: 150px;
+    }
+}
+
+@media (max-width:400px) {
+    .profile form > div:nth-child(2){
+        padding: 10px 1% 30px;
+    }
+
+    .profile form .header{
+        padding: 110px 30px;
+    }
+
+    .profile form > div:nth-child(2) h2{
+        font-size: 20px;
+    }
+}
+
+@media (max-width:350px) {
+    .profile form h2 span p{
+        width: 120px;
+        padding: 5px;
+    }
 }

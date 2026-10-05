@@ -11,10 +11,12 @@ const Login = () => {
     const [err2,setErr2] = useState(false)
     const [err3,setErr3] = useState(false)
     const [err4,setErr4] = useState(false)
+    const [err5,setErr5] = useState(false)
+    const [err6,setErr6] = useState(false)
     const [success,setSuccess] = useState(false)
     const [message,setMessage] = useState('')
 
-    const {setLoggedin,temp,setTemp,logindata,setLogindata,signuptemp,setSignuptemp,signupdata,setSignupdata} = useContext(JobContext)
+    const {setLoggedin,temp,setTemp,setLogindata,signuptemp,setSignuptemp,signupdata,setSignupdata} = useContext(JobContext)
     
     const handleLogin = (e)=>{
         e.preventDefault()
