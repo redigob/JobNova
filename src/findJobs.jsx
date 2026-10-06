@@ -1,4 +1,4 @@
-import { faHeart, faHeartCircleCheck, faSearch,faArrowDown, faArrowUp } from "@fortawesome/free-solid-svg-icons";
+import { faHeart, faHeartCircleCheck, faSearch,faArrowDown, faArrowUp, faArrowLeft, faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import './findJobs.css'
 import { use, useContext, useEffect, useState } from "react";
@@ -11,7 +11,14 @@ const FindJobs = () => {
     const [showlong,setShowlong] = useState(false)
     const navigate = useNavigate()
     console.log(jobs)
+    const [currentpage,setCurrentpage]=useState(1)
+    const jobsperpage = 6
+    const start = (currentpage -1) * jobsperpage
+    const end = start + jobsperpage;
     
+    useEffect(()=>{
+       setCurrentpage(1)
+    },[filter])
 
     if(filter.location){
         tempJobs = tempJobs.filter((job)=>job.workType==filter.location)
@@ -41,7 +48,19 @@ const FindJobs = () => {
         job.company.toLowerCase().includes(search.toLowerCase()) 
     ))
 
-    
+    const secondtemp = [...tempJobs];
+    tempJobs = tempJobs.slice(start,end)
+
+
+    const handlepaggination = (message)=>{
+      if(message=="before"){
+        setCurrentpage(currentpage - 1)
+      }
+      else{
+        setCurrentpage(currentpage +1)
+      }
+    }
+    console.log(currentpage)
 
     return (
         <div className="findjobs">
@@ -179,8 +198,9 @@ const FindJobs = () => {
 
                     <button onClick={()=>setFilter({location:'',jobtype:'',experience:'',salary:[],category:''})}>Clear Filter</button>
                 </div>
+
                 <div>
-                    <p>{tempJobs.length} Available Jobs</p>
+                    <p>{secondtemp.length} Available Jobs</p>
                     <div>
                        {tempJobs && tempJobs.map((jo)=>(
                         <div className="jo" >
@@ -219,6 +239,16 @@ const FindJobs = () => {
                             <p>posted {jo.postedDate}</p>
                         </div>
                        ))}
+                    </div>
+
+                    <div className="buttons">
+                        <button disabled={currentpage==1 ? true : false} onClick={()=>handlepaggination("before")} ><FontAwesomeIcon icon={faArrowLeft}/></button>
+                        <button className={currentpage==1 ? "selected" : ""}>1</button>
+                        <button className={currentpage==2 ? "selected" : ""}>2</button>
+                        <button className={currentpage==3 ? "selected" : ""}>3</button>
+                        <button className={currentpage==4 ? "selected" : ""}>4</button>
+                        <button className={currentpage==5 ? "selected" : ""}>5</button>
+                        <button disabled={currentpage==5 || secondtemp.length <= 6  || tempJobs.length < 6 ? true : false} onClick={()=>handlepaggination("after")}><FontAwesomeIcon icon={faArrowRight}/></button>
                     </div>
                 </div>
             </div>

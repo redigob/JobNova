@@ -7,14 +7,10 @@ import JobContext from './JobContext';
 const Login = () => {
     const [visible,setVisible] = useState(false)
     const [login,setLogin] = useState(true)
-    const [err1,setErr1] = useState(false)
-    const [err2,setErr2] = useState(false)
-    const [err3,setErr3] = useState(false)
     const [err4,setErr4] = useState(false)
-    const [err5,setErr5] = useState(false)
-    const [err6,setErr6] = useState(false)
     const [success,setSuccess] = useState(false)
     const [message,setMessage] = useState('')
+    const [Show,setShow] = useState(false)
 
     const {setLoggedin,temp,setTemp,setLogindata,signuptemp,setSignuptemp,signupdata,setSignupdata} = useContext(JobContext)
     
@@ -46,27 +42,6 @@ const Login = () => {
     }
 
     const handleSignup = (e)=>{
-        e.preventDefault()
-        if(signuptemp.password.length < 8){
-            setErr1(true)
-        }
-        else{
-            setErr1(false)
-        }
-        if(signuptemp.confirm!=signuptemp.password){
-            setErr2(true)
-        }
-        else{
-            setErr2(false)
-        }
-        if(!signuptemp.agreed){
-            setErr3(true)
-        }
-        else{
-            setErr3(false)
-        }
-
-        console.log(signuptemp.password.length)
         if(signuptemp.password.length >= 8 && signuptemp.confirm==signuptemp.password && signuptemp.agreed){
            setSignupdata(signuptemp)
            setSuccess(true)
@@ -75,6 +50,8 @@ const Login = () => {
            setTemp({username:'',password:''})
         }
     }
+
+    console.log(signuptemp)
     return (
         <div className="login">
             <p className={success ? "success": ""}>You are successfully signed Up!! Please Log In to continue using JobNova</p>
@@ -86,9 +63,6 @@ const Login = () => {
                             }>Log In</p>
 
                 <p onClick={()=>(setLogin(false),
-                                setErr1(false),
-                                setErr2(false),
-                                setErr3(false),
                                 setSignuptemp({first:'',last:'',username:'',password:'',confirm:'',agreed:false})
                             )}>Sign Up</p>
             </div>
@@ -160,10 +134,11 @@ const Login = () => {
                     <input value={signuptemp.password} 
                            onChange={(e)=>setSignuptemp({...signuptemp,password : e.target.value})} 
                            required
-                           type='password'/>
+                           type={Show ? "text" : "password"} 
+                           placeholder='********' />
+                    <FontAwesomeIcon icon={Show ? faEye : faEyeSlash } onClick={()=>setShow(!Show)} />
                 </div>
                </label>
-               <p className={err1 ? "visibleerror1" : ""}>*Password must be 8 in length</p>
 
                <label>
                 <p>confirm password</p>
@@ -171,11 +146,10 @@ const Login = () => {
                     <input value={signuptemp.confirm} 
                            onChange={(e)=>setSignuptemp({...signuptemp,confirm : e.target.value})} 
                            required
-                           type='password'/>
+                           placeholder='********'/>
                 </div>
                </label>
 
-               <p className={err2 ? "visibleerror2" : ""}>*Password must match</p>
             
                 <label>
                 <div>
@@ -187,7 +161,6 @@ const Login = () => {
                 </div>
                </label>
 
-               <p className={err3 ? "visibleerror3" : ""}>*You have to check the agreement</p>
                <button onClick={(e)=>handleSignup(e)}>Sign Up</button>
             </form>}
 
@@ -197,12 +170,11 @@ const Login = () => {
                 <p><img src="images/apple.png" ></img> <span>Continue with Apple</span></p>
 
                 <p>{login ? "Don't have an account?" :" Already have an account? "}<span onClick={()=>{
-                    (setLogin(!login),
-                    setTemp({username:'',password:''},
-                    setErr4(false)),
-                    setErr1(false),
-                    setErr2(false),
-                    setErr3(false)),
+                    (
+                        setLogin(!login),
+                        setTemp({username:'',password:''},
+                        setErr4(false))
+                    ),
                     setSignuptemp({first:'',last:'',username:'',password:'',confirm:'',agreed:false})
                     }}>{login ? "Sign Up" : "Log In"}</span></p>
             </div>

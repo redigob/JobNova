@@ -18,7 +18,6 @@ const Featured = () => {
                      <div className="job">
                         <div>
                            <p>💼 {job.type}</p>
-                           <p><FontAwesomeIcon icon={job.liked ? faHeartCircleCheck :faHeart} /></p>
                         </div>
                         <div>
                            <img src={job.image}></img>

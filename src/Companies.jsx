@@ -11,8 +11,10 @@ const Companies = () => {
   const [search,setSearch] = useState('')
   const navigate = useNavigate()
   let tempcompanies = [...companies]
+  let secondtemp = [...companies]
   if(category){
     tempcompanies = tempcompanies.filter(companies=>companies.industry.toLowerCase()==category.toLowerCase())
+    secondtemp = secondtemp.filter(companies=>companies.industry.toLowerCase()==category.toLowerCase())
   }
 
   const [currentpage,setCurrentpage] = useState(1)
@@ -47,6 +49,7 @@ const Companies = () => {
 
   if(search){
     tempcompanies= tempcompanies.filter((company) => company.name.toLowerCase().includes(search.toLowerCase()))
+    secondtemp = secondtemp.filter((company) => company.name.toLowerCase().includes(search.toLowerCase()))
   }
 
   
@@ -104,7 +107,7 @@ const Companies = () => {
                 <p onClick={()=>handleCategory("")} style={{cursor:"pointer"}}>All Companies</p>
                 {category ? <p>{category}</p> : ""}
               </p>
-              <p>{tempcompanies.length}</p>
+              <p>{secondtemp.length}</p>
             </div>
             <div>
               {tempcompanies.map((company)=>(
@@ -124,7 +127,7 @@ const Companies = () => {
               <button className={selected=="2" ? "selected" : ""} >2</button>
               <button className={selected=="3" ? "selected" : ""} >3</button>
               <button className={selected=="4" ? "selected" : ""} >4</button>
-              <button disabled={currentpage==4 || tempcompanies.length<6 ? true : false} onClick={()=>handlePagination("next")} ><FontAwesomeIcon icon={faArrowRight}/></button>
+              <button disabled={currentpage==4 || secondtemp.length<=6 ||tempcompanies.length < 6 ? true : false} onClick={()=>handlePagination("next")} ><FontAwesomeIcon icon={faArrowRight}/></button>
             </div>
           </div>
       </div>
