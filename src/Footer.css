@@ -1,13 +1,18 @@
 .footer{
-    padding: 20px;
-    background-color: #92c088;
+    padding:0px 10px;
+    background-color: #f8fcf8;
     margin-top: 20px;
+    font-size: 18px;
+    display: grid;
+    border-top: 1px solid black;
+    grid-template-columns: 1fr 1fr;
 }
 
 .footer .header{
     display: flex;
     gap: 20px;
     align-items: start;
+    padding: 10px 0px;
 }
 
 .footer .header p{
@@ -18,17 +23,16 @@
 }
 
 .footer .header img{
-    width: 70px;
+    width: 100px;
 }
 
 .footer > div:nth-child(2){
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
     gap: 20px;
-    margin-top: 10px;
-    padding-block: 10px;
-    border-block: 1px solid #2c6029;
-    
+    margin-left: 10px;
+    border-left: 1px solid #2c6029;
+    padding: 10px 10px 0px;
 }
 
 .footer > div:nth-child(2) > div{
@@ -41,6 +45,7 @@
 .footer > div:nth-child(2) > div h2{
     text-decoration: underline;
     margin-bottom: 10px;
+    font-size: 18px;
 }
 
 .footer > div:nth-child(2) > div .links{
@@ -51,15 +56,22 @@
 
 .footer > div:nth-child(3){
     padding-top: 10px;
+    text-align: center;
+    grid-column: span 3;
+    border-top: 1px solid #2c6029;
 } 
 
 @media (max-width:975px) {
-    .footer .header img{
-        width: 100px;
+    .footer{
+        grid-template-columns: 1.5fr 1fr;
     }
+    
 }
 
 @media (max-width:700px) {
+    .footer{
+        grid-template-columns: 2fr 1fr;
+    }
     
     .footer > div:nth-child(2) > div{
         display: flex;
@@ -97,5 +109,27 @@
 
     .footer > div:nth-child(3){
         font-size: 10px;
+    }
+}
+
+@media (max-width:645px) {
+    .footer{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .footer > div:nth-child(2){
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+        margin: 10px 0px;
+        padding: 0px 0px;
+        border-left: none;
+        border-block: 1px solid #2c6029;
+    }
+
+    .footer > div:nth-child(3){
+        border-top: none;
+        padding: 0px;
     }
 }
