@@ -33,17 +33,19 @@ const Dashboard = () => {
 
                     <div>
                         <p>2</p>
+                        <h3>Discover Companies</h3>
+                        <p>Get to know the companies behind the opportunities. Explore employers, learn about their work, and find organizations where you can grow.</p>
+                        <p className="link" onClick={()=>(setSelected("career"),navigate("/career"))}>→ Explore Companies</p>
+                    </div>
+
+                    <div>
+                        <p>3</p>
                         <h3>Discover Jobs</h3>
                         <p>Explore opportunities from different companies and industries. Search by job title, skill, or company and find roles that match what you're looking for.</p>
                         <p className="link" onClick={()=>(setSelected("find"),navigate("/find"))}>→ Explore jobs</p>
                     </div>
 
-                    <div>
-                        <p>3</p>
-                        <h3>Grow Your Skills</h3>
-                        <p>Discover the skills employers are looking for and identify areas where you can improve. Build a clear path toward the career you want.</p>
-                        <p className="link" onClick={()=>(setSelected("career"),navigate("/career"))}>→ View roadmap</p>
-                    </div> 
+                     
                 </div>
             </div>
             <div>
