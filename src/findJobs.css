@@ -384,4 +384,8 @@
     .findjobs > div:nth-child(2) > div:nth-child(2) > div:nth-child(2){
         height: 2100px;
     }
+
+    .findjobs > div:nth-child(2) > div:nth-child(2) > p:nth-child(1){
+        padding: 5px 10px;
+    }
 }

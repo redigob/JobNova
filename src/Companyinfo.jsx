@@ -120,7 +120,7 @@ const Companyinfo = () => {
                             <h2>{company.name}</h2>
                             <p>{company.industry}</p>
                             <p>{company.description}</p>
-                            <p>{company.positions.length} {company.positions.length < 2 ?  "job" : "jobs"}<button onClick={()=>(navigate(`/companyinfo/${company.id}`))}>View Company ↗</button></p>
+                            <p><p>{company.positions.length} {company.positions.length < 2 ?  "job" : "jobs"}</p><button onClick={()=>(navigate(`/companyinfo/${company.id}`))}>View Company ↗</button></p>
                           </div>
                         </div>
                        ))}

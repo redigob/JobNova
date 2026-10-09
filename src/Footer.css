@@ -130,6 +130,6 @@
 
     .footer > div:nth-child(3){
         border-top: none;
-        padding: 0px;
+        padding: 0px 0px 10px;
     }
 }

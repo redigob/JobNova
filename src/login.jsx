@@ -143,6 +143,7 @@ const Login = () => {
                 <p>confirm password</p>
                 <div>
                     <input value={signuptemp.confirm} 
+                        type='password'
                            onChange={(e)=>setSignuptemp({...signuptemp,confirm : e.target.value})} 
                            required
                            placeholder='********'/>
