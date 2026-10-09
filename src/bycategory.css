@@ -150,10 +150,14 @@
 
 @media (max-width:365px) {
     .categorynlogin .login{
-       padding: 20px 10px;
+       padding: 20px 5px;
     }
 
     .login .loginform label > div, .login .signupform label > div{
         padding: 10px 5px;
+    }
+
+    .login .loginform label input, .login .signupform label input{
+        margin-left: 5px;
     }
 }
