@@ -139,6 +139,16 @@ h2 p{
         align-items: center;
         padding:10px 10% ;
      }
+
+     .job{
+        padding: 10px;
+     }
+}
+
+@media (max-width:450px) {
+    .featured > div:nth-child(2){
+         padding: 10px 3%;
+     }
 }
 
 
