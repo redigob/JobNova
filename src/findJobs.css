@@ -380,4 +380,8 @@
     .findjobs > div:nth-child(1) > div{
         width: 80%;
     }
+
+    .findjobs > div:nth-child(2) > div:nth-child(2) > div:nth-child(2){
+        height: 2100px;
+    }
 }

@@ -29,8 +29,8 @@ const Footer = () => {
                 {!loggedin ? 
                 <div>
                     <h2>Support</h2>
-                    <p className='links' onClick={()=>(setSelected("/"),navigate("/",{state:{scrollTo:window.innerWidth<=620 ? 4000 : window.innerWidth <=800 ? 3000 : (window.innerWidth <=1600  ? 2500 : 2300)}}))}>Log In</p>
-                    <p className='links' onClick={()=>(setSelected("/"),navigate("/",{state:{scrollTo:window.innerWidth<=620 ? 4000 : window.innerWidth <=800 ? 3000 : (window.innerWidth <=1600  ? 2500 : 2300)}}))}>Create an account</p>
+                    <p className='links' onClick={()=>(setSelected("/"),navigate("/",{state:{scrollTo:window.innerWidth<=470 ? 3500 : window.innerWidth<=620 ? 4000 : window.innerWidth <=800 ? 3000 : (window.innerWidth <=1600  ? 2500 : 2300)}}))}>Log In</p>
+                    <p className='links' onClick={()=>(setSelected("/"),navigate("/",{state:{scrollTo:window.innerWidth<=470 ? 3500 : window.innerWidth<=620 ? 4000 : window.innerWidth <=800 ? 3000 : (window.innerWidth <=1600  ? 2500 : 2300)}}))}>Create an account</p>
                 </div> : 
                     ( !profile.name ? 
                         <div>
