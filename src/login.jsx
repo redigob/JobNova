@@ -51,7 +51,6 @@ const Login = () => {
         }
     }
 
-    console.log(signuptemp)
     return (
         <div className="login">
             <p className={success ? "success": ""}>You are successfully signed Up!! Please Log In to continue using JobNova</p>

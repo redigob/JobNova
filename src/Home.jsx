@@ -10,8 +10,9 @@ import { useLocation, useNavigate } from 'react-router-dom';
 
 const Home = () => {
     const {loggedin,selected,setSelected} = useContext(JobContext)
-    const location = useLocation()
     const navigate = useNavigate()
+    const location = useLocation()
+
     
     useEffect(()=>{
         if(location.state?.scrollTo){

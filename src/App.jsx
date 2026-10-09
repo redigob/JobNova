@@ -12,6 +12,7 @@ import Companyinfo from "./Companyinfo";
 import Jobdetail from "./Jobdetail";
 import Application from "./Application";
 import Saved from "./Saved";
+import Footer from "./Footer";
 const App = () => {
     const {loggedin} = useContext(JobContext)
     const navigate = useNavigate()
@@ -39,6 +40,7 @@ const App = () => {
                 <Route path={`applications` }element={<Application/>}></Route>
                 <Route path={`saved` }element={<Saved/>}></Route>
             </Routes>
+            <Footer/>
         </div>
     );
 }
