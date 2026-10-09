@@ -82,19 +82,19 @@ export function Jobprovider({children}){
 
 
     useEffect(()=>{
-        fetch('http://localhost:3000/featured')
+        fetch(`${import.meta.env.VITE_API_URL}/featured`)
         .then(res=>res.json())
         .then(data=>setFeatured(data))
 
-        fetch('http://localhost:3000/company')
+        fetch(`${import.meta.env.VITE_API_URL}/company`)
         .then(res=>res.json())
         .then(data=>setMarquee(data))
 
-        fetch('http://localhost:3000/jobs')
+        fetch(`${import.meta.env.VITE_API_URL}/jobs`)
         .then(res=>res.json())
         .then(data=>setJobs(data))
 
-        fetch('http://localhost:3000/companies')
+        fetch(`${import.meta.env.VITE_API_URL}/companies`)
         .then(res=>res.json())
         .then(data=>(setCompanies(data),console.log(data)))
     },[])
