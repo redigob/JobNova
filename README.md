@@ -92,39 +92,6 @@ The main goal was to move beyond a simple job listing website and create an expe
 5. Understand their progress throughout the job-search process.
 6. Explore possible career paths.
 
-## 🧠 What I Learned
-
-Building JobNova helped me strengthen my understanding of:
-
-- React component architecture
-- React Router and multi-page navigation
-- Context API and shared application state
-- Managing and filtering dynamic data
-- Skill-based matching logic
-- Working with JSON Server and APIs
-- Form handling and validation
-- Application state management
-- Pagination
-- Responsive UI design
-- Git and GitHub workflows
-- Debugging and solving real-world frontend problems
-
-## 🔮 Future Improvements
-
-Possible future improvements include:
-
-- Backend authentication
-- Real user accounts
-- A real database
-- Real-time job listings
-- Resume/CV generation
-- Employer accounts
-- Job posting functionality
-- Notifications
-- Advanced recommendation algorithms
-
-## 👩‍💻 Author
-
 **Rediet Gobezie**
 
 Computer Science student interested in building useful and practical software.
