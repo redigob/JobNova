@@ -13,7 +13,6 @@ const Home = () => {
     const navigate = useNavigate()
     const location = useLocation()
 
-    
     useEffect(()=>{
         if(location.state?.scrollTo){
             window.scrollTo({
@@ -22,6 +21,7 @@ const Home = () => {
             })
         }
     },[location])
+    
     return (
         <div className="home">
             <div>
